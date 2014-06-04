@@ -1,0 +1,50 @@
+{% import "_includes/forms" as forms %}
+
+<h2>Social Meta</h2>
+
+<header>
+	<h3>Open Graph</h3>
+	<p>Metadata for Facebook, Google+ and Pinterest</p>
+</header>
+
+{{ forms.textField({
+	label: "Title"|t,
+	id: "smSocialOGTitle",
+	name: "smSocialOGTitle",
+}) }}
+
+{{ forms.selectField({
+	label: "Content Type"|t,
+	instructions: "The type of content",
+	id: "smSocialOGType",
+	name: "smSocialOGType",
+	options: {
+		article: "Article",
+	}
+}) }}
+
+{{ forms.textarea({
+	label: "Description"|t,
+	id: "smSocialOGDescription",
+	name: "smSocialOGDescription",
+}) }}
+
+<header>
+	<h3>Twitter</h3>
+	<p>Metadata for Twitter Cards</p>
+</header>
+
+{{ forms.textField({
+	label: "Title"|t,
+	id: "smSocialTwitterTitle",
+	name: "smSocialTwitterTitle",
+}) }}
+
+{{ forms.textarea({
+	label: "Description"|t,
+	instructions: "Page description less than 200 characters",
+	id: "smSocialTwitterDescription",
+	name: "smSocialTwitterDescription",
+}) }}
+
+<h2>SEO Meta</h2>
