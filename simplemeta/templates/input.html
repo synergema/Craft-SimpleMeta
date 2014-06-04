@@ -13,34 +13,34 @@
 				</header>
 
 				{{ forms.textField({
-					label: "Title"|t,
-					id: "smSocialOGTitle",
-					name: "smSocialOGTitle",
+					label:  "Title"|t,
+					id:     "smSocialOGTitle",
+					name:   "smSocialOGTitle",
 				}) }}
 
 				{{ forms.textareaField({
-					label: "Description"|t,
-					id: "smSocialOGDescription",
-					name: "smSocialOGDescription",
+					label:  "Description"|t,
+					id:     "smSocialOGDescription",
+					name:   "smSocialOGDescription",
 				}) }}
 
 				{{ forms.selectField({
-					label: "Content Type"|t,
-					instructions: "The type of content",
-					id: "smSocialOGType",
-					name: "smSocialOGType",
+					label:          "Content Type"|t,
+					instructions:   "The type of content",
+					id:             "smSocialOGType",
+					name:           "smSocialOGType",
 					options: {
-						article: "Article",
-						book: "Book",
-						"music.song": "Music - Song",
-						"music.album": "Music - Album",
-						"usic.playlist": "Music - Playlist",
-						"music.radio_station": "Music - Radio Station",
-						profile: "Profile",
-						"video.movie": "Video - Movie",
-						"video.episode": "Video - Episode",
-						"video.tv_show": "Video - TV Show",
-						website: "Website",
+						article:                "Article",
+						book:                   "Book",
+						"music.song":           "Music - Song",
+						"music.album":          "Music - Album",
+						"usic.playlist":        "Music - Playlist",
+						"music.radio_station":  "Music - Radio Station",
+						profile:                "Profile",
+						"video.movie":          "Video - Movie",
+						"video.episode":        "Video - Episode",
+						"video.tv_show":        "Video - TV Show",
+						website:                "Website",
 					}
 				}) }}
 
@@ -53,31 +53,33 @@
 				</header>
 
 				{{ forms.textField({
-					label: "Title"|t,
-					id: "smSocialTwitterTitle",
-					name: "smSocialTwitterTitle",
+					label:  "Title"|t,
+					id:     "smSocialTwitterTitle",
+					name:   "smSocialTwitterTitle",
 				}) }}
 
 				{{ forms.textareaField({
-					label: "Description"|t,
-					instructions: "Page description less than 200 characters",
-					id: "smSocialTwitterDescription",
-					name: "smSocialTwitterDescription",
+					label:          "Description"|t,
+					instructions:   "Page description less than 200 characters",
+					id:             "smSocialTwitterDescription",
+					name:           "smSocialTwitterDescription",
+					class:          "max"
 				}) }}
+				<span class="safe">200</span>
 
 				{{ forms.selectField({
-					label: "Content Type"|t,
-					instructions: "The type of content",
-					id: "smSocialTwitterType",
-					name: "smSocialTwitterType",
+					label:          "Content Type"|t,
+					instructions:   "The type of content",
+					id:             "smSocialTwitterType",
+					name:           "smSocialTwitterType",
 					options: {
-						summary: "Summary",
-						summary_large_image: "Summary w/ Large Image",
-						photo: "Photo",
-						gallery: "Gallery",
-						product: "Product",
-						app: "App",
-						player: "Player",
+						summary:                "Summary",
+						summary_large_image:    "Summary w/ Large Image",
+						photo:                  "Photo",
+						gallery:                "Gallery",
+						product:                "Product",
+						app:                    "App",
+						player:                 "Player",
 					}
 				}) }}
 
@@ -92,50 +94,50 @@
 
 			<div class="block">
 				{{ forms.textField({
-					label: "Title"|t,
-					instructions: "Title display in search engines results. Maximum length 70 characters.",
-					id: "smSEOTitle",
-					name: "smSEOTitle",
+					label:          "Title"|t,
+					instructions:   "Title display in search engines results. Maximum length 70 characters.",
+					id:             "smSEOTitle",
+					name:           "smSEOTitle",
 				}) }}
 
 				{{ forms.textareaField({
-					label: "Description"|t,
-					instructions: "Description displayed in search engine results. Maximum length 155 characters.",
-					id: "smSEODescription",
-					name: "smSEODescription",
+					label:          "Description"|t,
+					instructions:   "Description displayed in search engine results. Maximum length 155 characters.",
+					id:             "smSEODescription",
+					name:           "smSEODescription",
 				}) }}
 
 			</div>
 
 			<div class="block">
 				{{ forms.textField({
-					label: "Meta Canonical URL"|t,
-					instructions: "The canonical URL that this page should point to. Cross domain canonical supported too.",
-					id: "smSEOCanonicalUrl",
-					name: "smSEOCanonicalUrl",
+					label:          "Meta Canonical URL"|t,
+					instructions:   "The canonical URL that this page should point to. Cross domain canonical supported too.",
+					id:             "smSEOCanonicalUrl",
+					name:           "smSEOCanonicalUrl",
 				}) }}
 			</div>
 
 			<div class="block">
 				{{ forms.selectField({
-					label: "Robots Index"|t,
-					instructions: "Should robots index this page?",
-					id: "smSEORobotsIndex",
-					name: "smSEORobotsIndex",
+					label:          "Robots Index"|t,
+					instructions:   "Should robots index this page?",
+					id:             "smSEORobotsIndex",
+					name:           "smSEORobotsIndex",
 					options: {
-						index: "Index",
-						noindex: "No Index",
+						index:      "Index",
+						noindex:    "No Index",
 					}
 				}) }}
 
 				{{ forms.selectField({
-					label: "Robots Follow"|t,
-					instructions: "Should robots follow links on this page?",
-					id: "smSEORobotsFollow",
-					name: "smSEORobotsFollow",
+					label:          "Robots Follow"|t,
+					instructions:   "Should robots follow links on this page?",
+					id:             "smSEORobotsFollow",
+					name:           "smSEORobotsFollow",
 					options: {
-						follow: "Follow",
-						nofollow: "No Follow",
+						follow:     "Follow",
+						nofollow:   "No Follow",
 					}
 				}) }}
 			</div>
