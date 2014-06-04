@@ -1,50 +1,127 @@
 {% import "_includes/forms" as forms %}
 
-<h2>Social Meta</h2>
+<section class="social">
 
-<header>
-	<h3>Open Graph</h3>
-	<p>Metadata for Facebook, Google+ and Pinterest</p>
-</header>
+	<h2>Social Meta</h2>
 
-{{ forms.textField({
-	label: "Title"|t,
-	id: "smSocialOGTitle",
-	name: "smSocialOGTitle",
-}) }}
+	<header>
+		<h3>Open Graph</h3>
+		<p>Metadata for Facebook, Google+ and Pinterest</p>
+	</header>
 
-{{ forms.selectField({
-	label: "Content Type"|t,
-	instructions: "The type of content",
-	id: "smSocialOGType",
-	name: "smSocialOGType",
-	options: {
-		article: "Article",
-	}
-}) }}
+	{{ forms.textField({
+		label: "Title"|t,
+		id: "smSocialOGTitle",
+		name: "smSocialOGTitle",
+	}) }}
 
-{{ forms.textarea({
-	label: "Description"|t,
-	id: "smSocialOGDescription",
-	name: "smSocialOGDescription",
-}) }}
+	{{ forms.selectField({
+		label: "Content Type"|t,
+		instructions: "The type of content",
+		id: "smSocialOGType",
+		name: "smSocialOGType",
+		options: {
+			article: "Article",
+			book: "Book",
+			"music.song": "Music - Song",
+			"music.album": "Music - Album",
+			"usic.playlist": "Music - Playlist",
+			"music.radio_station": "Music - Radio Station",
+			profile: "Profile",
+			"video.movie": "Video - Movie",
+			"video.episode": "Video - Episode",
+			"video.tv_show": "Video - TV Show",
+			website: "Website",
+		}
+	}) }}
 
-<header>
-	<h3>Twitter</h3>
-	<p>Metadata for Twitter Cards</p>
-</header>
+	{{ forms.textarea({
+		label: "Description"|t,
+		id: "smSocialOGDescription",
+		name: "smSocialOGDescription",
+	}) }}
 
-{{ forms.textField({
-	label: "Title"|t,
-	id: "smSocialTwitterTitle",
-	name: "smSocialTwitterTitle",
-}) }}
+	<header>
+		<h3>Twitter</h3>
+		<p>Metadata for Twitter Cards</p>
+	</header>
 
-{{ forms.textarea({
-	label: "Description"|t,
-	instructions: "Page description less than 200 characters",
-	id: "smSocialTwitterDescription",
-	name: "smSocialTwitterDescription",
-}) }}
+	{{ forms.textField({
+		label: "Title"|t,
+		id: "smSocialTwitterTitle",
+		name: "smSocialTwitterTitle",
+	}) }}
 
-<h2>SEO Meta</h2>
+	{{ forms.selectField({
+		label: "Content Type"|t,
+		instructions: "The type of content",
+		id: "smSocialTwitterType",
+		name: "smSocialTwitterType",
+		options: {
+			summary: "Summary",
+			summary_large_image: "Summary w/ Large Image",
+			photo: "Photo",
+			gallery: "Gallery",
+			product: "Product",
+			app: "App",
+			player: "Player",
+		}
+	}) }}
+
+	{{ forms.textarea({
+		label: "Description"|t,
+		instructions: "Page description less than 200 characters",
+		id: "smSocialTwitterDescription",
+		name: "smSocialTwitterDescription",
+	}) }}
+
+</section>
+
+<section class="seo">
+
+	<h2>SEO Meta</h2>
+
+	{{ forms.textField({
+		label: "Title"|t,
+		instructions: "Title display in search engines is limited to 70 characters.",
+		id: "smSEOTitle",
+		name: "smSEOTitle",
+	}) }}
+
+	{{ forms.textarea({
+		label: "Description"|t,
+		instructions: "Title display in search engines is limited to 70 characters.",
+		id: "smSEODescription",
+		name: "smSEODescription",
+	}) }}
+
+	{{ forms.textField({
+		label: "Meta Canonical URL"|t,
+		instructions: "The canonical URL that this page should point to. Cross domain canonical supported too.",
+		id: "smSEOCanonicalUrl",
+		name: "smSEOCanonicalUrl",
+	}) }}
+
+	{{ forms.selectField({
+		label: "Robots Index"|t,
+		instructions: "Should robots index this page?",
+		id: "smSEORobotsIndex",
+		name: "smSEORobotsIndex",
+		options: {
+			index: "Index",
+			noindex: "No Index",
+		}
+	}) }}
+
+	{{ forms.selectField({
+		label: "Robots Follow"|t,
+		instructions: "Should robots follow links on this page?",
+		id: "smSEORobotsFollow",
+		name: "smSEORobotsFollow",
+		options: {
+			follow: "Follow",
+			nofollow: "No Follow",
+		}
+	}) }}
+
+</section>
