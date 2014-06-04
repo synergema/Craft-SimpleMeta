@@ -1,127 +1,140 @@
 {% import "_includes/forms" as forms %}
 
-<section class="social">
+<div class="simple-meta">
+	<section class="social">
 
-	<h2>Social Meta</h2>
+		<h2>Social Meta</h2>
+		<div class="group">
 
-	<header>
-		<h3>Open Graph</h3>
-		<p>Metadata for Facebook, Google+ and Pinterest</p>
-	</header>
+			<div class="block">
+				<header>
+					<h3>Open Graph</h3>
+					<p>Metadata for Facebook, Google+ and Pinterest</p>
+				</header>
 
-	{{ forms.textField({
-		label: "Title"|t,
-		id: "smSocialOGTitle",
-		name: "smSocialOGTitle",
-	}) }}
+				{{ forms.textField({
+					label: "Title"|t,
+					id: "smSocialOGTitle",
+					name: "smSocialOGTitle",
+				}) }}
 
-	{{ forms.selectField({
-		label: "Content Type"|t,
-		instructions: "The type of content",
-		id: "smSocialOGType",
-		name: "smSocialOGType",
-		options: {
-			article: "Article",
-			book: "Book",
-			"music.song": "Music - Song",
-			"music.album": "Music - Album",
-			"usic.playlist": "Music - Playlist",
-			"music.radio_station": "Music - Radio Station",
-			profile: "Profile",
-			"video.movie": "Video - Movie",
-			"video.episode": "Video - Episode",
-			"video.tv_show": "Video - TV Show",
-			website: "Website",
-		}
-	}) }}
+				{{ forms.selectField({
+					label: "Content Type"|t,
+					instructions: "The type of content",
+					id: "smSocialOGType",
+					name: "smSocialOGType",
+					options: {
+						article: "Article",
+						book: "Book",
+						"music.song": "Music - Song",
+						"music.album": "Music - Album",
+						"usic.playlist": "Music - Playlist",
+						"music.radio_station": "Music - Radio Station",
+						profile: "Profile",
+						"video.movie": "Video - Movie",
+						"video.episode": "Video - Episode",
+						"video.tv_show": "Video - TV Show",
+						website: "Website",
+					}
+				}) }}
 
-	{{ forms.textareaField({
-		label: "Description"|t,
-		id: "smSocialOGDescription",
-		name: "smSocialOGDescription",
-	}) }}
+				{{ forms.textareaField({
+					label: "Description"|t,
+					id: "smSocialOGDescription",
+					name: "smSocialOGDescription",
+				}) }}
+			</div>
 
-	<header>
-		<h3>Twitter</h3>
-		<p>Metadata for Twitter Cards</p>
-	</header>
+			<div class="block">
+				<header>
+					<h3>Twitter</h3>
+					<p>Metadata for Twitter Cards</p>
+				</header>
 
-	{{ forms.textField({
-		label: "Title"|t,
-		id: "smSocialTwitterTitle",
-		name: "smSocialTwitterTitle",
-	}) }}
+				{{ forms.textField({
+					label: "Title"|t,
+					id: "smSocialTwitterTitle",
+					name: "smSocialTwitterTitle",
+				}) }}
 
-	{{ forms.selectField({
-		label: "Content Type"|t,
-		instructions: "The type of content",
-		id: "smSocialTwitterType",
-		name: "smSocialTwitterType",
-		options: {
-			summary: "Summary",
-			summary_large_image: "Summary w/ Large Image",
-			photo: "Photo",
-			gallery: "Gallery",
-			product: "Product",
-			app: "App",
-			player: "Player",
-		}
-	}) }}
+				{{ forms.selectField({
+					label: "Content Type"|t,
+					instructions: "The type of content",
+					id: "smSocialTwitterType",
+					name: "smSocialTwitterType",
+					options: {
+						summary: "Summary",
+						summary_large_image: "Summary w/ Large Image",
+						photo: "Photo",
+						gallery: "Gallery",
+						product: "Product",
+						app: "App",
+						player: "Player",
+					}
+				}) }}
 
-	{{ forms.textareaField({
-		label: "Description"|t,
-		instructions: "Page description less than 200 characters",
-		id: "smSocialTwitterDescription",
-		name: "smSocialTwitterDescription",
-	}) }}
+				{{ forms.textareaField({
+					label: "Description"|t,
+					instructions: "Page description less than 200 characters",
+					id: "smSocialTwitterDescription",
+					name: "smSocialTwitterDescription",
+				}) }}
+			</div>
 
-</section>
+		</div>
+	</section>
 
-<section class="seo">
+	<section class="seo">
+		<h2>SEO Meta</h2>
+		<div class="group">
 
-	<h2>SEO Meta</h2>
+			<div class="block">
+				{{ forms.textField({
+					label: "Title"|t,
+					instructions: "Title display in search engines results. Maximum length 70 characters.",
+					id: "smSEOTitle",
+					name: "smSEOTitle",
+				}) }}
 
-	{{ forms.textField({
-		label: "Title"|t,
-		instructions: "Title display in search engines results. Maximum length 70 characters.",
-		id: "smSEOTitle",
-		name: "smSEOTitle",
-	}) }}
+				{{ forms.textareaField({
+					label: "Description"|t,
+					instructions: "Description displayed in search engine results. Maximum length 155 characters.",
+					id: "smSEODescription",
+					name: "smSEODescription",
+				}) }}
 
-	{{ forms.textareaField({
-		label: "Description"|t,
-		instructions: "Description displayed in search engine results. Maximum length 155 characters.",
-		id: "smSEODescription",
-		name: "smSEODescription",
-	}) }}
+				{{ forms.textField({
+					label: "Meta Canonical URL"|t,
+					instructions: "The canonical URL that this page should point to. Cross domain canonical supported too.",
+					id: "smSEOCanonicalUrl",
+					name: "smSEOCanonicalUrl",
+				}) }}
+			</div>
 
-	{{ forms.textField({
-		label: "Meta Canonical URL"|t,
-		instructions: "The canonical URL that this page should point to. Cross domain canonical supported too.",
-		id: "smSEOCanonicalUrl",
-		name: "smSEOCanonicalUrl",
-	}) }}
+			<div class="block">
+				{{ forms.selectField({
+					label: "Robots Index"|t,
+					instructions: "Should robots index this page?",
+					id: "smSEORobotsIndex",
+					name: "smSEORobotsIndex",
+					options: {
+						index: "Index",
+						noindex: "No Index",
+					}
+				}) }}
 
-	{{ forms.selectField({
-		label: "Robots Index"|t,
-		instructions: "Should robots index this page?",
-		id: "smSEORobotsIndex",
-		name: "smSEORobotsIndex",
-		options: {
-			index: "Index",
-			noindex: "No Index",
-		}
-	}) }}
+				{{ forms.selectField({
+					label: "Robots Follow"|t,
+					instructions: "Should robots follow links on this page?",
+					id: "smSEORobotsFollow",
+					name: "smSEORobotsFollow",
+					options: {
+						follow: "Follow",
+						nofollow: "No Follow",
+					}
+				}) }}
+			</div>
 
-	{{ forms.selectField({
-		label: "Robots Follow"|t,
-		instructions: "Should robots follow links on this page?",
-		id: "smSEORobotsFollow",
-		name: "smSEORobotsFollow",
-		options: {
-			follow: "Follow",
-			nofollow: "No Follow",
-		}
-	}) }}
-
-</section>
+		</div>
+	</section>
+</div>

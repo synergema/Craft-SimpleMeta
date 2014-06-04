@@ -50,8 +50,9 @@ class SimpleMeta_SimpleMetaFieldType extends BaseFieldType
 		// Get settings
 		$settings = $this->getSettings();
 
-		// Include JavaScript
-		//craft()->templates->includeJsResource('SimpleMeta/ace/ace.js');
+		// Include JavaScript & CSS
+		craft()->templates->includeJsResource('simplemeta/simple.meta.js');
+		craft()->templates->includeCssResource('simplemeta/simple.meta.css');
 
 		return craft()->templates->render('SimpleMeta/input', array(
 			'name'     => $name,

@@ -1,0 +1,22 @@
+.group {
+	background-color: #F9FAFA;
+	border: 1px solid #DFE0E0;
+	border-radius: 4px;
+	margin: 15px 0;
+
+}
+
+.group .block {
+	border-bottom: 1px solid #DFE0E0;;
+	padding: 20px;
+}
+
+h3 {
+	margin: 0;
+}
+
+h3 + p {
+	color: #8F98A3;
+	font-size: 13px;
+	margin: 5px 0 0 0;
+}
