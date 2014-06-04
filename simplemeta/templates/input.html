@@ -18,6 +18,12 @@
 					name: "smSocialOGTitle",
 				}) }}
 
+				{{ forms.textareaField({
+					label: "Description"|t,
+					id: "smSocialOGDescription",
+					name: "smSocialOGDescription",
+				}) }}
+
 				{{ forms.selectField({
 					label: "Content Type"|t,
 					instructions: "The type of content",
@@ -38,11 +44,6 @@
 					}
 				}) }}
 
-				{{ forms.textareaField({
-					label: "Description"|t,
-					id: "smSocialOGDescription",
-					name: "smSocialOGDescription",
-				}) }}
 			</div>
 
 			<div class="block">
@@ -55,6 +56,13 @@
 					label: "Title"|t,
 					id: "smSocialTwitterTitle",
 					name: "smSocialTwitterTitle",
+				}) }}
+
+				{{ forms.textareaField({
+					label: "Description"|t,
+					instructions: "Page description less than 200 characters",
+					id: "smSocialTwitterDescription",
+					name: "smSocialTwitterDescription",
 				}) }}
 
 				{{ forms.selectField({
@@ -73,12 +81,6 @@
 					}
 				}) }}
 
-				{{ forms.textareaField({
-					label: "Description"|t,
-					instructions: "Page description less than 200 characters",
-					id: "smSocialTwitterDescription",
-					name: "smSocialTwitterDescription",
-				}) }}
 			</div>
 
 		</div>
@@ -86,7 +88,7 @@
 
 	<section class="seo">
 		<h2>SEO Meta</h2>
-		<div class="group">
+		<div class="group last">
 
 			<div class="block">
 				{{ forms.textField({
