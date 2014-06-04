@@ -35,7 +35,7 @@
 		}
 	}) }}
 
-	{{ forms.textarea({
+	{{ forms.textareaField({
 		label: "Description"|t,
 		id: "smSocialOGDescription",
 		name: "smSocialOGDescription",
@@ -68,7 +68,7 @@
 		}
 	}) }}
 
-	{{ forms.textarea({
+	{{ forms.textareaField({
 		label: "Description"|t,
 		instructions: "Page description less than 200 characters",
 		id: "smSocialTwitterDescription",
@@ -83,14 +83,14 @@
 
 	{{ forms.textField({
 		label: "Title"|t,
-		instructions: "Title display in search engines is limited to 70 characters.",
+		instructions: "Title display in search engines results. Maximum length 70 characters.",
 		id: "smSEOTitle",
 		name: "smSEOTitle",
 	}) }}
 
-	{{ forms.textarea({
+	{{ forms.textareaField({
 		label: "Description"|t,
-		instructions: "Title display in search engines is limited to 70 characters.",
+		instructions: "Description displayed in search engine results. Maximum length 155 characters.",
 		id: "smSEODescription",
 		name: "smSEODescription",
 	}) }}
