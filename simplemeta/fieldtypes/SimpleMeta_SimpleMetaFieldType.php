@@ -52,7 +52,6 @@ class SimpleMeta_SimpleMetaFieldType extends BaseFieldType
 
 		// Include JavaScript & CSS
 		craft()->templates->includeJsResource('simplemeta/simple.meta.js');
-		craft()->templates->includeJsResource('simplemeta/plugins/jquery.simplyCountable.js');
 		craft()->templates->includeCssResource('simplemeta/simple.meta.css');
 
 		return craft()->templates->render('SimpleMeta/input', array(
