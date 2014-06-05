@@ -1,12 +1,12 @@
 <?php
 
 /**
- * Ace Freely by Brandon Haslip
+ * Simple Meta by Brandon Haslip
  *
- * @package   Ace Freely (Named by Chad J. Clark)
- * @author    Brandon Haslip
- * @copyright Copyright (c) 2014, Brandon Haslip
- * @link      http://brandonhaslip.com
+ * @package   Simple Meta
+ * @author    Synergema
+ * @copyright Copyright (c) 2014, Synergema
+ * @link      http://synergema.com
  * @license   GNU Public License (http://opensource.org/licenses/gpl-license.php)
  */
 
@@ -41,14 +41,6 @@ class SimpleMeta_SimpleMetaFieldType extends BaseFieldType
 	 */
 	public function getInputHtml($name, $value)
 	{
-		// Reformat the input name into something that looks more like an ID
-		$id = craft()->templates->formatInputId($name);
-
-		// Figure out what that ID is going to look like once it has been namespaced
-		$namespacedId = craft()->templates->namespaceInputId($id);
-
-		// Get settings
-		$settings = $this->getSettings();
 
 		// Include JavaScript & CSS
 		craft()->templates->includeJsResource('simplemeta/simple.meta.js');
@@ -56,15 +48,8 @@ class SimpleMeta_SimpleMetaFieldType extends BaseFieldType
 
 		return craft()->templates->render('SimpleMeta/input', array(
 			'name'     => $name,
-			'value'    => $value,
-			'settings' => $settings
+			'value'    => $value
 		));
 	}
 
-	public function getSettingsHtml()
-	{
-		return craft()->templates->render('SimpleMeta/settings', array(
-			'settings' => $this->getSettings()
-		));
-	}
 }

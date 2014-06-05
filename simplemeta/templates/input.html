@@ -16,6 +16,7 @@
 					label: "Title"|t,
 					id: "smSocialOGTitle",
 					name: "smSocialOGTitle",
+					value: smSocialOGTitle,
 				}) }}
 
 				{{ forms.selectField({
@@ -23,25 +24,27 @@
 					instructions: "The type of content",
 					id: "smSocialOGType",
 					name: "smSocialOGType",
+					value: smSocialOGType,
 					options: {
 						article: "Article",
 						book: "Book",
 						"music.song": "Music - Song",
 						"music.album": "Music - Album",
-						"usic.playlist": "Music - Playlist",
+						"music.playlist": "Music - Playlist",
 						"music.radio_station": "Music - Radio Station",
 						profile: "Profile",
 						"video.movie": "Video - Movie",
 						"video.episode": "Video - Episode",
 						"video.tv_show": "Video - TV Show",
 						website: "Website",
-					}
+					},
 				}) }}
 
 				{{ forms.textareaField({
 					label: "Description"|t,
 					id: "smSocialOGDescription",
 					name: "smSocialOGDescription",
+					value: smSocialOGDescription,
 				}) }}
 			</div>
 
@@ -55,6 +58,7 @@
 					label: "Title"|t,
 					id: "smSocialTwitterTitle",
 					name: "smSocialTwitterTitle",
+					value: smSocialTwitterTitle,
 				}) }}
 
 				{{ forms.selectField({
@@ -62,6 +66,7 @@
 					instructions: "The type of content",
 					id: "smSocialTwitterType",
 					name: "smSocialTwitterType",
+					value: smSocialTwitterType,
 					options: {
 						summary: "Summary",
 						summary_large_image: "Summary w/ Large Image",
@@ -70,7 +75,7 @@
 						product: "Product",
 						app: "App",
 						player: "Player",
-					}
+					},
 				}) }}
 
 				{{ forms.textareaField({
@@ -78,6 +83,7 @@
 					instructions: "Page description less than 200 characters",
 					id: "smSocialTwitterDescription",
 					name: "smSocialTwitterDescription",
+					value: smSocialTwitterDescription,
 				}) }}
 			</div>
 
@@ -94,6 +100,7 @@
 					instructions: "Title display in search engines results. Maximum length 70 characters.",
 					id: "smSEOTitle",
 					name: "smSEOTitle",
+					value: smSEOTitle,
 				}) }}
 
 				{{ forms.textareaField({
@@ -101,6 +108,7 @@
 					instructions: "Description displayed in search engine results. Maximum length 155 characters.",
 					id: "smSEODescription",
 					name: "smSEODescription",
+					value: smSEODescription,
 				}) }}
 
 				{{ forms.textField({
@@ -108,6 +116,7 @@
 					instructions: "The canonical URL that this page should point to. Cross domain canonical supported too.",
 					id: "smSEOCanonicalUrl",
 					name: "smSEOCanonicalUrl",
+					value: smSEOCanonicalUrl,
 				}) }}
 			</div>
 
@@ -117,10 +126,11 @@
 					instructions: "Should robots index this page?",
 					id: "smSEORobotsIndex",
 					name: "smSEORobotsIndex",
+					value: smSEORobotsIndex,
 					options: {
 						index: "Index",
 						noindex: "No Index",
-					}
+					},
 				}) }}
 
 				{{ forms.selectField({
@@ -128,6 +138,7 @@
 					instructions: "Should robots follow links on this page?",
 					id: "smSEORobotsFollow",
 					name: "smSEORobotsFollow",
+					value: smSEORobotsFollow,
 					options: {
 						follow: "Follow",
 						nofollow: "No Follow",
