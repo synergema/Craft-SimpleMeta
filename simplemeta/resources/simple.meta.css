@@ -33,3 +33,17 @@ h3 + p {
 	font-size: 13px;
 	margin: 3px 0 0 0;
 }
+
+.max .field {
+	margin: 0;
+}
+
+.countdown {
+	color: #8F98A3;
+	font-size: 11px;
+	text-align: right;
+}
+
+.countdown .live.nope {
+	color: red;
+}
