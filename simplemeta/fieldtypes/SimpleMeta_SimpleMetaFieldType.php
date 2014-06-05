@@ -1,12 +1,12 @@
 <?php
 
 /**
- * Simple Meta by Brandon Haslip
+ * Ace Freely by Brandon Haslip
  *
- * @package   Simple Meta
- * @author    Synergema
- * @copyright Copyright (c) 2014, Synergema
- * @link      http://synergema.com
+ * @package   Ace Freely (Named by Chad J. Clark)
+ * @author    Brandon Haslip
+ * @copyright Copyright (c) 2014, Brandon Haslip
+ * @link      http://brandonhaslip.com
  * @license   GNU Public License (http://opensource.org/licenses/gpl-license.php)
  */
 
@@ -44,12 +44,9 @@ class SimpleMeta_SimpleMetaFieldType extends BaseFieldType
 
 		// Include JavaScript & CSS
 		craft()->templates->includeJsResource('simplemeta/simple.meta.js');
+		craft()->templates->includeJsResource('simplemeta/plugins/jquery.simplyCountable.js');
 		craft()->templates->includeCssResource('simplemeta/simple.meta.css');
 
-		return craft()->templates->render('SimpleMeta/input', array(
-			'name'     => $name,
-			'value'    => $value
-		));
+		return craft()->templates->render('SimpleMeta/input', array('value' => $value));
 	}
-
 }
