@@ -41,30 +41,11 @@ class SimpleMeta_SimpleMetaFieldType extends BaseFieldType
 	 */
 	public function getInputHtml($name, $value)
 	{
-		// Reformat the input name into something that looks more like an ID
-		$id = craft()->templates->formatInputId($name);
-
-		// Figure out what that ID is going to look like once it has been namespaced
-		$namespacedId = craft()->templates->namespaceInputId($id);
-
-		// Get settings
-		$settings = $this->getSettings();
 
 		// Include JavaScript & CSS
 		craft()->templates->includeJsResource('simplemeta/simple.meta.js');
 		craft()->templates->includeCssResource('simplemeta/simple.meta.css');
 
-		return craft()->templates->render('SimpleMeta/input', array(
-            'name'          => $name,
-            'value'         => $value,
-            'settings'      => $settings,
-		));
-	}
-
-	public function getSettingsHtml()
-	{
-		return craft()->templates->render('SimpleMeta/settings', array(
-			'settings' => $this->getSettings()
-		));
+		return craft()->templates->render('SimpleMeta/input', array('value' => $value));
 	}
 }

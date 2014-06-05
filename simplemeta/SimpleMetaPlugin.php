@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Ace Freely by Brandon Haslip
+ * Simple Meta by Synergema
  *
  * @package   Simple Meta
  * @author    Synergema
