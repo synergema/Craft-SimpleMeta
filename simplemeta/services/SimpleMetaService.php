@@ -32,13 +32,13 @@ class SimpleMetaService extends BaseApplicationComponent
 			$attr['handle']    = $handle;
 		}
 
-		if (!$attr['smSocialOGTitle'])            {$attr['smSocialOGTitle']            = null;}
-		if (!$attr['smSocialOGDescription'])      {$attr['smSocialOGDescription']      = null;}
-		if (!$attr['smSocialTwitterTitle'])       {$attr['smSocialTwitterTitle']       = null;}
-		if (!$attr['smSocialTwitterDescription']) {$attr['smSocialTwitterDescription'] = null;}
-		if (!$attr['smSEOTitle'])                 {$attr['smSEOTitle']                 = null;}
-		if (!$attr['smSEODescription'])           {$attr['smSEODescription']           = null;}
-		if (!$attr['smSEOCanonicalUrl'])          {$attr['smSEOCanonicalUrl']          = null;}
+		if (!$attr['socialOGTitle'])            {$attr['socialOGTitle']            = null;}
+		if (!$attr['socialOGDescription'])      {$attr['socialOGDescription']      = null;}
+		if (!$attr['socialTwitterTitle'])       {$attr['socialTwitterTitle']       = null;}
+		if (!$attr['socialTwitterDescription']) {$attr['socialTwitterDescription'] = null;}
+		if (!$attr['seoTitle'])                 {$attr['seoTitle']                 = null;}
+		if (!$attr['seoDescription'])           {$attr['seoDescription']           = null;}
+		if (!$attr['seoCanonicalUrl'])          {$attr['seoCanonicalUrl']          = null;}
 
 		$simpleMetaRecord->setAttributes($attr, false);
 

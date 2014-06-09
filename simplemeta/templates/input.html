@@ -13,37 +13,37 @@
 				</header>
 
 				{{ forms.textField({
-					label:  "Title"|t,
-					id:     handle~'smSocialOGTitle',
-					name:   handle~'[smSocialOGTitle]',
-					value:  smSocialOGTitle,
+					label: "Title"|t,
+					id   : handle~'socialOGTitle',
+					name : handle~'[socialOGTitle]',
+					value: socialOGTitle,
 				}) }}
 
 				{{ forms.textareaField({
-					label:  "Description"|t,
-					id:     handle~'smSocialOGDescription',
-					name:   handle~'[smSocialOGDescription]',
-					value:  smSocialOGDescription,
+					label: "Description"|t,
+					id   : handle~'socialOGDescription',
+					name : handle~'[socialOGDescription]',
+					value: socialOGDescription,
 				}) }}
 
 				{{ forms.selectField({
-					label:          "Content Type"|t,
-					instructions:   "The type of content",
-					id:             handle~'smSocialOGType',
-					name:           handle~'[smSocialOGType]',
-					value:          smSocialOGType,
+					label       : "Content Type"|t,
+					instructions: "The type of content",
+					id          : handle~'socialOGType',
+					name        : handle~'[socialOGType]',
+					value       : socialOGType,
 					options: {
-						article:                "Article",
-						book:                   "Book",
-						"music.song":           "Music - Song",
-						"music.album":          "Music - Album",
-						"usic.playlist":        "Music - Playlist",
-						"music.radio_station":  "Music - Radio Station",
-						profile:                "Profile",
-						"video.movie":          "Video - Movie",
-						"video.episode":        "Video - Episode",
-						"video.tv_show":        "Video - TV Show",
-						website:                "Website",
+						article              : "Article",
+						book                 : "Book",
+						"music.song"         : "Music - Song",
+						"music.album"        : "Music - Album",
+						"music.playlist"     : "Music - Playlist",
+						"music.radio_station": "Music - Radio Station",
+						profile              : "Profile",
+						"video.movie"        : "Video - Movie",
+						"video.episode"      : "Video - Episode",
+						"video.tv_show"      : "Video - TV Show",
+						website              : "Website",
 					}
 				}) }}
 
@@ -56,19 +56,19 @@
 				</header>
 
 				{{ forms.textField({
-					label:  "Title"|t,
-					id:     handle~'smSocialTwitterTitle',
-					name:   handle~'[smSocialTwitterTitle]',
-					value:  smSocialTwitterTitle,
+					label: "Title"|t,
+					id   : handle~'socialTwitterTitle',
+					name : handle~'[socialTwitterTitle]',
+					value: socialTwitterTitle,
 				}) }}
 
 				<div class="max">
 					{{ forms.textareaField({
-						label:          "Description"|t,
-						instructions:   "Page description less than 200 characters",
-						id:             handle~'smSocialTwitterDescription',
-						name:           handle~'[smSocialTwitterDescription]',
-						value:          smSocialTwitterDescription,
+						label       : "Description"|t,
+						instructions: "Page description less than 200 characters",
+						id          : handle~'socialTwitterDescription',
+						name        : handle~'[socialTwitterDescription]',
+						value       : socialTwitterDescription,
 					}) }}
 					<div class="countdown" data-max="200">
 						<span class="live">0</span>&nbsp;/&nbsp;200 Characters
@@ -76,19 +76,19 @@
 				</div>
 
 				{{ forms.selectField({
-					label:          "Content Type"|t,
-					instructions:   "The type of content",
-					id:             handle~'smSocialTwitterType',
-					name:           handle~'[smSocialTwitterType]',
-					value:          smSocialTwitterType,
+					label       : "Content Type"|t,
+					instructions: "The type of content",
+					id          : handle~'socialTwitterType',
+					name        : handle~'[socialTwitterType]',
+					value       : socialTwitterType,
 					options: {
-						summary:                "Summary",
-						summary_large_image:    "Summary w/ Large Image",
-						photo:                  "Photo",
-						gallery:                "Gallery",
-						product:                "Product",
-						app:                    "App",
-						player:                 "Player",
+						summary            : "Summary",
+						summary_large_image: "Summary w/ Large Image",
+						photo              : "Photo",
+						gallery            : "Gallery",
+						product            : "Product",
+						app                : "App",
+						player             : "Player",
 					}
 				}) }}
 
@@ -104,11 +104,11 @@
 			<div class="block">
 				<div class="max">
 					{{ forms.textField({
-						label:          "Title"|t,
-						instructions:   "Title display in search engines results. Maximum length 70 characters.",
-						id:             handle~'smSEOTitle',
-						name:           handle~'[smSEOTitle]',
-						value:          smSEOTitle,
+						label       : "Title"|t,
+						instructions: "Title display in search engines results. Maximum length 70 characters.",
+						id          : handle~'seoTitle',
+						name        : handle~'[seoTitle]',
+						value       : seoTitle,
 					}) }}
 					<div class="countdown" data-max="70">
 						<span class="live">0</span>&nbsp;/&nbsp;70 Characters
@@ -117,11 +117,11 @@
 
 				<div class="max">
 					{{ forms.textareaField({
-						label:          "Description"|t,
-						instructions:   "Description displayed in search engine results. Maximum length 155 characters.",
-						id:             handle~'smSEODescription',
-						name:           handle~'[smSEODescription]',
-						value:          smSEODescription,
+						label       : "Description"|t,
+						instructions: "Description displayed in search engine results. Maximum length 155 characters.",
+						id          : handle~'seoDescription',
+						name        : handle~'[seoDescription]',
+						value       : eoDescription,
 					}) }}
 					<div class="countdown" data-max="155">
 						<span class="live">0</span>&nbsp;/&nbsp;155 Characters
@@ -132,49 +132,50 @@
 
 			<div class="block">
 				{{ forms.textField({
-					label:          "Meta Canonical URL"|t,
-					instructions:   "The canonical URL that this page should point to. Cross domain canonical supported too.",
-					id:             handle~'smSEOCanonicalUrl',
-					name:           handle~'[smSEOCanonicalUrl]',
-					value:          smSEOCanonicalUrl,
+					label       :  "Meta Canonical URL"|t,
+					instructions: "The canonical URL that this page should point to. Cross domain canonical supported too.",
+					id          :  handle~'seoCanonicalUrl',
+					name        : handle~'[seoCanonicalUrl]',
+					value       : seoCanonicalUrl,
 				}) }}
 			</div>
 
 			<div class="block">
 				{{ forms.selectField({
-					label:          "Robots Index"|t,
-					instructions:   "Should robots index this page?",
-					id:             handle~'smSEORobotsIndex',
-					name:           handle~'[smSEORobotsIndex]',
-					value:          smSEORobotsIndex,
+					label       : "Robots Index"|t,
+					instructions: "Should robots index this page?",
+					id          : handle~'seoRobotsIndex',
+					name        : handle~'[seoRobotsIndex]',
+					value       : seoRobotsIndex,
 					options: {
-						index:      "Index",
-						noindex:    "No Index",
+						index  : "Index",
+						noindex: "No Index",
 					}
 				}) }}
 
 				{{ forms.selectField({
-					label:          "Robots Follow"|t,
-					instructions:   "Should robots follow links on this page?",
-					id:             handle~'smSEORobotsFollow',
-					name:           handle~'[smSEORobotsFollow]',
-					value:          smSEORobotsFollow,
+					label       : "Robots Follow"|t,
+					instructions: "Should robots follow links on this page?",
+					id          : handle~'seoRobotsFollow',
+					name        : handle~'[seoRobotsFollow]',
+					value       : seoRobotsFollow,
 					options: {
-						follow:     "Follow",
-						nofollow:   "No Follow",
+						follow  : "Follow",
+						nofollow: "No Follow",
 					}
 				}) }}
 			</div>
 
 			<div class="block">
 				{{ forms.selectField({
-					label:          "Sitemap Priority"|t,
-					instructions:   "The priority given to this page in the XML sitemap.",
-					id:             "smSEOSitemapPriority",
-					name:           "smSEOSitemapPriority",
+					label       : "Sitemap Priority"|t,
+					instructions: "The priority given to this page in the XML sitemap.",
+					id          : handle~'seoSitemapPriority',
+					name        : handle~'[seoSitemapPriority]',
+					value       : seoSitemapPriority,
 					options: {
-						"": "Select",
-						"1": "1 - Highest Priority",
+						""   : "Select",
+						"1"  : "1 - Highest Priority",
 						"0.9": "0.9",
 						"0.8": "0.8 - Default for first-tier pages",
 						"0.7": "0.7",

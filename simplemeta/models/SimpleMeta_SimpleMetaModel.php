@@ -42,20 +42,36 @@ class SimpleMeta_SimpleMetaModel extends BaseModel
 			'nofollow',
 		);
 
+		// Sitemap Priority
+		$sitemapPriority = array(
+			'',
+			'1',
+			'0.9',
+			'0.8',
+			'0.7',
+			'0.6',
+			'0.5',
+			'0.4',
+			'0.3',
+			'0.2',
+			'0.1',
+		);
+
 		return array(
-			'elementId'                  => AttributeType::Number,
-			'handle'                     => AttributeType::String,
-			'smSocialOGTitle'            => AttributeType::String,
-			'smSocialOGDescription'      => AttributeType::String,
-			'smSocialOGType'             => array(AttributeType::Enum, 'values' => $openGraphTypes,   'default' => $openGraphTypes[0]),
-			'smSocialTwitterTitle'       => AttributeType::String,
-			'smSocialTwitterType'        => array(AttributeType::Enum, 'values' => $twitterCardTypes, 'default' => $twitterCardTypes[0]),
-			'smSocialTwitterDescription' => AttributeType::String,
-			'smSEOTitle'                 => AttributeType::String,
-			'smSEODescription'           => AttributeType::String,
-			'smSEOCanonicalUrl'          => AttributeType::String,
-			'smSEORobotsIndex'           => array(AttributeType::Enum, 'values' => $robotsIndex,      'default' => $robotsIndex[0]),
-			'smSEORobotsFollow'          => array(AttributeType::Enum, 'values' => $robotsFollow,     'default' => $robotsFollow[0]),
+			'elementId'                => AttributeType::Number,
+			'handle'                   => AttributeType::String,
+			'socialOGTitle'            => AttributeType::String,
+			'socialOGDescription'      => AttributeType::String,
+			'socialOGType'             => array(AttributeType::Enum, 'values' => $openGraphTypes,   'default' => $openGraphTypes[0]),
+			'socialTwitterTitle'       => AttributeType::String,
+			'socialTwitterType'        => array(AttributeType::Enum, 'values' => $twitterCardTypes, 'default' => $twitterCardTypes[0]),
+			'socialTwitterDescription' => AttributeType::String,
+			'seoTitle'                 => AttributeType::String,
+			'seoDescription'           => AttributeType::String,
+			'seoCanonicalUrl'          => AttributeType::String,
+			'seoRobotsIndex'           => array(AttributeType::Enum, 'values' => $robotsIndex,      'default' => $robotsIndex[0]),
+			'seoRobotsFollow'          => array(AttributeType::Enum, 'values' => $robotsFollow,     'default' => $robotsFollow[0]),
+			'seoSitemapPriority'       => array(AttributeType::Enum, 'values' => $sitemapPriority,  'default' => $sitemapPriority[0]),
 		);
 	}
 }
