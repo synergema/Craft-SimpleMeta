@@ -44,6 +44,10 @@ h3 + p {
 	text-align: right;
 }
 
+.countdown .live {
+	font-weight: 700;
+}
+
 .countdown .live.nope {
-	color: red;
+	color: #DA5A47;
 }

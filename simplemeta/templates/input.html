@@ -71,7 +71,7 @@
 						value:          smSocialTwitterDescription,
 					}) }}
 					<div class="countdown" data-max="200">
-						<span class="live">0</span>/200 Characters
+						<span class="live">0</span>&nbsp;/&nbsp;200 Characters
 					</div>
 				</div>
 
@@ -111,7 +111,7 @@
 						value:          smSEOTitle,
 					}) }}
 					<div class="countdown" data-max="70">
-						<span class="live">0</span>/70 Characters
+						<span class="live">0</span>&nbsp;/&nbsp;70 Characters
 					</div>
 				</div>
 
@@ -124,7 +124,7 @@
 						value:          smSEODescription,
 					}) }}
 					<div class="countdown" data-max="155">
-						<span class="live">0</span>/155 Characters
+						<span class="live">0</span>&nbsp;/&nbsp;155 Characters
 					</div>
 				</div>
 
@@ -162,6 +162,28 @@
 					options: {
 						follow:     "Follow",
 						nofollow:   "No Follow",
+					}
+				}) }}
+			</div>
+
+			<div class="block">
+				{{ forms.selectField({
+					label:          "Sitemap Priority"|t,
+					instructions:   "The priority given to this page in the XML sitemap.",
+					id:             "smSEOSitemapPriority",
+					name:           "smSEOSitemapPriority",
+					options: {
+						"": "Select",
+						"1": "1 - Highest Priority",
+						"0.9": "0.9",
+						"0.8": "0.8 - Default for first-tier pages",
+						"0.7": "0.7",
+						"0.6": "0.6 - Default for second-tier pages and posts",
+						"0.5": "0.5 - Medium priority",
+						"0.4": "0.4",
+						"0.3": "0.3",
+						"0.2": "0.2",
+						"0.1": "0.1 - Lowest priority",
 					}
 				}) }}
 			</div>
