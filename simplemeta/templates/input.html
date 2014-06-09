@@ -14,21 +14,24 @@
 
 				{{ forms.textField({
 					label:  "Title"|t,
-					id:     "smSocialOGTitle",
-					name:   "smSocialOGTitle",
+					id:     handle~'smSocialOGTitle',
+					name:   handle~'[smSocialOGTitle]',
+					value:  smSocialOGTitle,
 				}) }}
 
 				{{ forms.textareaField({
 					label:  "Description"|t,
-					id:     "smSocialOGDescription",
-					name:   "smSocialOGDescription",
+					id:     handle~'smSocialOGDescription',
+					name:   handle~'[smSocialOGDescription]',
+					value:  smSocialOGDescription,
 				}) }}
 
 				{{ forms.selectField({
 					label:          "Content Type"|t,
 					instructions:   "The type of content",
-					id:             "smSocialOGType",
-					name:           "smSocialOGType",
+					id:             handle~'smSocialOGType',
+					name:           handle~'[smSocialOGType]',
+					value:          smSocialOGType,
 					options: {
 						article:                "Article",
 						book:                   "Book",
@@ -52,23 +55,20 @@
 					<p>Metadata for Twitter Cards</p>
 				</header>
 
-				<div class="max">
-					{{ forms.textField({
-						label:  "Title"|t,
-						id:     "smSocialTwitterTitle",
-						name:   "smSocialTwitterTitle",
-					}) }}
-					<div class="countdown" data-max="70">
-						<span class="live">0</span>&nbsp;/&nbsp;70 Characters
-					</div>
-				</div>
+				{{ forms.textField({
+					label:  "Title"|t,
+					id:     handle~'smSocialTwitterTitle',
+					name:   handle~'[smSocialTwitterTitle]',
+					value:  smSocialTwitterTitle,
+				}) }}
 
 				<div class="max">
 					{{ forms.textareaField({
 						label:          "Description"|t,
 						instructions:   "Page description less than 200 characters",
-						id:             "smSocialTwitterDescription",
-						name:           "smSocialTwitterDescription",
+						id:             handle~'smSocialTwitterDescription',
+						name:           handle~'[smSocialTwitterDescription]',
+						value:          smSocialTwitterDescription,
 					}) }}
 					<div class="countdown" data-max="200">
 						<span class="live">0</span>&nbsp;/&nbsp;200 Characters
@@ -78,8 +78,9 @@
 				{{ forms.selectField({
 					label:          "Content Type"|t,
 					instructions:   "The type of content",
-					id:             "smSocialTwitterType",
-					name:           "smSocialTwitterType",
+					id:             handle~'smSocialTwitterType',
+					name:           handle~'[smSocialTwitterType]',
+					value:          smSocialTwitterType,
 					options: {
 						summary:                "Summary",
 						summary_large_image:    "Summary w/ Large Image",
@@ -104,12 +105,13 @@
 				<div class="max">
 					{{ forms.textField({
 						label:          "Title"|t,
-						instructions:   "Title display in search engines results. Maximum length 56 characters.",
-						id:             "smSEOTitle",
-						name:           "smSEOTitle",
+						instructions:   "Title display in search engines results. Maximum length 70 characters.",
+						id:             handle~'smSEOTitle',
+						name:           handle~'[smSEOTitle]',
+						value:          smSEOTitle,
 					}) }}
-					<div class="countdown" data-max="56">
-						<span class="live">0</span>&nbsp;/&nbsp;56 Characters
+					<div class="countdown" data-max="70">
+						<span class="live">0</span>&nbsp;/&nbsp;70 Characters
 					</div>
 				</div>
 
@@ -117,8 +119,9 @@
 					{{ forms.textareaField({
 						label:          "Description"|t,
 						instructions:   "Description displayed in search engine results. Maximum length 155 characters.",
-						id:             "smSEODescription",
-						name:           "smSEODescription",
+						id:             handle~'smSEODescription',
+						name:           handle~'[smSEODescription]',
+						value:          smSEODescription,
 					}) }}
 					<div class="countdown" data-max="155">
 						<span class="live">0</span>&nbsp;/&nbsp;155 Characters
@@ -131,8 +134,9 @@
 				{{ forms.textField({
 					label:          "Meta Canonical URL"|t,
 					instructions:   "The canonical URL that this page should point to. Cross domain canonical supported too.",
-					id:             "smSEOCanonicalUrl",
-					name:           "smSEOCanonicalUrl",
+					id:             handle~'smSEOCanonicalUrl',
+					name:           handle~'[smSEOCanonicalUrl]',
+					value:          smSEOCanonicalUrl,
 				}) }}
 			</div>
 
@@ -140,8 +144,9 @@
 				{{ forms.selectField({
 					label:          "Robots Index"|t,
 					instructions:   "Should robots index this page?",
-					id:             "smSEORobotsIndex",
-					name:           "smSEORobotsIndex",
+					id:             handle~'smSEORobotsIndex',
+					name:           handle~'[smSEORobotsIndex]',
+					value:          smSEORobotsIndex,
 					options: {
 						index:      "Index",
 						noindex:    "No Index",
@@ -151,8 +156,9 @@
 				{{ forms.selectField({
 					label:          "Robots Follow"|t,
 					instructions:   "Should robots follow links on this page?",
-					id:             "smSEORobotsFollow",
-					name:           "smSEORobotsFollow",
+					id:             handle~'smSEORobotsFollow',
+					name:           handle~'[smSEORobotsFollow]',
+					value:          smSEORobotsFollow,
 					options: {
 						follow:     "Follow",
 						nofollow:   "No Follow",

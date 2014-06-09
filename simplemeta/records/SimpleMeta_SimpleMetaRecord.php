@@ -1,10 +1,18 @@
 <?php
 namespace Craft;
 
-class SimpleMeta_SimpleMetaModel extends BaseModel
+class SimpleMeta_SimpleMetaRecord extends BaseRecord
 {
+	const TABLE_NAME = 'simplemeta';
+
+	public function getTableName()
+	{
+		return static::TABLE_NAME;
+	}
+
 	protected function defineAttributes()
 	{
+
 		// Open Graph Types
 		$openGraphTypes = array(
 			'article',
@@ -56,6 +64,14 @@ class SimpleMeta_SimpleMetaModel extends BaseModel
 			'smSEOCanonicalUrl'          => AttributeType::String,
 			'smSEORobotsIndex'           => array(AttributeType::Enum, 'values' => $robotsIndex,      'default' => $robotsIndex[0]),
 			'smSEORobotsFollow'          => array(AttributeType::Enum, 'values' => $robotsFollow,     'default' => $robotsFollow[0]),
+		);
+
+	}
+
+	public function defineRelations()
+	{
+		return array(
+			'element' => array(static::BELONGS_TO, 'ElementRecord', 'required' => true, 'onDelete' => static::CASCADE),
 		);
 	}
 }
