@@ -1,12 +1,12 @@
 <?php
 
 /**
- * Ace Freely by Brandon Haslip
+ * Simple Meta by Synergema
  *
- * @package   Ace Freely (Named by Chad J. Clark)
- * @author    Brandon Haslip
- * @copyright Copyright (c) 2014, Brandon Haslip
- * @link      http://brandonhaslip.com
+ * @package   Simple Meta
+ * @author    Synergema
+ * @copyright Copyright (c) 2014, Synergema
+ * @link      http://synergema.com
  * @license   GNU Public License (http://opensource.org/licenses/gpl-license.php)
  */
 
@@ -14,38 +14,47 @@ namespace Craft;
 
 class SimpleMeta_SimpleMetaFieldType extends BaseFieldType
 {
-	/**
-	 * Get the name of this fieldtype
-	 */
+
 	public function getName()
 	{
 		return Craft::t('Simple Meta');
 	}
 
-	/**
-	 * Get this fieldtype's column type.
-	 *
-	 * @return string
-	 */
 	public function defineContentAttribute()
 	{
-		return array(AttributeType::String, 'column' => ColumnType::Text);
+		return false;
 	}
 
-	/**
-	 * Get this fieldtype's form HTML
-	 *
-	 * @param  string $name
-	 * @param  mixed  $value
-	 * @return string
-	 */
+	public function modifyElementsQuery(DbCommand $query, $params)
+	{
+		if ($params !== null) {
+			craft()->simpleMeta->modifyQuery($query, $params);
+		}
+	}
+
 	public function getInputHtml($name, $value)
 	{
-
 		// Include JavaScript & CSS
 		craft()->templates->includeJsResource('simplemeta/simple.meta.js');
 		craft()->templates->includeCssResource('simplemeta/simple.meta.css');
 
-		return craft()->templates->render('SimpleMeta/input', array('value' => $value));
+		if (!empty($value)) {
+			$simpleMetaModel = SimpleMeta_SimpleMetaModel::populateModel($value);
+		} else {
+			$simpleMetaModel = new SimpleMeta_SimpleMetaModel;
+			$simpleMetaModel->handle = $name;
+		}
+
+		return craft()->templates->render('simplemeta/input', $simpleMetaModel->getAttributes());
+	}
+
+	public function prepValue($value)
+	{
+		return craft()->simpleMeta->getSimpleMeta($this);
+	}
+
+	public function onAfterElementSave()
+	{
+		return craft()->simpleMeta->saveSimpleMeta($this);
 	}
 }
