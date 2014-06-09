@@ -52,11 +52,16 @@
 					<p>Metadata for Twitter Cards</p>
 				</header>
 
-				{{ forms.textField({
-					label:  "Title"|t,
-					id:     "smSocialTwitterTitle",
-					name:   "smSocialTwitterTitle",
-				}) }}
+				<div class="max">
+					{{ forms.textField({
+						label:  "Title"|t,
+						id:     "smSocialTwitterTitle",
+						name:   "smSocialTwitterTitle",
+					}) }}
+					<div class="countdown" data-max="70">
+						<span class="live">0</span>&nbsp;/&nbsp;70 Characters
+					</div>
+				</div>
 
 				<div class="max">
 					{{ forms.textareaField({
@@ -99,12 +104,12 @@
 				<div class="max">
 					{{ forms.textField({
 						label:          "Title"|t,
-						instructions:   "Title display in search engines results. Maximum length 70 characters.",
+						instructions:   "Title display in search engines results. Maximum length 56 characters.",
 						id:             "smSEOTitle",
 						name:           "smSEOTitle",
 					}) }}
-					<div class="countdown" data-max="70">
-						<span class="live">0</span>&nbsp;/&nbsp;70 Characters
+					<div class="countdown" data-max="56">
+						<span class="live">0</span>&nbsp;/&nbsp;56 Characters
 					</div>
 				</div>
 
