@@ -29,6 +29,7 @@
 				{{ forms.selectField({
 					label       : "Content Type"|t,
 					instructions: "The type of content",
+					class       : "has-addl-fields",
 					id          : handle~'socialOGType',
 					name        : handle~'[socialOGType]',
 					value       : socialOGType,
@@ -46,6 +47,52 @@
 						website              : "Website",
 					}
 				}) }}
+
+				<div class="addl-fields">
+					<div id="{{ handle~'socialOGType' }}_article" class="block is-visible">
+						<h3>Article fields go here</h3>
+					</div>
+
+					<div id="{{ handle~'socialOGType' }}_book" class="block is-hidden">
+						<h3>Book fields go here</h3>
+					</div>
+
+					<div id="{{ handle~'socialOGType' }}_music_song" class="block is-hidden">
+						<h3>Music - Song fields go here</h3>
+					</div>
+
+					<div id="{{ handle~'socialOGType' }}_music_album" class="block is-hidden">
+						<h3>Music - Album fields go here</h3>
+					</div>
+
+					<div id="{{ handle~'socialOGType' }}_music_playlist" class="block is-hidden">
+						<h3>Music - Playlist fields go here</h3>
+					</div>
+
+					<div id="{{ handle~'socialOGType' }}_music_radio_station" class="block is-hidden">
+						<h3>Music - Radio Station fields go here</h3>
+					</div>
+
+					<div id="{{ handle~'socialOGType' }}_profile" class="block is-hidden">
+						<h3>Profile fields go here</h3>
+					</div>
+
+					<div id="{{ handle~'socialOGType' }}_video_movie" class="block is-hidden">
+						<h3>Video - Movie fields go here</h3>
+					</div>
+
+					<div id="{{ handle~'socialOGType' }}_video_episode" class="block is-hidden">
+						<h3>Video - Episode fields go here</h3>
+					</div>
+
+					<div id="{{ handle~'socialOGType' }}_video_tv_show" class="block addl-fields is-hidden">
+						<h3>Video - TV Show fields go here</h3>
+					</div>
+
+					<div id="{{ handle~'socialOGType' }}_website" class="block addl-fields is-hidden">
+						<h3>Website fields go here</h3>
+					</div>
+				</div>
 
 			</div>
 
@@ -78,6 +125,7 @@
 				{{ forms.selectField({
 					label       : "Content Type"|t,
 					instructions: "The type of content",
+					class       : "has-addl-fields",
 					id          : handle~'socialTwitterType',
 					name        : handle~'[socialTwitterType]',
 					value       : socialTwitterType,
@@ -91,6 +139,36 @@
 						player             : "Player",
 					}
 				}) }}
+
+				<div class="addl-fields">
+					<div id="{{ handle~'socialTwitterType' }}_summary" class="block is-visible">
+						<h3>Summary fields go here</h3>
+					</div>
+
+					<div id="{{ handle~'socialTwitterType' }}_summary_large_image" class="block is-hidden">
+						<h3>Summary w/ Large Image fields go here</h3>
+					</div>
+
+					<div id="{{ handle~'socialTwitterType' }}_photo" class="block is-hidden">
+						<h3>Photo fields go here</h3>
+					</div>
+
+					<div id="{{ handle~'socialTwitterType' }}_gallery" class="block is-hidden">
+						<h3>Gallery fields go here</h3>
+					</div>
+
+					<div id="{{ handle~'socialTwitterType' }}_product" class="block is-hidden">
+						<h3>Product fields go here</h3>
+					</div>
+
+					<div id="{{ handle~'socialTwitterType' }}_app" class="block is-hidden">
+						<h3>App fields go here</h3>
+					</div>
+
+					<div id="{{ handle~'socialTwitterType' }}_player" class="block is-hidden">
+						<h3>Player fields go here</h3>
+					</div>
+				</div>
 
 			</div>
 
@@ -121,7 +199,7 @@
 						instructions: "Description displayed in search engine results. Maximum length 155 characters.",
 						id          : handle~'seoDescription',
 						name        : handle~'[seoDescription]',
-						value       : eoDescription,
+						value       : seoDescription,
 					}) }}
 					<div class="countdown" data-max="155">
 						<span class="live">0</span>&nbsp;/&nbsp;155 Characters
@@ -134,7 +212,7 @@
 				{{ forms.textField({
 					label       :  "Meta Canonical URL"|t,
 					instructions: "The canonical URL that this page should point to. Cross domain canonical supported too.",
-					id          :  handle~'seoCanonicalUrl',
+					id          : handle~'seoCanonicalUrl',
 					name        : handle~'[seoCanonicalUrl]',
 					value       : seoCanonicalUrl,
 				}) }}

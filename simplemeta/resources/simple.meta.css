@@ -51,3 +51,7 @@ h3 + p {
 .countdown .live.nope {
 	color: #DA5A47;
 }
+
+.is-hidden {
+	display: none;
+}

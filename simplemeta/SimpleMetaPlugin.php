@@ -15,11 +15,6 @@ namespace Craft;
 class SimpleMetaPlugin extends BasePlugin
 {
 
-	public function init()
-	{
-		parent::init();
-	}
-
 	public function getName()
 	{
 		return Craft::t('Simple Meta');
@@ -39,4 +34,5 @@ class SimpleMetaPlugin extends BasePlugin
 	{
 		return 'http://synergema.com';
 	}
+
 }

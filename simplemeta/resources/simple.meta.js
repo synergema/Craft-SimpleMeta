@@ -46,4 +46,49 @@ $(document).ready(function() {
 
 	characterCount.init();
 
+	//  $$$$$$\  $$\                                     $$\ $$\   $$\ $$\       $$\
+	// $$  __$$\ $$ |                                   $$  |$$ |  $$ |\__|      $$ |
+	// $$ /  \__|$$$$$$$\   $$$$$$\  $$\  $$\  $$\     $$  / $$ |  $$ |$$\  $$$$$$$ | $$$$$$\
+	// \$$$$$$\  $$  __$$\ $$  __$$\ $$ | $$ | $$ |   $$  /  $$$$$$$$ |$$ |$$  __$$ |$$  __$$\
+	//  \____$$\ $$ |  $$ |$$ /  $$ |$$ | $$ | $$ |  $$  /   $$  __$$ |$$ |$$ /  $$ |$$$$$$$$ |
+	// $$\   $$ |$$ |  $$ |$$ |  $$ |$$ | $$ | $$ | $$  /    $$ |  $$ |$$ |$$ |  $$ |$$   ____|
+	// \$$$$$$  |$$ |  $$ |\$$$$$$  |\$$$$$\$$$$  |$$  /     $$ |  $$ |$$ |\$$$$$$$ |\$$$$$$$\
+	//  \______/ \__|  \__| \______/  \_____\____/ \__/      \__|  \__|\__| \_______| \_______|
+	//
+	//
+	//
+
+	var showHide = {
+
+		init: function() {
+			this.bindUIActions();
+		},
+
+		bindUIActions: function() {
+			$('body').on('change', '.has-addl-fields', this.showHideFields );
+		},
+
+		showHideFields: function( event ) {
+
+			var $this = $(this).find('select'),
+				selection = $this.val().replace(/\./g, '_'), // replace periods with underscores
+				showFields = $this.attr('id') + '_' + selection,
+				addlFields = $this.closest('.field').next('.addl-fields').find('.block')
+			;
+
+			// Hide all additional fields
+			addlFields.each(function( index ) {
+				$(this).removeClass('is-visible').addClass('is-hidden');
+			});
+
+			// Show additional fields based on selection
+			$('#' + showFields).toggleClass('is-hidden is-visible');
+
+		}
+	}
+
+	showHide.init();
+
+
+
 });
