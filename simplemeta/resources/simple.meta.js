@@ -62,16 +62,33 @@ $(document).ready(function() {
 
 		init: function() {
 			this.bindUIActions();
+			this.onPageLoad();
 		},
 
 		bindUIActions: function() {
 			$('body').on('change', '.has-addl-fields', this.showHideFields );
 		},
 
+		// Show additional fields for selected content type on page load
+		onPageLoad: function() {
+			var contentTypeSelect = $('.simple-meta .has-addl-fields select'),
+				selected  = contentTypeSelect, // replace periods with underscores
+				selection = selected.val().replace(/\./g, '_'),
+				showFields = selected.attr('id') + '_' + selection,
+				addlFields = selected.closest('.field').next('.addl-fields').find('.block')
+			;
+
+			// Show selected content type addtl field(s) on load
+			addlFields.each(function( index ) {
+				$('#' + showFields).toggleClass('is-hidden is-visible');
+			});
+
+		},
+
 		showHideFields: function( event ) {
 
 			var $this = $(this).find('select'),
-				selection = $this.val().replace(/\./g, '_'), // replace periods with underscores
+				selection  = $this.val().replace(/\./g, '_'), // replace periods with underscores
 				showFields = $this.attr('id') + '_' + selection,
 				addlFields = $this.closest('.field').next('.addl-fields').find('.block')
 			;
