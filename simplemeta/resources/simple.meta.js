@@ -72,15 +72,20 @@ $(document).ready(function() {
 		// Show additional fields for selected content type on page load
 		onPageLoad: function() {
 			var contentTypeSelect = $('.simple-meta .has-addl-fields select'),
-				selected  = contentTypeSelect, // replace periods with underscores
-				selection = selected.val().replace(/\./g, '_'),
-				showFields = selected.attr('id') + '_' + selection,
-				addlFields = selected.closest('.field').next('.addl-fields').find('.block')
+				selected  = contentTypeSelect
 			;
 
 			// Show selected content type addtl field(s) on load
-			addlFields.each(function( index ) {
+			selected.each(function( index ) {
+				var $this = $(this),
+					selection = $this.val().replace(/\./g, '_'), // replace periods with underscores
+					showFields = $this.attr('id') + '_' + selection,
+					addlFields = $this.closest('.field').next('.addl-fields').find('.block')
+				;
+
+				addlFields.removeClass('is-visible').addClass('is-hidden');
 				$('#' + showFields).toggleClass('is-hidden is-visible');
+
 			});
 
 		},
