@@ -8,15 +8,8 @@ class SimpleMeta_SimpleMetaModel extends BaseModel
 		// Open Graph Types
 		$openGraphTypes = array(
 			'article',
-			'book',
-			'music.song',
-			'music.album',
-			'music.playlist',
-			'music.radio_station',
 			'profile',
-			'video.movie',
-			'video.episode',
-			'video.tv_show',
+			'video',
 			'website',
 		);
 
@@ -51,6 +44,18 @@ class SimpleMeta_SimpleMetaModel extends BaseModel
 			'socialTwitterTitle'       => AttributeType::String,
 			'socialTwitterType'        => array(AttributeType::Enum, 'values' => $twitterCardTypes, 'default' => $twitterCardTypes[0]),
 			'socialTwitterDescription' => AttributeType::String,
+				// Twiter Card Type fields
+				'socialTwitterAppCountry'    => AttributeType::String,
+				'socialTwitterAppIphoneId'   => AttributeType::String,
+				'socialTwitterAppIphoneUrl'  => AttributeType::String,
+				'socialTwitterAppIpadId'     => AttributeType::String,
+				'socialTwitterAppIpadUrl'    => AttributeType::String,
+				'socialTwitterAppAndroidId'  => AttributeType::String,
+				'socialTwitterAppAndroidUrl' => AttributeType::String,
+				'socialTwitterProductData1'  => AttributeType::String,
+				'socialTwitterProductLabel1' => AttributeType::String,
+				'socialTwitterProductData2'  => AttributeType::String,
+				'socialTwitterProductLabel2' => AttributeType::String,
 			'seoTitle'                 => AttributeType::String,
 			'seoDescription'           => AttributeType::String,
 			'seoCanonicalUrl'          => AttributeType::String,

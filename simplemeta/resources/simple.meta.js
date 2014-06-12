@@ -111,6 +111,4 @@ $(document).ready(function() {
 
 	showHide.init();
 
-
-
 });

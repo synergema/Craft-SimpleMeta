@@ -26,6 +26,18 @@
 					value: socialOGDescription,
 				}) }}
 
+				<div class="field">
+					<div class="heading">
+						<label for="">Image</label>
+						<div class="instructions">
+							Twitter image. Must be at least 280px wide, 150px tall, and less than 1MB in size.
+						</div>
+					</div>
+					<div class="input">
+						Assets
+					</div>
+				</div>
+
 				{{ forms.selectField({
 					label       : "Content Type"|t,
 					instructions: "The type of content",
@@ -34,63 +46,16 @@
 					name        : handle~'[socialOGType]',
 					value       : socialOGType,
 					options: {
-						article              : "Article",
-						book                 : "Book",
-						"music.song"         : "Music - Song",
-						"music.album"        : "Music - Album",
-						"music.playlist"     : "Music - Playlist",
-						"music.radio_station": "Music - Radio Station",
-						profile              : "Profile",
-						"video.movie"        : "Video - Movie",
-						"video.episode"      : "Video - Episode",
-						"video.tv_show"      : "Video - TV Show",
-						website              : "Website",
+						article: "Article",
+						profile: "Profile",
+						video  : "Video",
+						website: "Website",
 					}
 				}) }}
 
 				<div class="addl-fields">
-					<div id="{{ handle~'socialOGType' }}_article" class="block is-visible">
-						<h3>Article fields go here</h3>
-					</div>
-
-					<div id="{{ handle~'socialOGType' }}_book" class="block is-hidden">
-						<h3>Book fields go here</h3>
-					</div>
-
-					<div id="{{ handle~'socialOGType' }}_music_song" class="block is-hidden">
-						<h3>Music - Song fields go here</h3>
-					</div>
-
-					<div id="{{ handle~'socialOGType' }}_music_album" class="block is-hidden">
-						<h3>Music - Album fields go here</h3>
-					</div>
-
-					<div id="{{ handle~'socialOGType' }}_music_playlist" class="block is-hidden">
-						<h3>Music - Playlist fields go here</h3>
-					</div>
-
-					<div id="{{ handle~'socialOGType' }}_music_radio_station" class="block is-hidden">
-						<h3>Music - Radio Station fields go here</h3>
-					</div>
-
-					<div id="{{ handle~'socialOGType' }}_profile" class="block is-hidden">
-						<h3>Profile fields go here</h3>
-					</div>
-
-					<div id="{{ handle~'socialOGType' }}_video_movie" class="block is-hidden">
-						<h3>Video - Movie fields go here</h3>
-					</div>
-
-					<div id="{{ handle~'socialOGType' }}_video_episode" class="block is-hidden">
-						<h3>Video - Episode fields go here</h3>
-					</div>
-
-					<div id="{{ handle~'socialOGType' }}_video_tv_show" class="block addl-fields is-hidden">
-						<h3>Video - TV Show fields go here</h3>
-					</div>
-
-					<div id="{{ handle~'socialOGType' }}_website" class="block addl-fields is-hidden">
-						<h3>Website fields go here</h3>
+					<div id="{{ handle~'socialOGType' }}_video" class="block is-hidden">
+						Video
 					</div>
 				</div>
 
@@ -102,12 +67,18 @@
 					<p>Metadata for Twitter Cards</p>
 				</header>
 
-				{{ forms.textField({
-					label: "Title"|t,
-					id   : handle~'socialTwitterTitle',
-					name : handle~'[socialTwitterTitle]',
-					value: socialTwitterTitle,
-				}) }}
+				<div class="max">
+					{{ forms.textField({
+						label: "Title"|t,
+						instructions: "Summary title less than 70 characters",
+						id   : handle~'socialTwitterTitle',
+						name : handle~'[socialTwitterTitle]',
+						value: socialTwitterTitle,
+					}) }}
+					<div class="countdown" data-max="70">
+						<span class="live">0</span>&nbsp;/&nbsp;70 Characters
+					</div>
+				</div>
 
 				<div class="max">
 					{{ forms.textareaField({
@@ -119,6 +90,18 @@
 					}) }}
 					<div class="countdown" data-max="200">
 						<span class="live">0</span>&nbsp;/&nbsp;200 Characters
+					</div>
+				</div>
+
+				<div class="field">
+					<div class="heading">
+						<label for="">Image</label>
+						<div class="instructions">
+							Twitter image. Must be at least 280px wide, 150px tall, and less than 1MB in size.
+						</div>
+					</div>
+					<div class="input">
+						Assets
 					</div>
 				</div>
 
@@ -134,35 +117,184 @@
 						summary_large_image: "Summary w/ Large Image",
 						photo              : "Photo",
 						gallery            : "Gallery",
-						product            : "Product",
 						app                : "App",
+						product            : "Product",
 						player             : "Player",
 					}
 				}) }}
 
 				<div class="addl-fields">
-					<div id="{{ handle~'socialTwitterType' }}_summary" class="block is-visible">
-						<h3>Summary fields go here</h3>
+
+					<div id="{{ handle~'socialTwitterType' }}_summary" class="block is-hidden">
+						<div class="field">
+							<div class="heading">
+								<label for="">Image</label>
+								<div class="instructions">
+									Unique summary image. Must be at least 120px 120px and less than 1MB in size.
+								</div>
+							</div>
+							<div class="input">
+								Assets
+							</div>
+						</div>
 					</div>
 
 					<div id="{{ handle~'socialTwitterType' }}_summary_large_image" class="block is-hidden">
-						<h3>Summary w/ Large Image fields go here</h3>
+						<div class="field">
+							<div class="heading">
+								<label for="">Image</label>
+								<div class="instructions">
+									Unique summary image. Must be at least 280px wide, 150px tall, and less than 1MB in size.
+								</div>
+							</div>
+							<div class="input">
+								Assets
+							</div>
+						</div>
 					</div>
 
 					<div id="{{ handle~'socialTwitterType' }}_photo" class="block is-hidden">
-						<h3>Photo fields go here</h3>
+						<div class="field">
+							<div class="heading">
+								<label for="">Image</label>
+								<div class="instructions">
+									Photo. Must be at least 280px wide, 150px tall, and less than 1MB in size.
+								</div>
+							</div>
+							<div class="input">
+								Assets
+							</div>
+						</div>
 					</div>
 
 					<div id="{{ handle~'socialTwitterType' }}_gallery" class="block is-hidden">
-						<h3>Gallery fields go here</h3>
-					</div>
-
-					<div id="{{ handle~'socialTwitterType' }}_product" class="block is-hidden">
-						<h3>Product fields go here</h3>
+						<div class="field">
+							<div class="heading">
+								<label for="">Image Gallery</label>
+								<div class="instructions">
+									Select up to 4 images. Each image must be less than 1MB in size.
+								</div>
+							</div>
+							<div class="input">
+								Assets (max 4)
+							</div>
+						</div>
 					</div>
 
 					<div id="{{ handle~'socialTwitterType' }}_app" class="block is-hidden">
-						<h3>App fields go here</h3>
+						{{ forms.textField({
+							label       : "App Country"|t,
+							instructions: 'Two-letter country code for the App Store',
+							id          : handle~'socialTwitterAppCountry',
+							class 		: "uppercase",
+							name        : handle~'[socialTwitterAppCountry]',
+							value       : socialTwitterAppCountry,
+							size		: "2",
+							maxlength 	: "2",
+						}) }}
+						<div class="platform">
+							<h4>iPhone</h4>
+							{{ forms.textField({
+								label       : "iPhone App ID"|t,
+								instructions: 'Your iPhone App Store ID (i.e. "307234931")',
+								id          : handle~'socialTwitterAppIphoneId',
+								name        : handle~'[socialTwitterAppIphoneId]',
+								value       : socialTwitterAppIphoneId,
+								size		: "25",
+							}) }}
+							{{ forms.textField({
+								label       : "iPhone App URL"|t,
+								instructions: 'Your iPhone app&rsquo;s custom URL scheme (i.e. "appname://")',
+								id          : handle~'socialTwitterAppIphoneUrl',
+								name        : handle~'[socialTwitterAppIphoneUrl]',
+								value       : socialTwitterAppIphoneUrl,
+								size		: "25",
+							}) }}
+						</div>
+						<div class="platform">
+							<h4>iPad</h4>
+							{{ forms.textField({
+								label       : "iPad App ID"|t,
+								instructions: 'Your iPad App Store ID (i.e. "307234931")',
+								id          : handle~'socialTwitterAppIpadId',
+								name        : handle~'[socialTwitterAppIpadId]',
+								value       : socialTwitterAppIpadId,
+								size		: "25",
+							}) }}
+							{{ forms.textField({
+								label       : "iPad App URL"|t,
+								instructions: 'Your iPad app&rsquo;s custom URL scheme (i.e. "appname://")',
+								id          : handle~'socialTwitterAppIpadUrl',
+								name        : handle~'[socialTwitterAppIpadUrl]',
+								value       : socialTwitterAppIpadUrl,
+								size		: "25",
+							}) }}
+						</div>
+						<div class="platform">
+							<h4>Android</h4>
+							{{ forms.textField({
+								label       : "Google Play App ID"|t,
+								instructions: 'Your Google Play App Store ID (i.e. "com.android.app")',
+								id          : handle~'socialTwitterAppAndroidId',
+								name        : handle~'[socialTwitterAppAndroidId]',
+								value       : socialTwitterAppAndroidId,
+								size		: "25",
+							}) }}
+							{{ forms.textField({
+								label       : "Android App URL"|t,
+								instructions: 'Your Android app&rsquo;s custom URL scheme',
+								id          : handle~'socialTwitterAppAndroidUrl',
+								name        : handle~'[socialTwitterAppAndroidUrl]',
+								value       : socialTwitterAppAndroidUrl,
+								size		: "25",
+							}) }}
+						</div>
+					</div>
+
+					<div id="{{ handle~'socialTwitterType' }}_product" class="block is-hidden">
+						<div class="field">
+							<div class="heading">
+								<label for="">Image</label>
+								<div class="instructions">
+									Product image. Must be less than 1MB in size.
+								</div>
+							</div>
+							<div class="input">
+								Assets
+							</div>
+						</div>
+						{{ forms.textField({
+							label       : "Data 1"|t,
+							instructions: 'Specify values for labels such as price, items in stock, sizes, etc.',
+							id          : handle~'socialTwitterProductData1',
+							name        : handle~'[socialTwitterProductData1]',
+							value       : socialTwitterProductData1,
+							placeholder : "$125",
+						}) }}
+						{{ forms.textField({
+							label       : "Label 1"|t,
+							instructions: 'Explains the type of data (price, country, etc.)',
+							id          : handle~'socialTwitterProductLabel1',
+							name        : handle~'[socialTwitterProductLabel1]',
+							value       : socialTwitterProductLabel1,
+							placeholder : "USD",
+						}) }}
+						{{ forms.textField({
+							label       : "Data 2"|t,
+							instructions: 'Specify values for labels such as price, items in stock, sizes, etc.',
+							id          : handle~'socialTwitterProductData2',
+							name        : handle~'[socialTwitterProductData2]',
+							value       : socialTwitterProductData1,
+							placeholder : "Boston, MA",
+						}) }}
+						{{ forms.textField({
+							label       : "Label 2"|t,
+							instructions: 'Explains the type of data (price, country, etc.)',
+							id          : handle~'socialTwitterProductLabel2',
+							name        : handle~'[socialTwitterProductLabel2]',
+							value       : socialTwitterProductLabel2,
+							placeholder : "Location",
+						}) }}
 					</div>
 
 					<div id="{{ handle~'socialTwitterType' }}_player" class="block is-hidden">
