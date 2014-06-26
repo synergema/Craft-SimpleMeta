@@ -34,7 +34,21 @@
 						</div>
 					</div>
 					<div class="input">
-						Assets
+					    {% if assetsSourceExists %}
+					        {{ forms.elementSelect({
+					            elements: elements,
+					            id: 'assetId',
+					            name: 'assetId',
+					            elementType: elementType,
+					            criteria: {"kind":[],"localeEnabled":null,"locale":"en_us"},
+					            sourceElementId: assetId,
+					            jsClass: 'Craft.AssetSelectInput',
+					            addButtonLabel: 'Select Ad Graphic',
+					            limit: 1,
+					        }) }}
+					    {% else %}
+					        <p class="error">No assets sources currently exist. <a href="{{ newAssetsSourceUrl }}">Create one now...</a></p>
+					    {% endif %}
 					</div>
 				</div>
 
