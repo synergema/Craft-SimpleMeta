@@ -1,18 +1,46 @@
 <div id="{{ handle~'socialOGType' }}_audio" class="block is-hidden">
-	{{ forms.textField({
-		label       : "Content"|t,
-		instructions: "Full URL to audio file",
-		id          : handle~'socialOGProfileAudioContent',
-		name        : handle~'[socialOGProfileAudioContent]',
-		placeholder : 'http://myradwebsite.com/awesome.mp3',
-		value       : socialOGProfileAudioContent,
+	{% if assetsSourceExists %}
+		{{ forms.elementSelect({
+			label: "Content"|t,
+			instructions: "Select an audio file",
+			elements: elements,
+			id: handle~'socialOGAudioContent',
+			name: handle~'socialOGAudioContent',
+			elementType: elementType,
+			criteria: {
+				"kind":[],
+				"localeEnabled":null,
+				"locale":"en_us"
+			},
+			sourceElementId: assetId,
+			jsClass: 'Craft.AssetSelectInput',
+			addButtonLabel: 'Select Audio File',
+			limit: 1,
+		}) }}
+	{% else %}
+		<p class="error">No assets sources currently exist. <a href="{{ newAssetsSourceUrl }}">Create one now...</a></p>
+	{% endif %}
+	{{ forms.lightswitchField({
+		label: "Include secure URL"|t,
+		instructions: "Secure (https) URL to audio file",
+		id   : handle~'socialOGAudioContentSecure',
+		name : handle~'[socialOGAudioContentSecure]',
 	}) }}
-	{{ forms.textField({
-		label       : "Secure URL"|t,
-		instructions: "Full, secure URL to audio file",
-		id          : handle~'socialOGProfileAudioContent',
-		name        : handle~'[socialOGProfileAudioContent]',
-		placeholder : 'https://myradwebsite.com/awesome.mp3',
-		value       : socialOGProfileAudioContent,
+	{{ forms.selectField({
+		label       : "Audio Type"|t,
+		instructions: "The type of audio file",
+		id          : handle~'socialOGAudioType',
+		name        : handle~'[socialOGAudioType]',
+		value       : socialOGAudioType,
+		options: {
+			'audio/mpeg'            : "MPEG (.mp3)",
+			'audio/mp4'             : "MP4",
+			'audio/ogg'             : "Ogg Vorbis/Speex/Flac",
+			'audio/opus'            : "Opus",
+			'audio/vorbis'          : "Vorbis",
+			'audio/vnd.rn-realaudio': "RealAudio",
+			"audio/vnd.wave"        : "WAV",
+			"audio/webm"            : "WebM",
+		}
 	}) }}
 </div>

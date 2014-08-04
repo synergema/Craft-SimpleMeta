@@ -20,11 +20,15 @@
 		value: socialOGProfileUsername,
 		size : "50",
 	}) }}
-	{{ forms.textField({
+	{{ forms.selectField({
 		label: "Gender"|t,
-		id   : handle~'socialOGProfileGender',
-		name : handle~'[socialOGProfileGender]',
-		value: socialOGProfileGender,
-		size : "50",
+		id          : handle~'socialOGProfileGender',
+		name        : handle~'[socialOGProfileGender]',
+		value       : socialOGProfileGender,
+		options: {
+			''      : 'Unspecificed',
+			'female': 'Female',
+			'male'  : 'Male'
+		}
 	}) }}
 </div>
