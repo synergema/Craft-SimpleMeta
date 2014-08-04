@@ -61,6 +61,7 @@
 					value       : socialOGType,
 					options: {
 						article: "Article",
+						audio  : "Audio",
 						profile: "Profile",
 						video  : "Video",
 						website: "Website",
@@ -68,7 +69,9 @@
 				}) }}
 
 				<div class="addl-fields">
-					{% include 'simplemeta/_includes/opengraph/video' %} {# Summary Card #}
+					{% include 'simplemeta/_includes/opengraph/audio' %} {# Audio OG #}
+					{% include 'simplemeta/_includes/opengraph/profile' %} {# Profile OG #}
+					{% include 'simplemeta/_includes/opengraph/video' %} {# Video OG #}
 				</div>
 
 			</div>

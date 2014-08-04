@@ -16,6 +16,7 @@ class SimpleMeta_SimpleMetaRecord extends BaseRecord
 		// Open Graph Types
 		$openGraphTypes = array(
 			'article',
+			'audio',
 			'profile',
 			'video',
 			'website',
@@ -49,10 +50,11 @@ class SimpleMeta_SimpleMetaRecord extends BaseRecord
 			'socialOGTitle'            => AttributeType::String,
 			'socialOGDescription'      => AttributeType::String,
 			'socialOGType'             => array(AttributeType::Enum, 'values' => $openGraphTypes, 'default' => $openGraphTypes[0]),
-				// Open Graph Objec Type fields
-				'socialOGVideoImage'     => AttributeType::String, // This will be an Assets field
-				'socialOGVideoUrl'       => AttributeType::String,
-				'socialOGVideoSecureUrl' => AttributeType::String,
+				// Open Graph Type fields
+				'socialOGProfileFirstName' => AttributeType::String,
+				'socialOGProfileLastName'  => AttributeType::String,
+				'socialOGProfileUsername'  => AttributeType::String,
+				'socialOGProfileGender'    => AttributeType::String,
 			'socialTwitterTitle'       => AttributeType::String,
 			'socialTwitterType'        => array(AttributeType::Enum, 'values' => $twitterCardTypes, 'default' => $twitterCardTypes[0]),
 			'socialTwitterDescription' => AttributeType::String,

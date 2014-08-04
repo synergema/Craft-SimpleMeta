@@ -8,6 +8,7 @@ class SimpleMeta_SimpleMetaModel extends BaseModel
 		// Open Graph Types
 		$openGraphTypes = array(
 			'article',
+			'audio',
 			'profile',
 			'video',
 			'website',
@@ -36,11 +37,16 @@ class SimpleMeta_SimpleMetaModel extends BaseModel
 		);
 
 		return array(
-			'elementId'                => AttributeType::Number,
-			'handle'                   => AttributeType::String,
-			'socialOGTitle'            => AttributeType::String,
-			'socialOGDescription'      => AttributeType::String,
-			'socialOGType'             => array(AttributeType::Enum, 'values' => $openGraphTypes, 'default' => $openGraphTypes[0]),
+			'elementId'           => AttributeType::Number,
+			'handle'              => AttributeType::String,
+			'socialOGTitle'       => AttributeType::String,
+			'socialOGDescription' => AttributeType::String,
+			'socialOGType'        => array(AttributeType::Enum, 'values' => $openGraphTypes, 'default' => $openGraphTypes[0]),
+				// Open Graph Type fields
+				'socialOGProfileFirstName' => AttributeType::String,
+				'socialOGProfileLastName'  => AttributeType::String,
+				'socialOGProfileUsername'  => AttributeType::String,
+				'socialOGProfileGender'    => AttributeType::String,
 			'socialTwitterTitle'       => AttributeType::String,
 			'socialTwitterType'        => array(AttributeType::Enum, 'values' => $twitterCardTypes, 'default' => $twitterCardTypes[0]),
 			'socialTwitterDescription' => AttributeType::String,
@@ -56,12 +62,12 @@ class SimpleMeta_SimpleMetaModel extends BaseModel
 				'socialTwitterProductLabel1' => AttributeType::String,
 				'socialTwitterProductData2'  => AttributeType::String,
 				'socialTwitterProductLabel2' => AttributeType::String,
-			'seoTitle'                 => AttributeType::String,
-			'seoDescription'           => AttributeType::String,
-			'seoCanonicalUrl'          => AttributeType::String,
-			'seoRobotsIndex'           => array(AttributeType::Enum, 'values' => $robotsIndex, 'default' => $robotsIndex[0]),
-			'seoRobotsFollow'          => array(AttributeType::Enum, 'values' => $robotsFollow, 'default' => $robotsFollow[0]),
-			'seoSitemapPriority'       => array(AttributeType::String, 'default' => '0.5'),
+			'seoTitle'           => AttributeType::String,
+			'seoDescription'     => AttributeType::String,
+			'seoCanonicalUrl'    => AttributeType::String,
+			'seoRobotsIndex'     => array(AttributeType::Enum, 'values' => $robotsIndex, 'default' => $robotsIndex[0]),
+			'seoRobotsFollow'    => array(AttributeType::Enum, 'values' => $robotsFollow, 'default' => $robotsFollow[0]),
+			'seoSitemapPriority' => array(AttributeType::String, 'default' => '0.5'),
 		);
 	}
 }

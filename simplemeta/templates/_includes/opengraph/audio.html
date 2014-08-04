@@ -1,0 +1,18 @@
+<div id="{{ handle~'socialOGType' }}_audio" class="block is-hidden">
+	{{ forms.textField({
+		label       : "Content"|t,
+		instructions: "Full URL to audio file",
+		id          : handle~'socialOGProfileAudioContent',
+		name        : handle~'[socialOGProfileAudioContent]',
+		placeholder : 'http://myradwebsite.com/awesome.mp3',
+		value       : socialOGProfileAudioContent,
+	}) }}
+	{{ forms.textField({
+		label       : "Secure URL"|t,
+		instructions: "Full, secure URL to audio file",
+		id          : handle~'socialOGProfileAudioContent',
+		name        : handle~'[socialOGProfileAudioContent]',
+		placeholder : 'https://myradwebsite.com/awesome.mp3',
+		value       : socialOGProfileAudioContent,
+	}) }}
+</div>

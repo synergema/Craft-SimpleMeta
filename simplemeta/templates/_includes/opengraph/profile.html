@@ -1,0 +1,30 @@
+<div id="{{ handle~'socialOGType' }}_profile" class="block is-hidden">
+	{{ forms.textField({
+		label: "First Name"|t,
+		id   : handle~'socialOGProfileFirstName',
+		name : handle~'[socialOGProfileFirstName]',
+		value: socialOGProfileFirstName,
+		size : "50",
+	}) }}
+	{{ forms.textField({
+		label: "Last Name"|t,
+		id   : handle~'socialOGProfileLastName',
+		name : handle~'[socialOGProfileLastName]',
+		value: socialOGProfileLastName,
+		size : "50",
+	}) }}
+	{{ forms.textField({
+		label: "Username"|t,
+		id   : handle~'socialOGProfileUsername',
+		name : handle~'[socialOGProfileUsername]',
+		value: socialOGProfileUsername,
+		size : "50",
+	}) }}
+	{{ forms.textField({
+		label: "Gender"|t,
+		id   : handle~'socialOGProfileGender',
+		name : handle~'[socialOGProfileGender]',
+		value: socialOGProfileGender,
+		size : "50",
+	}) }}
+</div>
