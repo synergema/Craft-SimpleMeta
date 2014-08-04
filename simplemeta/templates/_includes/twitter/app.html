@@ -1,0 +1,69 @@
+<div id="{{ handle~'socialTwitterType' }}_app" class="block is-hidden">
+	{{ forms.textField({
+		label       : "App Country"|t,
+		instructions: 'Two-letter country code for the App Store',
+		id          : handle~'socialTwitterAppCountry',
+		class 		: "uppercase",
+		name        : handle~'[socialTwitterAppCountry]',
+		value       : socialTwitterAppCountry,
+		size		: "2",
+		maxlength 	: "2",
+	}) }}
+	<div class="platform">
+		<h4>iPhone</h4>
+		{{ forms.textField({
+			label       : "iPhone App ID"|t,
+			instructions: 'Your iPhone App Store ID (i.e. "307234931")',
+			id          : handle~'socialTwitterAppIphoneId',
+			name        : handle~'[socialTwitterAppIphoneId]',
+			value       : socialTwitterAppIphoneId,
+			size		: "25",
+		}) }}
+		{{ forms.textField({
+			label       : "iPhone App URL"|t,
+			instructions: 'Your iPhone app&rsquo;s custom URL scheme (i.e. "appname://")',
+			id          : handle~'socialTwitterAppIphoneUrl',
+			name        : handle~'[socialTwitterAppIphoneUrl]',
+			value       : socialTwitterAppIphoneUrl,
+			size		: "25",
+		}) }}
+	</div>
+	<div class="platform">
+		<h4>iPad</h4>
+		{{ forms.textField({
+			label       : "iPad App ID"|t,
+			instructions: 'Your iPad App Store ID (i.e. "307234931")',
+			id          : handle~'socialTwitterAppIpadId',
+			name        : handle~'[socialTwitterAppIpadId]',
+			value       : socialTwitterAppIpadId,
+			size		: "25",
+		}) }}
+		{{ forms.textField({
+			label       : "iPad App URL"|t,
+			instructions: 'Your iPad app&rsquo;s custom URL scheme (i.e. "appname://")',
+			id          : handle~'socialTwitterAppIpadUrl',
+			name        : handle~'[socialTwitterAppIpadUrl]',
+			value       : socialTwitterAppIpadUrl,
+			size		: "25",
+		}) }}
+	</div>
+	<div class="platform">
+		<h4>Android</h4>
+		{{ forms.textField({
+			label       : "Google Play App ID"|t,
+			instructions: 'Your Google Play App Store ID (i.e. "com.android.app")',
+			id          : handle~'socialTwitterAppAndroidId',
+			name        : handle~'[socialTwitterAppAndroidId]',
+			value       : socialTwitterAppAndroidId,
+			size		: "25",
+		}) }}
+		{{ forms.textField({
+			label       : "Android App URL"|t,
+			instructions: 'Your Android app&rsquo;s custom URL scheme',
+			id          : handle~'socialTwitterAppAndroidUrl',
+			name        : handle~'[socialTwitterAppAndroidUrl]',
+			value       : socialTwitterAppAndroidUrl,
+			size		: "25",
+		}) }}
+	</div>
+</div>

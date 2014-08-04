@@ -1,0 +1,31 @@
+<div id="{{ handle~'socialTwitterType' }}_summary" class="block is-hidden">
+	<div class="field">
+		<div class="heading">
+			<label for="">Image</label>
+			<div class="instructions">
+				Unique summary image. Must be at least 120px 120px and less than 1MB in size.
+			</div>
+		</div>
+		<div class="input">
+			{% if assetsSourceExists %}
+				{{ forms.elementSelect({
+					elements: elements,
+					id: handle~'socialTwitterType',
+					name: handle~'socialTwitterType',
+					elementType: elementType,
+					criteria: {
+						"kind":[],
+						"localeEnabled":null,
+						"locale":"en_us"
+					},
+					sourceElementId: assetId,
+					jsClass: 'Craft.AssetSelectInput',
+					addButtonLabel: 'Select Ad Graphic',
+					limit: 1,
+				}) }}
+			{% else %}
+				<p class="error">No assets sources currently exist. <a href="{{ newAssetsSourceUrl }}">Create one now...</a></p>
+			{% endif %}
+		</div>
+	</div>
+</div>
