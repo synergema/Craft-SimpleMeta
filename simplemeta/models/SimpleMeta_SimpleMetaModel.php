@@ -37,45 +37,51 @@ class SimpleMeta_SimpleMetaModel extends BaseModel
 		);
 
 		return array(
-			'elementId'           => AttributeType::Number,
-			'handle'              => AttributeType::String,
-			'socialOGTitle'       => AttributeType::String,
-			'socialOGDescription' => AttributeType::String,
-			'socialOGType'        => array(AttributeType::Enum, 'values' => $openGraphTypes, 'default' => $openGraphTypes[0]),
-				// Open Graph Type fields
-				'socialOGAudioContent'       => AttributeType::String,
-				'socialOGAudioContentSecure' => AttributeType::String,
-				'socialOGAudioType'          => AttributeType::String,
-				'socialOGProfileFirstName'   => AttributeType::String,
-				'socialOGProfileLastName'    => AttributeType::String,
-				'socialOGProfileUsername'    => AttributeType::String,
-				'socialOGProfileGender'      => AttributeType::String,
-				'socialOGVideoContent'       => AttributeType::String,
-				'socialOGVideoContentSecure' => AttributeType::String,
-				'socialOGVideoType'          => AttributeType::String,
-				'socialOGVideoWidth'         => AttributeType::String,
-				'socialOGVideoHeight'        => AttributeType::String,
-			'socialTwitterTitle'       => AttributeType::String,
-			'socialTwitterType'        => array(AttributeType::Enum, 'values' => $twitterCardTypes, 'default' => $twitterCardTypes[0]),
-			'socialTwitterDescription' => AttributeType::String,
-				// Twiter Card Type fields
-				'socialTwitterAppCountry'    => AttributeType::String,
-				'socialTwitterAppIphoneId'   => AttributeType::String,
-				'socialTwitterAppIphoneUrl'  => AttributeType::String,
-				'socialTwitterAppIpadId'     => AttributeType::String,
-				'socialTwitterAppIpadUrl'    => AttributeType::String,
-				'socialTwitterAppAndroidId'  => AttributeType::String,
-				'socialTwitterAppAndroidUrl' => AttributeType::String,
-				'socialTwitterProductData1'  => AttributeType::String,
-				'socialTwitterProductLabel1' => AttributeType::String,
-				'socialTwitterProductData2'  => AttributeType::String,
-				'socialTwitterProductLabel2' => AttributeType::String,
-			'seoTitle'           => AttributeType::String,
-			'seoDescription'     => AttributeType::String,
-			'seoCanonicalUrl'    => AttributeType::String,
-			'seoRobotsIndex'     => array(AttributeType::Enum, 'values' => $robotsIndex, 'default' => $robotsIndex[0]),
-			'seoRobotsFollow'    => array(AttributeType::Enum, 'values' => $robotsFollow, 'default' => $robotsFollow[0]),
-			'seoSitemapPriority' => array(AttributeType::String, 'default' => '0.5'),
+				'elementId'                          => array(AttributeType::Number, 'default' => null),
+				'handle'                             => array(AttributeType::String, 'default' => null),
+				'socialOGTitle'                      => array(AttributeType::String, 'default' => null),
+				'socialOGDescription'                => array(AttributeType::String, 'default' => null),
+				'socialOGImageId'                    => array(AttributeType::Number, 'default' => null), /* Asset */
+				'socialOGType'                       => array(AttributeType::Enum, 'values' => $openGraphTypes, 'default' => $openGraphTypes[0]),
+					// Open Graph Type fields
+					'socialOGAudioContentId'             => array(AttributeType::Number, 'default' => null), /* Asset */
+					'socialOGAudioContentSecure'         => array(AttributeType::String, 'default' => null),
+					'socialOGAudioType'                  => array(AttributeType::String, 'default' => null),
+					'socialOGProfileFirstName'           => array(AttributeType::String, 'default' => null),
+					'socialOGProfileLastName'            => array(AttributeType::String, 'default' => null),
+					'socialOGProfileUsername'            => array(AttributeType::String, 'default' => null),
+					'socialOGProfileGender'              => array(AttributeType::String, 'default' => null),
+					'socialOGVideoContentId'             => array(AttributeType::Number, 'default' => null), /* Asset */
+					'socialOGVideoContentSecure'         => array(AttributeType::String, 'default' => null),
+					'socialOGVideoType'                  => array(AttributeType::String, 'default' => null),
+					'socialOGVideoWidth'                 => array(AttributeType::String, 'default' => null),
+					'socialOGVideoHeight'                => array(AttributeType::String, 'default' => null),
+				'socialTwitterTitle'                 => array(AttributeType::String, 'default' => null),
+				'socialTwitterType'                  => array(AttributeType::Enum, 'values' => $twitterCardTypes, 'default' => $twitterCardTypes[0]),
+				'socialTwitterDescription'           => array(AttributeType::String, 'default' => null),
+					// Twiter Card Type fields
+					'socialTwitterAppCountry'          => array(AttributeType::String, 'default' => null),
+					'socialTwitterAppIphoneId'         => array(AttributeType::String, 'default' => null),
+					'socialTwitterAppIphoneUrl'        => array(AttributeType::String, 'default' => null),
+					'socialTwitterAppIpadId'           => array(AttributeType::String, 'default' => null),
+					'socialTwitterAppIpadUrl'          => array(AttributeType::String, 'default' => null),
+					'socialTwitterAppAndroidId'        => array(AttributeType::String, 'default' => null),
+					'socialTwitterAppAndroidUrl'       => array(AttributeType::String, 'default' => null),
+					'socialTwitterGalleryImagesId'     => array(AttributeType::Number, 'default' => null), /* Asset */
+					'socialTwitterPhotoId'             => array(AttributeType::Number, 'default' => null), /* Asset */
+					'socialTwitterProductData1'        => array(AttributeType::String, 'default' => null),
+					'socialTwitterProductLabel1'       => array(AttributeType::String, 'default' => null),
+					'socialTwitterProductData2'        => array(AttributeType::String, 'default' => null),
+					'socialTwitterProductLabel2'       => array(AttributeType::String, 'default' => null),
+					'socialTwitterProductImageId'      => array(AttributeType::Number, 'default' => null), /* Asset */
+					'socialTwitterSummaryImageId'      => array(AttributeType::Number, 'default' => null), /* Asset */
+					'socialTwitterSummaryLargeImageId' => array(AttributeType::Number, 'default' => null), /* Asset */
+				'seoTitle'                           => array(AttributeType::String, 'default' => null),
+				'seoDescription'                     => array(AttributeType::String, 'default' => null),
+				'seoCanonicalUrl'                    => array(AttributeType::String, 'default' => null),
+				'seoRobotsIndex'                     => array(AttributeType::Enum, 'values' => $robotsIndex, 'default' => $robotsIndex[0]),
+				'seoRobotsFollow'                    => array(AttributeType::Enum, 'values' => $robotsFollow, 'default' => $robotsFollow[0]),
+				'seoSitemapPriority'                 => array(AttributeType::String, 'default' => '0.5'),
 		);
 	}
 }

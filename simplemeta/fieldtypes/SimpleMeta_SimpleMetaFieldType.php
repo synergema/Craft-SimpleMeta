@@ -34,9 +34,18 @@ class SimpleMeta_SimpleMetaFieldType extends BaseFieldType
 
 	public function getInputHtml($name, $value)
 	{
+
 		// Include JavaScript & CSS
 		craft()->templates->includeJsResource('simplemeta/simple.meta.js');
 		craft()->templates->includeCssResource('simplemeta/simple.meta.css');
+
+
+		// Whether any assets sources exist
+		$sources = craft()->assets->findFolders();
+		$variables['assetsSourceExists'] = count($sources);
+
+		// URL to create a new assets source
+		$variables['newAssetsSourceUrl'] = UrlHelper::getUrl('settings/assets/sources/new');
 
 		if (!empty($value)) {
 			$simpleMetaModel = SimpleMeta_SimpleMetaModel::populateModel($value);
@@ -45,7 +54,33 @@ class SimpleMeta_SimpleMetaFieldType extends BaseFieldType
 			$simpleMetaModel->handle = $name;
 		}
 
-		return craft()->templates->render('simplemeta/input', $simpleMetaModel->getAttributes());
+		// Set assets
+		$simplemetaAssets = array(
+			'socialOGImageId'                  => $simpleMetaModel->socialOGImageId,
+			'socialOGAudioContentId'           => $simpleMetaModel->socialOGAudioContentId,
+			'socialOGVideoContentId'           => $simpleMetaModel->socialOGVideoContentId,
+			'socialTwitterGalleryImagesId'     => $simpleMetaModel->socialTwitterGalleryImagesId,
+			'socialTwitterPhotoId'             => $simpleMetaModel->socialTwitterPhotoId,
+			'socialTwitterProductImageId'      => $simpleMetaModel->socialTwitterProductImageId,
+			'socialTwitterSummaryImageId'      => $simpleMetaModel->socialTwitterSummaryImageId,
+			'socialTwitterSummaryLargeImageId' => $simpleMetaModel->socialTwitterSummaryLargeImageId,
+		);
+
+		foreach ($simplemetaAssets as $key => $value) {
+			if ($value) {
+				$asset = craft()->elements->getElementById($value);
+				$variables[$key] = array($asset);
+			} else {
+				$variables[$key] = array();
+			}
+		}
+
+		// Set element type
+		$variables['elementType'] = craft()->elements->getElementType(ElementType::Asset);
+
+		$data = array_merge($simpleMetaModel->getAttributes(), $variables);
+
+		return craft()->templates->render('simplemeta/input', $data);
 	}
 
 	public function prepValue($value)

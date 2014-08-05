@@ -9,18 +9,14 @@
 		<div class="input">
 			{% if assetsSourceExists %}
 				{{ forms.elementSelect({
-					elements: elements,
-					id: handle~'socialTwitterType',
-					name: handle~'socialTwitterType',
+					elements: socialTwitterSummaryImageId,
+					id: handle~'socialTwitterSummaryImageId',
+					name: handle~'[socialTwitterSummaryImageId]',
 					elementType: elementType,
-					criteria: {
-						"kind":[],
-						"localeEnabled":null,
-						"locale":"en_us"
-					},
-					sourceElementId: assetId,
+					criteria: {"kind":[],"localeEnabled":null,"locale":"en_us"},
+					sourceElementId: socialTwitterSummaryImageId,
 					jsClass: 'Craft.AssetSelectInput',
-					addButtonLabel: 'Select Ad Graphic',
+					addButtonLabel: 'Select Image',
 					limit: 1,
 				}) }}
 			{% else %}

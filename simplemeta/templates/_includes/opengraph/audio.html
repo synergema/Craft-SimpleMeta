@@ -3,16 +3,16 @@
 		{{ forms.elementSelect({
 			label: "Content"|t,
 			instructions: "Select an audio file",
-			elements: elements,
-			id: handle~'socialOGAudioContent',
-			name: handle~'socialOGAudioContent',
+			elements: socialOGAudioContentId,
+			id: handle~'socialOGAudioContentId',
+			name: handle~'[socialOGAudioContentId]',
 			elementType: elementType,
 			criteria: {
 				"kind":[],
 				"localeEnabled":null,
 				"locale":"en_us"
 			},
-			sourceElementId: assetId,
+			sourceElementId: socialOGAudioContentId,
 			jsClass: 'Craft.AssetSelectInput',
 			addButtonLabel: 'Select Audio File',
 			limit: 1,

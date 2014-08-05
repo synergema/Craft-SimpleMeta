@@ -7,7 +7,21 @@
 			</div>
 		</div>
 		<div class="input">
-			Assets (max 4)
+			{% if assetsSourceExists %}
+				{{ forms.elementSelect({
+					elements: socialTwitterGalleryImagesId,
+					id: handle~'socialTwitterGalleryImagesId',
+					name: handle~'[socialTwitterGalleryImagesId]',
+					elementType: elementType,
+					criteria: {"kind":[],"localeEnabled":null,"locale":"en_us"},
+					sourceElementId: socialTwitterGalleryImagesId,
+					jsClass: 'Craft.AssetSelectInput',
+					addButtonLabel: 'Select Images',
+					limit: 4,
+				}) }}
+			{% else %}
+				<p class="error">No assets sources currently exist. <a href="{{ newAssetsSourceUrl }}">Create one now...</a></p>
+			{% endif %}
 		</div>
 	</div>
 </div>

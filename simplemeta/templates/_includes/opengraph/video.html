@@ -1,18 +1,18 @@
 <div id="{{ handle~'socialOGType' }}_video" class="block is-hidden">
-	{% if assetsSourceExists %}
+		{% if assetsSourceExists %}
 			{{ forms.elementSelect({
 				label: "Content"|t,
 				instructions: "Select a video file",
-				elements: elements,
-				id: handle~'socialOGVideoContent',
-				name: handle~'socialOGVideoContent',
+				elements: socialOGVideoContentId,
+				id: handle~'socialOGVideoContentId',
+				name: handle~'[socialOGVideoContentId]',
 				elementType: elementType,
 				criteria: {
 					"kind":[],
 					"localeEnabled":null,
 					"locale":"en_us"
 				},
-				sourceElementId: assetId,
+				sourceElementId: socialOGVideoContentId,
 				jsClass: 'Craft.AssetSelectInput',
 				addButtonLabel: 'Select Video File',
 				limit: 1,

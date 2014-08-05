@@ -17,7 +17,8 @@ class SimpleMetaService extends BaseApplicationComponent
 
 		$attr = $content->getAttribute($handle);
 
-		if (!$attr) {
+		if (!$attr)
+		{
 			return false;
 		}
 
@@ -26,19 +27,21 @@ class SimpleMetaService extends BaseApplicationComponent
 			'handle'    => $handle,
 			));
 
-		if (!$simpleMetaRecord) {
+		if (!$simpleMetaRecord)
+		{
 			$simpleMetaRecord = new SimpleMeta_SimpleMetaRecord;
 			$attr['elementId'] = $elementId;
 			$attr['handle']    = $handle;
 		}
 
-		if (!$attr['socialOGTitle'])            {$attr['socialOGTitle']            = null;}
-		if (!$attr['socialOGDescription'])      {$attr['socialOGDescription']      = null;}
-		if (!$attr['socialTwitterTitle'])       {$attr['socialTwitterTitle']       = null;}
-		if (!$attr['socialTwitterDescription']) {$attr['socialTwitterDescription'] = null;}
-		if (!$attr['seoTitle'])                 {$attr['seoTitle']                 = null;}
-		if (!$attr['seoDescription'])           {$attr['seoDescription']           = null;}
-		if (!$attr['seoCanonicalUrl'])          {$attr['seoCanonicalUrl']          = null;}
+		$attr['socialOGImageId']                  = (!empty($attr['socialOGImageId']) ? $attr['socialOGImageId'][0] : null);
+		$attr['socialOGAudioContentId']           = (!empty($attr['socialOGAudioContentId']) ? $attr['socialOGAudioContentId'][0] : null);
+		$attr['socialOGVideoContentId']           = (!empty($attr['socialOGVideoContentId']) ? $attr['socialOGVideoContentId'][0] : null);
+		$attr['socialTwitterGalleryImagesId']     = (!empty($attr['socialTwitterGalleryImagesId']) ? $attr['socialTwitterGalleryImagesId'][0] : null);
+		$attr['socialTwitterPhotoId']             = (!empty($attr['socialTwitterPhotoId']) ? $attr['socialTwitterPhotoId'][0] : null);
+		$attr['socialTwitterProductImageId']      = (!empty($attr['socialTwitterProductImageId']) ? $attr['socialTwitterProductImageId'][0] : null);
+		$attr['socialTwitterSummaryImageId']      = (!empty($attr['socialTwitterSummaryImageId']) ? $attr['socialTwitterSummaryImageId'][0] : null);
+		$attr['socialTwitterSummaryLargeImageId'] = (!empty($attr['socialTwitterSummaryLargeImageId']) ? $attr['socialTwitterSummaryLargeImageId'][0] : null);
 
 		$simpleMetaRecord->setAttributes($attr, false);
 
@@ -53,9 +56,11 @@ class SimpleMetaService extends BaseApplicationComponent
 			'handle'    => $fieldType->model->handle,
 		));
 
-		if ($simpleMetaRecord) {
+		if ($simpleMetaRecord)
+		{
 			$attr = $simpleMetaRecord->getAttributes();
-		} else {
+		} else
+		{
 			$attr = array();
 		}
 
