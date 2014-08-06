@@ -65,18 +65,25 @@
 					name        : handle~'[socialOGType]',
 					value       : socialOGType,
 					options: {
-						article: "Article",
-						audio  : "Audio",
-						profile: "Profile",
-						video  : "Video",
-						website: "Website",
+						article              : "Article",
+						audio                : "Audio",
+						'music.song'         : "Music - Song",
+						'music.album'        : "Music - Album",
+						'music.playlist'     : "Music - Playlist",
+						'music.radio_station': "Music - Radio Station",
+						profile              : "Profile",
+						'video.movie'        : "Video - Movie",
+						'video.episode'		 : "Video - Episode",
+						'video.tv_show'		 : "Video - TV Show",
+						'video.other'		 : "Video - Other",
+						website              : "Website",
 					}
 				}) }}
 
 				<div class="addl-fields">
 					{% include 'simplemeta/_includes/opengraph/audio' %} {# Audio OG #}
 					{% include 'simplemeta/_includes/opengraph/profile' %} {# Profile OG #}
-					{% include 'simplemeta/_includes/opengraph/video' %} {# Video OG #}
+					{% include 'simplemeta/_includes/opengraph/video_movie' %} {# Video - Movie OG #}
 				</div>
 
 			</div>

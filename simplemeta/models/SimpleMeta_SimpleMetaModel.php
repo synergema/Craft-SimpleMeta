@@ -10,7 +10,7 @@ class SimpleMeta_SimpleMetaModel extends BaseModel
 			'article',
 			'audio',
 			'profile',
-			'video',
+			'video.movie',
 			'website',
 		);
 

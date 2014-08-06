@@ -18,7 +18,7 @@ class SimpleMeta_SimpleMetaRecord extends BaseRecord
 			'article',
 			'audio',
 			'profile',
-			'video',
+			'video.movie',
 			'website',
 		);
 
