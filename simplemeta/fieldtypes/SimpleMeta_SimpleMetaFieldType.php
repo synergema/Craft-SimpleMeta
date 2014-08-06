@@ -56,22 +56,24 @@ class SimpleMeta_SimpleMetaFieldType extends BaseFieldType
 
 		// Set assets
 		$simplemetaAssets = array(
-			'socialOGImageId'                  => $simpleMetaModel->socialOGImageId,
-			'socialOGAudioContentId'           => $simpleMetaModel->socialOGAudioContentId,
-			'socialOGVideoContentId'           => $simpleMetaModel->socialOGVideoContentId,
-			'socialTwitterGalleryImagesId'     => $simpleMetaModel->socialTwitterGalleryImagesId,
-			'socialTwitterPhotoId'             => $simpleMetaModel->socialTwitterPhotoId,
-			'socialTwitterProductImageId'      => $simpleMetaModel->socialTwitterProductImageId,
-			'socialTwitterSummaryImageId'      => $simpleMetaModel->socialTwitterSummaryImageId,
-			'socialTwitterSummaryLargeImageId' => $simpleMetaModel->socialTwitterSummaryLargeImageId,
+			'socialOGImage'                  => $simpleMetaModel->socialOGImageId,
+			'socialOGAudioContent'           => $simpleMetaModel->socialOGAudioContentId,
+			'socialOGVideoContent'           => $simpleMetaModel->socialOGVideoContentId,
+			'socialTwitterGalleryImages'     => $simpleMetaModel->socialTwitterGalleryImagesId,
+			'socialTwitterPhoto'             => $simpleMetaModel->socialTwitterPhotoId,
+			'socialTwitterProductImage'      => $simpleMetaModel->socialTwitterProductImageId,
+			'socialTwitterSummaryImage'      => $simpleMetaModel->socialTwitterSummaryImageId,
+			'socialTwitterSummaryLargeImage' => $simpleMetaModel->socialTwitterSummaryLargeImageId,
 		);
 
 		foreach ($simplemetaAssets as $key => $value) {
 			if ($value) {
 				$asset = craft()->elements->getElementById($value);
-				$variables[$key] = array($asset);
+				$variables[$key . 'Elements'] = array($asset);
+				$variables[$key . 'Id'] = $asset->id;
 			} else {
-				$variables[$key] = array();
+				$variables[$key . 'Elements'] = array();
+				$variables[$key . 'Id'] = "";
 			}
 		}
 

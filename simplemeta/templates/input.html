@@ -36,7 +36,7 @@
 					<div class="input">
 						{% if assetsSourceExists %}
 							{{ forms.elementSelect({
-								elements: socialOGImageId,
+								elements: socialOGImageElements,
 								id: handle~'socialOGImageId',
 								name: handle~'[socialOGImageId]',
 								elementType: elementType,
@@ -119,7 +119,6 @@
 						summary            : "Summary",
 						summary_large_image: "Summary w/ Large Image",
 						photo              : "Photo",
-						gallery            : "Gallery",
 						app                : "App",
 						product            : "Product",
 						player             : "Player",
@@ -130,7 +129,7 @@
 					{% include 'simplemeta/_includes/twitter/summary' %} {# Summary Card #}
 					{% include 'simplemeta/_includes/twitter/summary-large-image' %} {# Card - Summary Card with Large Image #}
 					{% include 'simplemeta/_includes/twitter/photo' %} {# Photo Card #}
-					{% include 'simplemeta/_includes/twitter/gallery' %} {# Gallery Card #}
+					{# {% include 'simplemeta/_includes/twitter/gallery' %} #} {# Gallery Card #}
 					{% include 'simplemeta/_includes/twitter/app' %} {# App Card #}
 					{% include 'simplemeta/_includes/twitter/product' %} {# Product Card #}
 					{% include 'simplemeta/_includes/twitter/player' %} {# Player Card #}
