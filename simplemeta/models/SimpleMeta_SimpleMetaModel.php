@@ -53,6 +53,7 @@ class SimpleMeta_SimpleMetaModel extends BaseModel
 					'socialOGProfileGender'              => array(AttributeType::String, 'default' => null),
 					'socialOGVideoContentId'             => array(AttributeType::Number, 'default' => null), /* Asset */
 					'socialOGVideoContentSecure'         => array(AttributeType::String, 'default' => null),
+					'socialOGVideoUrl'					 => array(AttributeType::String, 'default' => null),
 					'socialOGVideoType'                  => array(AttributeType::String, 'default' => null),
 					'socialOGVideoWidth'                 => array(AttributeType::String, 'default' => null),
 					'socialOGVideoHeight'                => array(AttributeType::String, 'default' => null),

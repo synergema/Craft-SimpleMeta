@@ -57,6 +57,7 @@ class SimpleMeta_SimpleMetaRecord extends BaseRecord
 					'socialOGProfileUsername'        => AttributeType::String,
 					'socialOGProfileGender'          => AttributeType::String,
 					'socialOGVideoContentSecure'     => AttributeType::String,
+					'socialOGVideoUrl'				 => AttributeType::String,
 					'socialOGVideoType'              => AttributeType::String,
 					'socialOGVideoWidth'             => AttributeType::String,
 					'socialOGVideoHeight'            => AttributeType::String,
