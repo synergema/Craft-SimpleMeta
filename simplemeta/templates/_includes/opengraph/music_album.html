@@ -1,0 +1,39 @@
+<div id="{{ handle~'socialOGType' }}_music_album" class="block is-hidden">
+	{{ forms.textField({
+		label: "Song"|t,
+		instructions: "The song on this album."|t,
+		id   : handle~'socialOGMusicAlbumSong',
+		name : handle~'[socialOGMusicAlbumSong]',
+		value: socialOGMusicAlbumSong,
+	}) }}
+	{{ forms.textField({
+		label: "Disc"|t,
+		instructions: "The same as music:album:disc but in reverse."|t,
+		id   : handle~'socialOGMusicAlbumDisc',
+		name : handle~'[socialOGMusicAlbumDisc]',
+		value: socialOGMusicAlbumDisc,
+		size: "5",
+	}) }}
+	{{ forms.textField({
+		label: "Track"|t,
+		instructions: "The same as music:album:track but in reverse."|t,
+		id   : handle~'socialOGMusicAlbumTrack',
+		name : handle~'[socialOGMusicAlbumTrack]',
+		value: socialOGMusicAlbumTrack,
+		size: "5",
+	}) }}
+	{{ forms.textField({
+		label: "Musician"|t,
+		instructions: "The musician that made this song."|t,
+		id   : handle~'socialOGMusicAlbumMusician',
+		name : handle~'[socialOGMusicAlbumMusician]',
+		value: socialOGMusicAlbumMusician,
+	}) }}
+	{{ forms.dateField({
+		label: "Release Date"|t,
+		instructions: "The date the album was released."|t,
+		id   : handle~'socialOGMusicAlbumReleaseDate',
+		name : handle~'[socialOGMusicAlbumReleaseDate]',
+		value: socialOGMusicAlbumReleaseDate,
+	}) }}
+</div>

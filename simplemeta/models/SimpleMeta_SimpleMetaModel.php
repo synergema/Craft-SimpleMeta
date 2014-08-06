@@ -46,32 +46,38 @@ class SimpleMeta_SimpleMetaModel extends BaseModel
 				'elementId' => array(AttributeType::Number, 'default' => null),
 				'handle'    => array(AttributeType::String, 'default' => null),
 				// Open Graph
-					'socialOGTitle'              => array(AttributeType::String, 'default' => null),
-					'socialOGDescription'        => array(AttributeType::String, 'default' => null),
-					'socialOGImageId'            => array(AttributeType::Number, 'default' => null), /* Asset */
-					'socialOGType'               => array(AttributeType::Enum, 'values' => $openGraphTypes, 'default' => $openGraphTypes[0]),
+					'socialOGTitle'                 => array(AttributeType::String, 'default' => null),
+					'socialOGDescription'           => array(AttributeType::String, 'default' => null),
+					'socialOGImageId'               => array(AttributeType::Number, 'default' => null), /* Asset */
+					'socialOGType'                  => array(AttributeType::Enum, 'values' => $openGraphTypes, 'default' => $openGraphTypes[0]),
 					// OG Video
-					'socialOGVideoContentId'     => array(AttributeType::Number, 'default' => null), /* Asset */
-					'socialOGVideoContentSecure' => array(AttributeType::String, 'default' => null),
-					'socialOGVideoUrl'           => array(AttributeType::String, 'default' => null),
-					'socialOGVideoType'          => array(AttributeType::String, 'default' => null),
-					'socialOGVideoWidth'         => array(AttributeType::String, 'default' => null),
-					'socialOGVideoHeight'        => array(AttributeType::String, 'default' => null),
+					'socialOGVideoContentId'        => array(AttributeType::Number, 'default' => null), /* Asset */
+					'socialOGVideoContentSecure'    => array(AttributeType::String, 'default' => null),
+					'socialOGVideoUrl'              => array(AttributeType::String, 'default' => null),
+					'socialOGVideoType'             => array(AttributeType::String, 'default' => null),
+					'socialOGVideoWidth'            => array(AttributeType::String, 'default' => null),
+					'socialOGVideoHeight'           => array(AttributeType::String, 'default' => null),
 					// OG Audio
-					'socialOGAudioContentId'     => array(AttributeType::Number, 'default' => null), /* Asset */
-					'socialOGAudioContentSecure' => array(AttributeType::String, 'default' => null),
-					'socialOGAudioType'          => array(AttributeType::String, 'default' => null),
+					'socialOGAudioContentId'        => array(AttributeType::Number, 'default' => null), /* Asset */
+					'socialOGAudioContentSecure'    => array(AttributeType::String, 'default' => null),
+					'socialOGAudioType'             => array(AttributeType::String, 'default' => null),
+					// OG Music - Album
+					'socialOGMusicAlbumSong'        => array(AttributeType::String, 'default' => null),
+					'socialOGMusicAlbumDisc'        => array(AttributeType::String, 'default' => null),
+					'socialOGMusicAlbumTrack'       => array(AttributeType::String, 'default' => null),
+					'socialOGMusicAlbumMusician'    => array(AttributeType::String, 'default' => null),
+					'socialOGMusicAlbumReleaseDate' => array(AttributeType::DateTime, 'default' => null),
 					// OG Music - Song
-					'socialOGMusicSongDuration'  => array(AttributeType::String, 'default' => null),
-					'socialOGMusicSongAlbum'     => array(AttributeType::String, 'default' => null),
-					'socialOGMusicSongDisc'      => array(AttributeType::String, 'default' => null),
-					'socialOGMusicSongTrack'     => array(AttributeType::String, 'default' => null),
-					'socialOGMusicSongMusician' => array(AttributeType::String, 'default' => null),
+					'socialOGMusicSongDuration'     => array(AttributeType::String, 'default' => null),
+					'socialOGMusicSongAlbum'        => array(AttributeType::String, 'default' => null),
+					'socialOGMusicSongDisc'         => array(AttributeType::String, 'default' => null),
+					'socialOGMusicSongTrack'        => array(AttributeType::String, 'default' => null),
+					'socialOGMusicSongMusician'     => array(AttributeType::String, 'default' => null),
 					// OG Profile
-					'socialOGProfileFirstName'   => array(AttributeType::String, 'default' => null),
-					'socialOGProfileLastName'    => array(AttributeType::String, 'default' => null),
-					'socialOGProfileUsername'    => array(AttributeType::String, 'default' => null),
-					'socialOGProfileGender'      => array(AttributeType::String, 'default' => null),
+					'socialOGProfileFirstName'      => array(AttributeType::String, 'default' => null),
+					'socialOGProfileLastName'       => array(AttributeType::String, 'default' => null),
+					'socialOGProfileUsername'       => array(AttributeType::String, 'default' => null),
+					'socialOGProfileGender'         => array(AttributeType::String, 'default' => null),
 					
 				// Twitter
 				'socialTwitterTitle'       => array(AttributeType::String, 'default' => null),
