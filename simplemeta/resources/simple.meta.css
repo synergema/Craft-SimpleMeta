@@ -62,7 +62,15 @@ h3 + p {
 }
 
 .is-hidden {
-	display: none;
+	max-height: 0;
+	overflow: hidden;
+	padding: 0;
+}
+
+.is-visible {
+	max-height: 999px;
+	overflow: visible;
+	padding: inherit;
 }
 
 input.uppercase {

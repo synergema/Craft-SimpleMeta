@@ -120,4 +120,37 @@ $(document).ready(function() {
 
 	showHide.init();
 
+	//  $$$$$$$$\                                               $$\ 
+	//  $$  _____|                                              $$ |
+	//  $$ |      $$\   $$\  $$$$$$\   $$$$$$\  $$$$$$$\   $$$$$$$ |
+	//  $$$$$\    \$$\ $$  |$$  __$$\  \____$$\ $$  __$$\ $$  __$$ |
+	//  $$  __|    \$$$$  / $$ /  $$ | $$$$$$$ |$$ |  $$ |$$ /  $$ |
+	//  $$ |       $$  $$<  $$ |  $$ |$$  __$$ |$$ |  $$ |$$ |  $$ |
+	//  $$$$$$$$\ $$  /\$$\ $$$$$$$  |\$$$$$$$ |$$ |  $$ |\$$$$$$$ |
+	//  \________|\__/  \__|$$  ____/  \_______|\__|  \__| \_______|
+	//                      $$ |                                    
+	//                      $$ |                                    
+	//                      \__|                                    
+
+	var expandFields = {
+
+		init: function() {
+			this.bindUIActions();
+		},
+
+		bindUIActions: function() {
+			$('body').on('click', '.lightswitch .handle', this.expandHidden );
+		},
+
+		expandHidden: function() {
+			var $this = $(this),
+				parent = $this.closest('.field'),
+				content = parent.next('.content')
+			;
+
+			content.toggleClass('is-hidden is-visible');
+		}
+	}
+
+	expandFields.init();
 });

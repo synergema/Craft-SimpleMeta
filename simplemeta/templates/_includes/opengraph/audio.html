@@ -1,55 +1,57 @@
-{{ forms.lightswitchField({
-	label: "Add Audio"|t,
-	id   : handle~'socialOGAudioInclude',
-	name : handle~'[socialOGAudioInclude]',
-	on   : (socialOGAudioInclude is defined) ? socialOGAudioInclude : "",
-}) }}
-<div class="toggle is-hidden">
-	
-	{% if assetsSourceExists %}
-		{{ forms.elementSelect({
-			label: "Content"|t,
-			instructions: "Select an audio file",
-			elements: socialOGAudioContentElements,
-			id: handle~'socialOGAudioContentId',
-			name: handle~'[socialOGAudioContentId]',
-			elementType: elementType,
-			criteria: {
-				"kind":[],
-				"localeEnabled":null,
-				"locale":"en_us"
-			},
-			sourceElementId: socialOGAudioContentId,
-			jsClass: 'Craft.AssetSelectInput',
-			addButtonLabel: 'Select Audio File',
-			limit: 1,
-		}) }}
-	{% else %}
-		<p class="error">No assets sources currently exist. <a href="{{ newAssetsSourceUrl }}">Create one now...</a></p>
-	{% endif %}
+<div class="expand">
 	{{ forms.lightswitchField({
-		label: "Include secure URL"|t,
-		instructions: "Secure (https) URL to audio file",
-		id   : handle~'socialOGAudioContentSecure',
-		name : handle~'[socialOGAudioContentSecure]',
-		on   : (socialOGAudioContentSecure is defined) ? socialOGAudioContentSecure : "",
+		label: "Add Audio"|t,
+		id   : handle~'socialOGAudioInclude',
+		name : handle~'[socialOGAudioInclude]',
+		on   : (socialOGAudioInclude is defined) ? socialOGAudioInclude : "",
 	}) }}
-	{{ forms.selectField({
-		label       : "Audio Type"|t,
-		instructions: "The type of audio file",
-		id          : handle~'socialOGAudioType',
-		name        : handle~'[socialOGAudioType]',
-		value       : socialOGAudioType,
-		options: {
-			'audio/mpeg'            : "MPEG (.mp3)",
-			'audio/mp4'             : "MP4",
-			'audio/ogg'             : "Ogg Vorbis/Speex/Flac",
-			'audio/opus'            : "Opus",
-			'audio/vorbis'          : "Vorbis",
-			'audio/vnd.rn-realaudio': "RealAudio",
-			"audio/vnd.wave"        : "WAV",
-			"audio/webm"            : "WebM",
-		}
-	}) }}
+	<div class="content is-hidden">
+		
+		{% if assetsSourceExists %}
+			{{ forms.elementSelect({
+				label: "Content"|t,
+				instructions: "Select an audio file",
+				elements: socialOGAudioContentElements,
+				id: handle~'socialOGAudioContentId',
+				name: handle~'[socialOGAudioContentId]',
+				elementType: elementType,
+				criteria: {
+					"kind":[],
+					"localeEnabled":null,
+					"locale":"en_us"
+				},
+				sourceElementId: socialOGAudioContentId,
+				jsClass: 'Craft.AssetSelectInput',
+				addButtonLabel: 'Select Audio File',
+				limit: 1,
+			}) }}
+		{% else %}
+			<p class="error">No assets sources currently exist. <a href="{{ newAssetsSourceUrl }}">Create one now...</a></p>
+		{% endif %}
+		{{ forms.lightswitchField({
+			label: "Include secure URL"|t,
+			instructions: "Secure (https) URL to audio file",
+			id   : handle~'socialOGAudioContentSecure',
+			name : handle~'[socialOGAudioContentSecure]',
+			on   : (socialOGAudioContentSecure is defined) ? socialOGAudioContentSecure : "",
+		}) }}
+		{{ forms.selectField({
+			label       : "Audio Type"|t,
+			instructions: "The type of audio file",
+			id          : handle~'socialOGAudioType',
+			name        : handle~'[socialOGAudioType]',
+			value       : socialOGAudioType,
+			options: {
+				'audio/mpeg'            : "MPEG (.mp3)",
+				'audio/mp4'             : "MP4",
+				'audio/ogg'             : "Ogg Vorbis/Speex/Flac",
+				'audio/opus'            : "Opus",
+				'audio/vorbis'          : "Vorbis",
+				'audio/vnd.rn-realaudio': "RealAudio",
+				"audio/vnd.wave"        : "WAV",
+				"audio/webm"            : "WebM",
+			}
+		}) }}
 
+	</div>
 </div>
