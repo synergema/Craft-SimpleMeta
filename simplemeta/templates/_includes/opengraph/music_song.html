@@ -1,0 +1,40 @@
+<div id="{{ handle~'socialOGType' }}_music_song" class="block is-hidden">
+	{{ forms.textField({
+		label: "Duration"|t,
+		instructions: " The song's length in seconds"|t,
+		id   : handle~'socialOGMusicSongDuration',
+		name : handle~'[socialOGMusicSongDuration]',
+		value: socialOGMusicSongDuration,
+		size: "5",
+	}) }}
+	{{ forms.textField({
+		label: "Album"|t,
+		instructions: "The album this song is from."|t,
+		id   : handle~'socialOGMusicSongAlbum',
+		name : handle~'[socialOGMusicSongAlbum]',
+		value: socialOGMusicSongAlbum,
+	}) }}
+	{{ forms.textField({
+		label: "Disc"|t,
+		instructions: "Which disc of the album this song is on."|t,
+		id   : handle~'socialOGMusicSongDisc',
+		name : handle~'[socialOGMusicSongDisc]',
+		value: socialOGMusicSongDisc,
+		size: "5",
+	}) }}
+	{{ forms.textField({
+		label: "Track"|t,
+		instructions: "Which track this song is."|t,
+		id   : handle~'socialOGMusicSongTrack',
+		name : handle~'[socialOGMusicSongTrack]',
+		value: socialOGMusicSongTrack,
+		size: "5",
+	}) }}
+	{{ forms.textField({
+		label: "Musician"|t,
+		instructions: "The musician that made this song."|t,
+		id   : handle~'socialOGMusicSongMusician',
+		name : handle~'[socialOGMusicSongMusician]',
+		value: socialOGMusicSongMusician,
+	}) }}
+</div>

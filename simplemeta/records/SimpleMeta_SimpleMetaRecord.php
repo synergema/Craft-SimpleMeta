@@ -16,9 +16,15 @@ class SimpleMeta_SimpleMetaRecord extends BaseRecord
 		// Open Graph Types
 		$openGraphTypes = array(
 			'article',
-			'audio',
+			'music.song',
+			'music.album',
+			'music.playlist',
+			'music.radio_station',
 			'profile',
 			'video.movie',
+			'video.episode',
+			'video.tv_show',
+			'video.other',
 			'website',
 		);
 
@@ -45,26 +51,37 @@ class SimpleMeta_SimpleMetaRecord extends BaseRecord
 		);
 
 		return array(
-				'handle'                         => AttributeType::String,
-				'socialOGTitle'                  => AttributeType::String,
-				'socialOGDescription'            => AttributeType::String,
-				'socialOGType'                   => array(AttributeType::Enum, 'values' => $openGraphTypes, 'default' => $openGraphTypes[0]),
-					// Open Graph Type fields
-					'socialOGAudioContentSecure'     => AttributeType::String,
-					'socialOGAudioType'              => AttributeType::String,
-					'socialOGProfileFirstName'       => AttributeType::String,
-					'socialOGProfileLastName'        => AttributeType::String,
-					'socialOGProfileUsername'        => AttributeType::String,
-					'socialOGProfileGender'          => AttributeType::String,
-					'socialOGVideoContentSecure'     => AttributeType::String,
-					'socialOGVideoUrl'				 => AttributeType::String,
-					'socialOGVideoType'              => AttributeType::String,
-					'socialOGVideoWidth'             => AttributeType::String,
-					'socialOGVideoHeight'            => AttributeType::String,
-				'socialTwitterTitle'             => AttributeType::String,
-				'socialTwitterType'              => array(AttributeType::Enum, 'values' => $twitterCardTypes, 'default' => $twitterCardTypes[0]),
-				'socialTwitterDescription'       => AttributeType::String,
-					// Twiter Card Type fields
+				'handle' => AttributeType::String,
+				// Open Graph
+					'socialOGTitle'              => AttributeType::String,
+					'socialOGDescription'        => AttributeType::String,
+					'socialOGType'               => array(AttributeType::Enum, 'values' => $openGraphTypes, 'default' => $openGraphTypes[0]),
+					// OG Video
+					'socialOGVideoContentSecure' => AttributeType::String,
+					'socialOGVideoUrl'           => AttributeType::String,
+					'socialOGVideoType'          => AttributeType::String,
+					'socialOGVideoWidth'         => AttributeType::String,
+					'socialOGVideoHeight'        => AttributeType::String,
+					// OG Audio
+					'socialOGAudioContentSecure' => AttributeType::String,
+					'socialOGAudioType'          => AttributeType::String,
+					// OG Music - Song
+					'socialOGMusicSongDuration'  => AttributeType::String,
+					'socialOGMusicSongAlbum'     => AttributeType::String,
+					'socialOGMusicSongDisc'      => AttributeType::String,
+					'socialOGMusicSongTrack'     => AttributeType::String,
+					'socialOGMusicSongMusician'  => AttributeType::String,
+					// OG Profile
+					'socialOGProfileFirstName'   => AttributeType::String,
+					'socialOGProfileLastName'    => AttributeType::String,
+					'socialOGProfileUsername'    => AttributeType::String,
+					'socialOGProfileGender'      => AttributeType::String,
+				
+				// Twitter	
+				'socialTwitterTitle'       => AttributeType::String,
+				'socialTwitterType'        => array(AttributeType::Enum, 'values' => $twitterCardTypes, 'default' => $twitterCardTypes[0]),
+				'socialTwitterDescription' => AttributeType::String,
+					// Twiter App
 					'socialTwitterAppCountry'     => AttributeType::String,
 					'socialTwitterAppIphoneName'  => array(AttributeType::String, 'default' => null),
 					'socialTwitterAppIphoneId'    => AttributeType::String,
@@ -75,16 +92,19 @@ class SimpleMeta_SimpleMetaRecord extends BaseRecord
 					'socialTwitterAppAndroidName' => array(AttributeType::String, 'default' => null),
 					'socialTwitterAppAndroidId'   => AttributeType::String,
 					'socialTwitterAppAndroidUrl'  => AttributeType::String,
+					// Twitter Product
 					'socialTwitterProductData1'   => AttributeType::String,
 					'socialTwitterProductLabel1'  => AttributeType::String,
 					'socialTwitterProductData2'   => AttributeType::String,
 					'socialTwitterProductLabel2'  => AttributeType::String,
-				'seoTitle'                       => AttributeType::String,
-				'seoDescription'                 => AttributeType::String,
-				'seoCanonicalUrl'                => AttributeType::String,
-				'seoRobotsIndex'                 => array(AttributeType::Enum, 'values' => $robotsIndex, 'default' => $robotsIndex[0]),
-				'seoRobotsFollow'                => array(AttributeType::Enum, 'values' => $robotsFollow, 'default' => $robotsFollow[0]),
-				'seoSitemapPriority'             => array(AttributeType::String, 'default' => '0.5'),
+				
+				// SEO
+				'seoTitle'           => AttributeType::String,
+				'seoDescription'     => AttributeType::String,
+				'seoCanonicalUrl'    => AttributeType::String,
+				'seoRobotsIndex'     => array(AttributeType::Enum, 'values' => $robotsIndex, 'default' => $robotsIndex[0]),
+				'seoRobotsFollow'    => array(AttributeType::Enum, 'values' => $robotsFollow, 'default' => $robotsFollow[0]),
+				'seoSitemapPriority' => array(AttributeType::String, 'default' => '0.5'),
 		);
 
 	}
