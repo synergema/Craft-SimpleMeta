@@ -144,11 +144,19 @@ $(document).ready(function() {
 
 		expandHidden: function() {
 			var $this = $(this),
-				parent = $this.closest('.field'),
-				content = parent.next('.content')
+				lightswitch = $this.closest('.lightswitch'),
+				parent      = $this.closest('.field'),
+				content     = parent.next('.content')
 			;
 
-			content.toggleClass('is-hidden is-visible');
+			if (lightswitch.hasClass('on'))
+			{
+				content.removeClass('is-hidden').addClass('is-visible');
+			}
+			else
+			{
+				content.removeClass('is-visible').addClass('is-hidden');
+			}
 		}
 	}
 
