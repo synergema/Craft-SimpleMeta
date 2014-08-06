@@ -6,79 +6,81 @@
 		on   : (socialOGVideoInclude is defined) ? socialOGVideoInclude : "",
 	}) }}
 	<div class="content is-hidden">
-		
-		<div class="field">
-			<div class="heading">
-				<label for="">Video</label>
-				<div class="instructions">
-					Twitter image. Must be at least 280px wide, 150px tall, and less than 1MB in size.
+		<div class="child">
+			
+			<div class="field">
+				<div class="heading">
+					<label for="">Video</label>
+					<div class="instructions">
+						Twitter image. Must be at least 280px wide, 150px tall, and less than 1MB in size.
+					</div>
+				</div>
+				<div class="input">
+					{% if assetsSourceExists %}
+						{{ forms.elementSelect({
+							label: "Content"|t,
+							instructions: "Select a video file",
+							elements: socialOGVideoContentElements,
+							id: handle~'socialOGVideoContentId',
+							name: handle~'[socialOGVideoContentId]',
+							elementType: elementType,
+							criteria: {
+								"kind":[],
+								"localeEnabled":null,
+								"locale":"en_us"
+							},
+							sourceElementId: socialOGVideoContentId,
+							jsClass: 'Craft.AssetSelectInput',
+							addButtonLabel: 'Select Video File',
+							limit: 1,
+						}) }}
+					{% else %}
+						<p class="error">No assets sources currently exist. <a href="{{ newAssetsSourceUrl }}">Create one now...</a></p>
+					{% endif %}
 				</div>
 			</div>
-			<div class="input">
-				{% if assetsSourceExists %}
-					{{ forms.elementSelect({
-						label: "Content"|t,
-						instructions: "Select a video file",
-						elements: socialOGVideoContentElements,
-						id: handle~'socialOGVideoContentId',
-						name: handle~'[socialOGVideoContentId]',
-						elementType: elementType,
-						criteria: {
-							"kind":[],
-							"localeEnabled":null,
-							"locale":"en_us"
-						},
-						sourceElementId: socialOGVideoContentId,
-						jsClass: 'Craft.AssetSelectInput',
-						addButtonLabel: 'Select Video File',
-						limit: 1,
-					}) }}
-				{% else %}
-					<p class="error">No assets sources currently exist. <a href="{{ newAssetsSourceUrl }}">Create one now...</a></p>
-				{% endif %}
-			</div>
-		</div>
-		{{ forms.lightswitchField({
-			label: "Include secure URL"|t,
-			instructions: "Secure (https) URL to video file",
-			id   : handle~'socialOGVideoContentSecure',
-			name : handle~'[socialOGVideoContentSecure]',
-			on   : (socialOGVideoContentSecure is defined) ? socialOGVideoContentSecure : "",
-		}) }}
-		{{ forms.selectField({
-			label       : "Video Type"|t,
-			instructions: "The type of video file",
-			id          : handle~'socialOGVideoType',
-			name        : handle~'[socialOGVideoType]',
-			value       : socialOGVideoType,
-			options: {
-				'video/avi'       : 'AVI',
-				'video/x-flv'     : 'Flash Video',
-				'video/x-matroska': 'Matroska',
-				'video/mpeg'      : 'MPEG-1',
-				'video/mp4'       : 'MP4',
-				'video/ogg'       : 'Ogg Theora',
-				'video/quicktime' : 'Quicktime',
-				'video/webm'      : 'WebM',
-				'video/x-ms-wmv'  : 'Windows Media Video',
-			}
-		}) }}
-		{{ forms.textField({
-			label: "Video Width"|t,
-			id   : handle~'socialOGVideoWidth',
-			name : handle~'[socialOGVideoWidth]',
-			placeholder: '400',
-			value: socialOGVideoWidth,
-			size : "5",
-		}) }}
-		{{ forms.textField({
-			label: "Video Width"|t,
-			id   : handle~'socialOGVideoHeight',
-			name : handle~'[socialOGVideoHeight]',
-			placeholder: '300',
-			value: socialOGVideoHeight,
-			size : "5",
-		}) }}
+			{{ forms.lightswitchField({
+				label: "Include secure URL"|t,
+				instructions: "Secure (https) URL to video file",
+				id   : handle~'socialOGVideoContentSecure',
+				name : handle~'[socialOGVideoContentSecure]',
+				on   : (socialOGVideoContentSecure is defined) ? socialOGVideoContentSecure : "",
+			}) }}
+			{{ forms.selectField({
+				label       : "Video Type"|t,
+				instructions: "The type of video file",
+				id          : handle~'socialOGVideoType',
+				name        : handle~'[socialOGVideoType]',
+				value       : socialOGVideoType,
+				options: {
+					'video/avi'                          : 'AVI',
+					'video/application/x-shockwave-flash': 'Flash Video',
+					'video/x-matroska'                   : 'Matroska',
+					'video/mpeg'                         : 'MPEG-1',
+					'video/mp4'                          : 'MP4',
+					'video/ogg'                          : 'Ogg Theora',
+					'video/quicktime'                    : 'Quicktime',
+					'video/webm'                         : 'WebM',
+					'video/x-ms-wmv'                     : 'Windows Media Video',
+				}
+			}) }}
+			{{ forms.textField({
+				label: "Video Width"|t,
+				id   : handle~'socialOGVideoWidth',
+				name : handle~'[socialOGVideoWidth]',
+				placeholder: '400',
+				value: socialOGVideoWidth,
+				size : "5",
+			}) }}
+			{{ forms.textField({
+				label: "Video Width"|t,
+				id   : handle~'socialOGVideoHeight',
+				name : handle~'[socialOGVideoHeight]',
+				placeholder: '300',
+				value: socialOGVideoHeight,
+				size : "5",
+			}) }}
 
+		</div>
 	</div>
 </div>
