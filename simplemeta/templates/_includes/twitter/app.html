@@ -12,6 +12,14 @@
 	<div class="platform">
 		<h4>iPhone</h4>
 		{{ forms.textField({
+			label       : "iPhone App Name"|t,
+			instructions: 'Your iPhone App Name',
+			id          : handle~'socialTwitterAppIphoneName',
+			name        : handle~'[socialTwitterAppIphoneName]',
+			value       : socialTwitterAppIphoneName,
+			size		: "25",
+		}) }}
+		{{ forms.textField({
 			label       : "iPhone App ID"|t,
 			instructions: 'Your iPhone App Store ID (i.e. "307234931")',
 			id          : handle~'socialTwitterAppIphoneId',
@@ -31,6 +39,14 @@
 	<div class="platform">
 		<h4>iPad</h4>
 		{{ forms.textField({
+			label       : "iPad App Name"|t,
+			instructions: 'Your iPad App Name',
+			id          : handle~'socialTwitterAppIpadName',
+			name        : handle~'[socialTwitterAppIpadName]',
+			value       : socialTwitterAppIpadName,
+			size		: "25",
+		}) }}
+		{{ forms.textField({
 			label       : "iPad App ID"|t,
 			instructions: 'Your iPad App Store ID (i.e. "307234931")',
 			id          : handle~'socialTwitterAppIpadId',
@@ -49,6 +65,14 @@
 	</div>
 	<div class="platform">
 		<h4>Android</h4>
+		{{ forms.textField({
+			label       : "Android App Name"|t,
+			instructions: 'Your Android App Name',
+			id          : handle~'socialTwitterAppAndroidName',
+			name        : handle~'[socialTwitterAppAndroidName]',
+			value       : socialTwitterAppAndroidName,
+			size		: "25",
+		}) }}
 		{{ forms.textField({
 			label       : "Google Play App ID"|t,
 			instructions: 'Your Google Play App Store ID (i.e. "com.android.app")',

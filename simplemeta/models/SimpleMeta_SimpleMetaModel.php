@@ -61,10 +61,13 @@ class SimpleMeta_SimpleMetaModel extends BaseModel
 				'socialTwitterDescription'           => array(AttributeType::String, 'default' => null),
 					// Twiter Card Type fields
 					'socialTwitterAppCountry'          => array(AttributeType::String, 'default' => null),
+					'socialTwitterAppIphoneName'       => array(AttributeType::String, 'default' => null),
 					'socialTwitterAppIphoneId'         => array(AttributeType::String, 'default' => null),
 					'socialTwitterAppIphoneUrl'        => array(AttributeType::String, 'default' => null),
+					'socialTwitterAppIpadName'         => array(AttributeType::String, 'default' => null),
 					'socialTwitterAppIpadId'           => array(AttributeType::String, 'default' => null),
 					'socialTwitterAppIpadUrl'          => array(AttributeType::String, 'default' => null),
+					'socialTwitterAppAndroidName'      => array(AttributeType::String, 'default' => null),
 					'socialTwitterAppAndroidId'        => array(AttributeType::String, 'default' => null),
 					'socialTwitterAppAndroidUrl'       => array(AttributeType::String, 'default' => null),
 					'socialTwitterGalleryImagesId'     => array(AttributeType::Number, 'default' => null), /* Asset */
