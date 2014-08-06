@@ -25,6 +25,7 @@
 			instructions: "Secure (https) URL to video file",
 			id   : handle~'socialOGVideoContentSecure',
 			name : handle~'[socialOGVideoContentSecure]',
+			on   : (socialOGVideoContentSecure is defined) ? socialOGVideoContentSecure : "",
 		}) }}
 		{{ forms.selectField({
 			label       : "Video Type"|t,

@@ -17,14 +17,23 @@ $(document).ready(function() {
 
 		init: function() {
 			this.bindUIActions();
+			this.onLoadCount();
 		},
 
 		bindUIActions: function() {
 			$('body').on('keyup', '.max input, .max textarea', this.updateCount );
 		},
 
-		updateCount: function( event ) {
-			var $this = $(this),
+		onLoadCount: function() {
+			var inputs = $('.max textarea, .max input');
+
+			inputs.each(function( index ) {
+				characterCount.updateCount(event, $(this));
+			});
+		},
+
+		updateCount: function( event, el ) {
+			var $this = (el === undefined ? $(this) : el),
 				max = $this.closest('.max'),
 				input = max.find('input, textarea'),
 				maxCharacters = max.find('.countdown').attr('data-max'),

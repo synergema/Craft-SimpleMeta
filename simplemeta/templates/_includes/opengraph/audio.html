@@ -25,6 +25,7 @@
 		instructions: "Secure (https) URL to audio file",
 		id   : handle~'socialOGAudioContentSecure',
 		name : handle~'[socialOGAudioContentSecure]',
+		on   : (socialOGAudioContentSecure is defined) ? socialOGAudioContentSecure : "",
 	}) }}
 	{{ forms.selectField({
 		label       : "Audio Type"|t,
