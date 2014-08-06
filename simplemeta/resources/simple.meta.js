@@ -139,7 +139,7 @@ $(document).ready(function() {
 		},
 
 		bindUIActions: function() {
-			$('body').on('click', '.lightswitch .handle', this.expandHidden );
+			$('body').on('click', '.lightswitch', this.expandHidden );
 		},
 
 		expandHidden: function() {
