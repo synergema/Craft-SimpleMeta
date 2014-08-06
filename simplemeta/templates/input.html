@@ -3,15 +3,13 @@
 <div class="simple-meta">
 	<section class="social">
 
-		<h2>Social Meta</h2>
+		<header>
+			<h3>Open Graph</h3>
+			<p>Metadata for Facebook, Google+ and Pinterest</p>
+		</header>
 		<div class="group">
 
 			<div class="block">
-				<header>
-					<h3>Open Graph</h3>
-					<p>Metadata for Facebook, Google+ and Pinterest</p>
-				</header>
-
 				{{ forms.textField({
 					label: "Title"|t,
 					id   : handle~'socialOGTitle',
@@ -30,12 +28,13 @@
 						<span class="live">0</span>&nbsp;/&nbsp;300 Characters
 					</div>
 				</div>
-
+			</div>	
+			<div class="block">
 				<div class="field">
 					<div class="heading">
 						<label for="">Image</label>
 						<div class="instructions">
-							Twitter image. Must be at least 280px wide, 150px tall, and less than 1MB in size.
+							The &ldquo;share&rdquo; image. 1200 x 630 pixels minimum is best, 600 x 315 pixels minimum is next best.
 						</div>
 					</div>
 					<div class="input">
@@ -56,7 +55,14 @@
 						{% endif %}
 					</div>
 				</div>
-
+			</div>
+			<div class="block">
+				{% include 'simplemeta/_includes/opengraph/video' %} {# Video File/Embed OG #}
+			</div>
+			<div class="block">
+				{% include 'simplemeta/_includes/opengraph/audio' %} {# Video File/Embed OG #}
+			</div>
+			<div class="block">
 				{{ forms.selectField({
 					label       : "Content Type"|t,
 					instructions: "The type of content",
@@ -66,7 +72,6 @@
 					value       : socialOGType,
 					options: {
 						article              : "Article",
-						audio                : "Audio",
 						'music.song'         : "Music - Song",
 						'music.album'        : "Music - Album",
 						'music.playlist'     : "Music - Playlist",
@@ -81,19 +86,21 @@
 				}) }}
 
 				<div class="addl-fields">
-					{% include 'simplemeta/_includes/opengraph/audio' %} {# Audio OG #}
 					{% include 'simplemeta/_includes/opengraph/profile' %} {# Profile OG #}
 					{% include 'simplemeta/_includes/opengraph/video_movie' %} {# Video - Movie OG #}
 				</div>
-
 			</div>
-
+		</div>
+	</section>
+	
+	<section class="twitter">
+		<header>
+			<h3>Twitter</h3>
+			<p>Metadata for Twitter Cards</p>
+		</header>
+		<div class="group">
+			
 			<div class="block">
-				<header>
-					<h3>Twitter</h3>
-					<p>Metadata for Twitter Cards</p>
-				</header>
-
 				<div class="max">
 					{{ forms.textField({
 						label: "Title"|t,
@@ -119,7 +126,9 @@
 						<span class="live">0</span>&nbsp;/&nbsp;200 Characters
 					</div>
 				</div>
-
+			</div>
+			
+			<div class="block">
 				{{ forms.selectField({
 					label       : "Content Type"|t,
 					instructions: "The type of content",
@@ -143,7 +152,6 @@
 					{% include 'simplemeta/_includes/twitter/app' %} {# App Card #}
 					{% include 'simplemeta/_includes/twitter/product' %} {# Product Card #}
 				</div>
-
 			</div>
 
 		</div>

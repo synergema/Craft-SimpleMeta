@@ -1,4 +1,11 @@
-<div id="{{ handle~'socialOGType' }}_audio" class="block is-hidden">
+{{ forms.lightswitchField({
+	label: "Add Audio"|t,
+	id   : handle~'socialOGAudioInclude',
+	name : handle~'[socialOGAudioInclude]',
+	on   : (socialOGAudioInclude is defined) ? socialOGAudioInclude : "",
+}) }}
+<div class="toggle is-hidden">
+	
 	{% if assetsSourceExists %}
 		{{ forms.elementSelect({
 			label: "Content"|t,
@@ -44,4 +51,5 @@
 			"audio/webm"            : "WebM",
 		}
 	}) }}
+
 </div>
