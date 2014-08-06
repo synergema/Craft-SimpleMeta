@@ -66,4 +66,17 @@ class SimpleMetaService extends BaseApplicationComponent
 
 		return $attr;
 	}
+
+
+	/**
+	 * Returns an asset by id.
+	 *
+	 * @param int $id
+	 * @return AssetFileModel|null
+	 */
+	public function getAssetById($id)
+	{
+		return craft()->elements->getElementById($id, ElementType::Asset);
+	}
+
 }
