@@ -19,12 +19,17 @@
 					value: socialOGTitle,
 				}) }}
 
-				{{ forms.textareaField({
-					label: "Description"|t,
-					id   : handle~'socialOGDescription',
-					name : handle~'[socialOGDescription]',
-					value: socialOGDescription,
-				}) }}
+				<div class="max">
+					{{ forms.textareaField({
+						label: "Description"|t,
+						id   : handle~'socialOGDescription',
+						name : handle~'[socialOGDescription]',
+						value: socialOGDescription,
+					}) }}
+					<div class="countdown" data-max="300">
+						<span class="live">0</span>&nbsp;/&nbsp;300 Characters
+					</div>
+				</div>
 
 				<div class="field">
 					<div class="heading">
