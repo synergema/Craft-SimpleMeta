@@ -58,6 +58,7 @@ class SimpleMeta_SimpleMetaRecord extends BaseRecord
 					'socialOGType'                  => array(AttributeType::Enum, 'values' => $openGraphTypes, 'default' => $openGraphTypes[0]),
 					// OG Video
 					'socialOGVideoContentSecure'    => AttributeType::String,
+					'socialOGVideoEmbeddedUrl'      => AttributeType::String,
 					'socialOGVideoUrl'              => AttributeType::String,
 					'socialOGVideoType'             => AttributeType::String,
 					'socialOGVideoWidth'            => AttributeType::String,

@@ -53,6 +53,7 @@ class SimpleMeta_SimpleMetaModel extends BaseModel
 					// OG Video
 					'socialOGVideoContentId'        => array(AttributeType::Number, 'default' => null), /* Asset */
 					'socialOGVideoContentSecure'    => array(AttributeType::String, 'default' => null),
+					'socialOGVideoEmbeddedUrl'      => array(AttributeType::String, 'default' => null),
 					'socialOGVideoUrl'              => array(AttributeType::String, 'default' => null),
 					'socialOGVideoType'             => array(AttributeType::String, 'default' => null),
 					'socialOGVideoWidth'            => array(AttributeType::String, 'default' => null),
