@@ -49,6 +49,12 @@ class SimpleMetaService extends BaseApplicationComponent
 
 	}
 
+	/**
+	 * Returns data from field
+	 *
+	 * @param BaseFieldType
+	 * @return SimpleMeta_SimpleMetaModel
+	 */
 	public function getSimpleMeta(BaseFieldType $fieldType)
 	{
 		$simpleMetaRecord = SimpleMeta_SimpleMetaRecord::model()->findByAttributes(array(
@@ -65,6 +71,38 @@ class SimpleMetaService extends BaseApplicationComponent
 		}
 
 		return $attr;
+	}
+
+	/**
+	 * Returns data by entry id for use on the front-end
+	 *
+	 * @param int $id
+	 * @return SimpleMeta_SimpleMetaModel
+	 */
+	public function outputSimpleMeta($entry, $fallback)
+	{
+
+		$id = ($entry) ? $entry->id : (($fallback) ? $fallback->id : false);
+
+		if ($id)
+		{
+			$simpleMetaRecord = SimpleMeta_SimpleMetaRecord::model()->findByAttributes(array(
+				'elementId' => $id,
+			));
+
+			if ($simpleMetaRecord)
+			{
+				$attr = $simpleMetaRecord->getAttributes();
+			}
+
+			$templatesPath = craft()->path->getPluginsPath().'simplemeta/templates/';
+			craft()->path->setTemplatesPath($templatesPath);
+
+			return craft()->templates->render('output', $attr);
+
+		} else {
+			return false;
+		}
 	}
 
 
