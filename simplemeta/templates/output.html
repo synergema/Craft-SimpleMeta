@@ -1,3 +1,12 @@
 {% import "_imports/simpleMeta" as meta -%}
 
 {{ meta.meta('og:title', socialOGTitle) }}
+{{ meta.meta('og:title', socialOGTitle) }}
+{{ meta.meta('og:description', socialOGDescription) }}
+{{ meta.metaAsset('og:image', socialOGImageId) }}
+
+{{ meta.meta('twitter:card', socialTwitterType) }}
+{{ meta.meta('twitter:title', socialTwitterTitle) }}
+{{ meta.meta('twitter:description', socialTwitterDescription) }}
+
+{{ meta.metaObjectTwitterCard(_context) }}

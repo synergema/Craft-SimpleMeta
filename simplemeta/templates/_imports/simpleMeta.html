@@ -28,70 +28,68 @@
 {%- endmacro -%}
 
 {# -- Twitter Card -- #}
-{%- macro metaObjectTwitterCard(entry) -%}
+{%- macro metaObjectTwitterCard(data) -%}
 {% spaceless %}
-	{% if entry is iterable %}
-		{% switch entry.socialTwitterType %}
-			{% case "summary" %}
-				{% if entry.socialTwitterSummaryImageId | length -%}
-				<meta property="twitter:image" content="{{ craft.simpleMeta.asset(entry.socialTwitterSummaryImageId).url }}">
-				{% endif %}
-			{% case "summary_large_image" %}
-				{% if entry.socialTwitterSummaryLargeImageId | length -%}
-				<meta property="twitter:image" content="{{ craft.simpleMeta.asset(entry.socialTwitterSummaryLargeImageId).url }}">
-				{% endif %}
-			{% case "photo" %}	
-				{% if entry.socialTwitterPhotoId | length -%}
-				<meta property="twitter:image" content="{{ craft.simpleMeta.asset(entry.socialTwitterPhotoId).url }}">
-				{% endif %}
-			{% case "app" %}
-				{% if entry.socialTwitterAppCountry | length %}
-					<meta property="twitter:app:country" content="{{ entry.socialTwitterAppCountry }}">
-				{% endif %}
-				{% if entry.socialTwitterAppIphoneName %}
-					<meta property="twitter:app:name:iphone" content="{{ entry.socialTwitterAppIphoneName }}">
-				{% endif %}
-				{% if entry.socialTwitterAppIphoneId %}
-					<meta property="twitter:app:id:iphone" content="{{ entry.socialTwitterAppIphoneId }}">
-				{% endif %}
-				{% if entry.socialTwitterAppIphoneUrl %}
-					<meta property="twitter:app:url:iphone" content="{{ entry.socialTwitterAppIphoneUrl }}">
-				{% endif %}
-				{% if entry.socialTwitterAppIpadName %}
-					<meta property="twitter:app:name:ipad" content="{{ entry.socialTwitterAppIpadName }}">
-				{% endif %}
-				{% if entry.socialTwitterAppIpadId %}
-					<meta property="twitter:app:id:ipad" content="{{ entry.socialTwitterAppIpadId }}">
-				{% endif %}
-				{% if entry.socialTwitterAppIpadUrl %}
-					<meta property="twitter:app:ur:ipad" content="{{ entry.socialTwitterAppIpadUrl }}">
-				{% endif %}
-				{% if entry.socialTwitterAppAndroidName %}
-					<meta property="twitter:app:name:googleplay" content="{{ entry.socialTwitterAppAndroidName }}">
-				{% endif %}
-				{% if entry.socialTwitterAppAndroidId %}
-					<meta property="twitter:app:id:googleplay" content="{{ entry.socialTwitterAppAndroidId }}">
-				{% endif %}
-				{% if entry.socialTwitterAppAndroidUrl %}
-					<meta property="twitter:app:url:googleplay" content="{{ entry.socialTwitterAppAndroidUrl }}">
-				{% endif %}
-			{% case "product" %}	
-				{% if entry.socialTwitterProductImageId | length -%}
-				<meta property="twitter:image" content="{{ craft.simpleMeta.asset(entry.socialTwitterProductImageId).url }}">
-				{% endif %}
-				{% if entry.socialTwitterProductData1 %}
-					<meta property="twitter:data1" content="{{ entry.socialTwitterProductData1 }}">
-				{% endif %}
-				{% if entry.socialTwitterProductLabel1 %}
-					<meta property="twitter:label1" content="{{ entry.socialTwitterProductLabel1 }}">
-				{% endif %}
-				{% if entry.socialTwitterProductData2 %}
-					<meta property="twitter:data2" content="{{ entry.socialTwitterProductData2 }}">
-				{% endif %}
-				{% if entry.socialTwitterProductLabel2 %}
-					<meta property="twitter:label2" content="{{ entry.socialTwitterProductLabel2 }}">
-				{% endif %}
-		{% endswitch %}
-	{% endif %}
+	{% switch data.socialTwitterType %}
+		{% case "summary" %}
+			{% if data.socialTwitterSummaryImageId | length -%}
+			<meta property="twitter:image" content="{{ craft.simpleMeta.asset(data.socialTwitterSummaryImageId).url }}">
+			{% endif %}
+		{% case "summary_large_image" %}
+			{% if data.socialTwitterSummaryLargeImageId | length -%}
+			<meta property="twitter:image" content="{{ craft.simpleMeta.asset(data.socialTwitterSummaryLargeImageId).url }}">
+			{% endif %}
+		{% case "photo" %}	
+			{% if data.socialTwitterPhotoId | length -%}
+			<meta property="twitter:image" content="{{ craft.simpleMeta.asset(data.socialTwitterPhotoId).url }}">
+			{% endif %}
+		{% case "app" %}
+			{% if data.socialTwitterAppCountry | length %}
+				<meta property="twitter:app:country" content="{{ data.socialTwitterAppCountry }}">
+			{% endif %}
+			{% if data.socialTwitterAppIphoneName %}
+				<meta property="twitter:app:name:iphone" content="{{ data.socialTwitterAppIphoneName }}">
+			{% endif %}
+			{% if data.socialTwitterAppIphoneId %}
+				<meta property="twitter:app:id:iphone" content="{{ data.socialTwitterAppIphoneId }}">
+			{% endif %}
+			{% if data.socialTwitterAppIphoneUrl %}
+				<meta property="twitter:app:url:iphone" content="{{ data.socialTwitterAppIphoneUrl }}">
+			{% endif %}
+			{% if data.socialTwitterAppIpadName %}
+				<meta property="twitter:app:name:ipad" content="{{ data.socialTwitterAppIpadName }}">
+			{% endif %}
+			{% if data.socialTwitterAppIpadId %}
+				<meta property="twitter:app:id:ipad" content="{{ data.socialTwitterAppIpadId }}">
+			{% endif %}
+			{% if data.socialTwitterAppIpadUrl %}
+				<meta property="twitter:app:ur:ipad" content="{{ data.socialTwitterAppIpadUrl }}">
+			{% endif %}
+			{% if data.socialTwitterAppAndroidName %}
+				<meta property="twitter:app:name:googleplay" content="{{ data.socialTwitterAppAndroidName }}">
+			{% endif %}
+			{% if data.socialTwitterAppAndroidId %}
+				<meta property="twitter:app:id:googleplay" content="{{ data.socialTwitterAppAndroidId }}">
+			{% endif %}
+			{% if data.socialTwitterAppAndroidUrl %}
+				<meta property="twitter:app:url:googleplay" content="{{ data.socialTwitterAppAndroidUrl }}">
+			{% endif %}
+		{% case "product" %}	
+			{% if data.socialTwitterProductImageId | length -%}
+			<meta property="twitter:image" content="{{ craft.simpleMeta.asset(data.socialTwitterProductImageId).url }}">
+			{% endif %}
+			{% if data.socialTwitterProductData1 %}
+				<meta property="twitter:data1" content="{{ data.socialTwitterProductData1 }}">
+			{% endif %}
+			{% if data.socialTwitterProductLabel1 %}
+				<meta property="twitter:label1" content="{{ data.socialTwitterProductLabel1 }}">
+			{% endif %}
+			{% if data.socialTwitterProductData2 %}
+				<meta property="twitter:data2" content="{{ data.socialTwitterProductData2 }}">
+			{% endif %}
+			{% if data.socialTwitterProductLabel2 %}
+				<meta property="twitter:label2" content="{{ data.socialTwitterProductLabel2 }}">
+			{% endif %}
+	{% endswitch %}
 {% endspaceless %}
 {%- endmacro -%}
