@@ -1,1 +1,3 @@
-Simple Meta Title: {{ socialOGTitle }}
+{% import "_imports/simpleMeta" as meta -%}
+
+{{ meta.meta('og:title', socialOGTitle) }}

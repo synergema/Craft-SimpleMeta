@@ -1,0 +1,97 @@
+{# -- Standard meta tag -- #}
+{%- macro meta(property, content) -%}
+{% spaceless %}
+	{% if content | length %}
+		<meta property="{{ property }}" content="{{ content }}" />
+	{% endif %}
+{% endspaceless %}
+{%- endmacro -%}
+
+{# -- Any items that include assets - we need to parse the Asset ID to output its URL -- #}
+{%- macro metaAsset(property, content) -%}
+{% spaceless %}
+	{% if content | length %}
+		<meta property="{{ property }}" content="{{ craft.simpleMeta.asset( content ).url }}" />
+	{% endif %}
+{% endspaceless %}
+{%- endmacro -%}
+
+{# -- Open Graph Video -- #}
+{%- macro metaOGVideo(property, content, secure) -%}
+{% spaceless %}
+	
+		{% if content | length %}
+			<meta property="{{ property }}" content="{{ content }}" />
+		{% endif %}
+	
+{% endspaceless %}
+{%- endmacro -%}
+
+{# -- Twitter Card -- #}
+{%- macro metaObjectTwitterCard(entry) -%}
+{% spaceless %}
+	{% if entry is iterable %}
+		{% switch entry.socialTwitterType %}
+			{% case "summary" %}
+				{% if entry.socialTwitterSummaryImageId | length -%}
+				<meta property="twitter:image" content="{{ craft.simpleMeta.asset(entry.socialTwitterSummaryImageId).url }}">
+				{% endif %}
+			{% case "summary_large_image" %}
+				{% if entry.socialTwitterSummaryLargeImageId | length -%}
+				<meta property="twitter:image" content="{{ craft.simpleMeta.asset(entry.socialTwitterSummaryLargeImageId).url }}">
+				{% endif %}
+			{% case "photo" %}	
+				{% if entry.socialTwitterPhotoId | length -%}
+				<meta property="twitter:image" content="{{ craft.simpleMeta.asset(entry.socialTwitterPhotoId).url }}">
+				{% endif %}
+			{% case "app" %}
+				{% if entry.socialTwitterAppCountry | length %}
+					<meta property="twitter:app:country" content="{{ entry.socialTwitterAppCountry }}">
+				{% endif %}
+				{% if entry.socialTwitterAppIphoneName %}
+					<meta property="twitter:app:name:iphone" content="{{ entry.socialTwitterAppIphoneName }}">
+				{% endif %}
+				{% if entry.socialTwitterAppIphoneId %}
+					<meta property="twitter:app:id:iphone" content="{{ entry.socialTwitterAppIphoneId }}">
+				{% endif %}
+				{% if entry.socialTwitterAppIphoneUrl %}
+					<meta property="twitter:app:url:iphone" content="{{ entry.socialTwitterAppIphoneUrl }}">
+				{% endif %}
+				{% if entry.socialTwitterAppIpadName %}
+					<meta property="twitter:app:name:ipad" content="{{ entry.socialTwitterAppIpadName }}">
+				{% endif %}
+				{% if entry.socialTwitterAppIpadId %}
+					<meta property="twitter:app:id:ipad" content="{{ entry.socialTwitterAppIpadId }}">
+				{% endif %}
+				{% if entry.socialTwitterAppIpadUrl %}
+					<meta property="twitter:app:ur:ipad" content="{{ entry.socialTwitterAppIpadUrl }}">
+				{% endif %}
+				{% if entry.socialTwitterAppAndroidName %}
+					<meta property="twitter:app:name:googleplay" content="{{ entry.socialTwitterAppAndroidName }}">
+				{% endif %}
+				{% if entry.socialTwitterAppAndroidId %}
+					<meta property="twitter:app:id:googleplay" content="{{ entry.socialTwitterAppAndroidId }}">
+				{% endif %}
+				{% if entry.socialTwitterAppAndroidUrl %}
+					<meta property="twitter:app:url:googleplay" content="{{ entry.socialTwitterAppAndroidUrl }}">
+				{% endif %}
+			{% case "product" %}	
+				{% if entry.socialTwitterProductImageId | length -%}
+				<meta property="twitter:image" content="{{ craft.simpleMeta.asset(entry.socialTwitterProductImageId).url }}">
+				{% endif %}
+				{% if entry.socialTwitterProductData1 %}
+					<meta property="twitter:data1" content="{{ entry.socialTwitterProductData1 }}">
+				{% endif %}
+				{% if entry.socialTwitterProductLabel1 %}
+					<meta property="twitter:label1" content="{{ entry.socialTwitterProductLabel1 }}">
+				{% endif %}
+				{% if entry.socialTwitterProductData2 %}
+					<meta property="twitter:data2" content="{{ entry.socialTwitterProductData2 }}">
+				{% endif %}
+				{% if entry.socialTwitterProductLabel2 %}
+					<meta property="twitter:label2" content="{{ entry.socialTwitterProductLabel2 }}">
+				{% endif %}
+		{% endswitch %}
+	{% endif %}
+{% endspaceless %}
+{%- endmacro -%}
