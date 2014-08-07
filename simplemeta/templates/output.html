@@ -1,16 +1,17 @@
 {%- import "_imports/simpleMeta" as meta %}
 
-{{ meta.meta('title', seoTitle) }}
-{{ meta.meta('description', seoDescription) }}
-{{ meta.metaLink('canonical', seoCanonicalUrl) }}
+{{- meta.meta('title', seoTitle) }}
+{{- meta.meta('description', seoDescription) }}
+{{- meta.metaLink('canonical', seoCanonicalUrl) }}
 
-{{ meta.meta('og:type', socialOGType) }}
-{{ meta.meta('og:title', socialOGTitle) }}
-{{ meta.meta('og:description', socialOGDescription) }}
-{{ meta.metaAsset('og:image', socialOGImageId) }}
-{{ meta.metaObjectOpenGraph(_context) }}
+{{- meta.meta('og:type', socialOGType) }}
+{{- meta.meta('og:title', socialOGTitle) }}
+{{- meta.meta('og:description', socialOGDescription) }}
+{{- meta.metaAsset('og:image', socialOGImageId) }}
+{{- meta.metaObjectOpenGraph(_context) }}
+{{- meta.metaObjectOpenGraphMedia(_context) }}
 
-{{ meta.meta('twitter:card', socialTwitterType) }}
-{{ meta.meta('twitter:title', socialTwitterTitle) }}
-{{ meta.meta('twitter:description', socialTwitterDescription) }}
-{{ meta.metaObjectTwitterCard(_context) }}
+{{- meta.meta('twitter:card', socialTwitterType) }}
+{{- meta.meta('twitter:title', socialTwitterTitle) }}
+{{- meta.meta('twitter:description', socialTwitterDescription) }}
+{{- meta.metaObjectTwitterCard(_context) }}

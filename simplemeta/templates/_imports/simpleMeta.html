@@ -26,13 +26,40 @@
 {%- endmacro -%}
 
 {# -- Open Graph Video -- #}
-{%- macro metaOGVideo(property, content, secure) -%}
+{%- macro metaObjectOpenGraphMedia(data) -%}
 {% spaceless %}
-	
-		{% if content | length %}
-			<meta property="{{ property }}" content="{{ content }}" />
+	{# Video #}
+	{% if data.socialOGVideoInclude == true %}
+		{% if data.socialOGVideoEmbeddedUrl | length %}
+		<meta property="og:video" content="{{ data.socialOGVideoEmbeddedUrl }}">
+		<meta property="og:video:secure_url" content="{{ data.socialOGVideoEmbeddedUrl }}">
 		{% endif %}
-	
+		{% if data.socialOGVideoContentId | length -%}
+		<meta property="og:video" content="{{ craft.simpleMeta.asset( data.socialOGVideoContentId ).url }}">
+		{% endif %}
+		{% if data.socialOGVideoType %}
+		<meta property="og:video:type" content="{{ data.socialOGVideoType }}">
+		{% endif %}
+		{% if data.socialOGVideoWidth %}
+		<meta property="og:video:width" content="{{ data.socialOGVideoWidth }}">
+		{% endif %}
+		{% if data.socialOGVideoHeight %}
+		<meta property="og:video:height" content="{{ data.socialOGVideoHeight }}">
+		{% endif %}
+	{% endif %}
+	{# Audio #}
+	{% if data.socialOGAudioInclude == true %}
+		{% if data.socialOGAudioEmbeddedUrl | length %}
+		<meta property="og:audio" content="{{ data.socialOGAudioEmbeddedUrl }}">
+		{% endif %}
+		{% if data.socialOGAudioContentId | length -%}
+		<meta property="og:audio" content="{{ craft.simpleMeta.asset( data.socialOGAudioContentId ).url }}">
+		{% endif %}
+		{% if data.socialOGAudioType %}
+		<meta property="og:audio:type" content="{{ data.socialOGAudioType }}">
+		{% endif %}
+	{% endif %}
+
 {% endspaceless %}
 {%- endmacro -%}
 
