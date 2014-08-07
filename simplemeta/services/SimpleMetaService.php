@@ -114,6 +114,8 @@ class SimpleMetaService extends BaseApplicationComponent
 			if ($simpleMetaRecord)
 			{
 				$attr = $simpleMetaRecord->getAttributes();
+			} else {
+				$attr = SimpleMeta_SimpleMetaRecord::model()->getAttributes();
 			}
 
 			$templatesPath = craft()->path->getPluginsPath().'simplemeta/templates/';
