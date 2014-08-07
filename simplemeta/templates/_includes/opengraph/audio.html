@@ -8,27 +8,46 @@
 	<div class="content is-hidden">
 		<div class="child">
 			
-			{% if assetsSourceExists %}
-				{{ forms.elementSelect({
-					label: "Content"|t,
-					instructions: "Select an audio file",
-					elements: socialOGAudioContentElements,
-					id: handle~'socialOGAudioContentId',
-					name: handle~'[socialOGAudioContentId]',
-					elementType: elementType,
-					criteria: {
-						"kind":[],
-						"localeEnabled":null,
-						"locale":"en_us"
-					},
-					sourceElementId: socialOGAudioContentId,
-					jsClass: 'Craft.AssetSelectInput',
-					addButtonLabel: 'Select Audio File',
-					limit: 1,
-				}) }}
-			{% else %}
-				<p class="error">No assets sources currently exist. <a href="{{ newAssetsSourceUrl }}">Create one now...</a></p>
-			{% endif %}
+			{{ forms.textField({
+				label: "Embedded Audio"|t,
+				instructions: "Include full URL if audio is embedded."|t,
+				id   : handle~'socialOGAudioEmbeddedUrl',
+				name : handle~'[socialOGAudioEmbeddedUrl]',
+				value: socialOGAudioEmbeddedUrl,
+			}) }}
+			
+			<div class="field">
+				<div class="heading">
+					<label for="">Local Audio</label>
+					<div class="instructions">
+						<p>Attach file if audio is hosted on your server.</p>
+					</div>
+				</div>
+				<div class="input">
+					{% if assetsSourceExists %}
+						{{ forms.elementSelect({
+							label: "Content"|t,
+							instructions: "Select an audio file",
+							elements: socialOGAudioContentElements,
+							id: handle~'socialOGAudioContentId',
+							name: handle~'[socialOGAudioContentId]',
+							elementType: elementType,
+							criteria: {
+								"kind":[],
+								"localeEnabled":null,
+								"locale":"en_us"
+							},
+							sourceElementId: socialOGAudioContentId,
+							jsClass: 'Craft.AssetSelectInput',
+							addButtonLabel: 'Select Audio File',
+							limit: 1,
+						}) }}
+					{% else %}
+						<p class="error">No assets sources currently exist. <a href="{{ newAssetsSourceUrl }}">Create one now...</a></p>
+					{% endif %}
+				</div>
+			</div>
+			
 			{{ forms.lightswitchField({
 				label: "Include secure URL"|t,
 				instructions: "Secure (https) URL to audio file",

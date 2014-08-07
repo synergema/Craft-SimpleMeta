@@ -1,0 +1,54 @@
+<div id="{{ handle~'socialOGType' }}_video_episode" class="block is-hidden">
+	{{ forms.textField({
+		label: "Actor"|t,
+		instructions: "Actor in the episode."|t,
+		id   : handle~'socialOGVideoEpisodeActor',
+		name : handle~'[socialOGVideoEpisodeActor]',
+		value: socialOGVideoEpisodeActor,
+	}) }}
+	{{ forms.textField({
+		label: "Role"|t,
+		instructions: "The role they played."|t,
+		id   : handle~'socialOGVideoEpisodeActorRole',
+		name : handle~'[socialOGVideoEpisodeActorRole]',
+		value: socialOGVideoEpisodeActorRole,
+	}) }}
+	{{ forms.textField({
+		label: "Director"|t,
+		instructions: "Director of the episode."|t,
+		id   : handle~'socialOGVideoEpisodeDirector',
+		name : handle~'[socialOGVideoEpisodeDirector]',
+		value: socialOGVideoEpisodeDirector,
+	}) }}
+	{{ forms.textField({
+		label: "Writer"|t,
+		instructions: "Writers of the episode."|t,
+		id   : handle~'socialOGVideoEpisodeWriter',
+		name : handle~'[socialOGVideoEpisodeWriter]',
+		value: socialOGVideoEpisodeWriter,
+	}) }}
+	{{ forms.textField({
+		label: "Duration"|t,
+		instructions: "The episode&rsquo;s length in seconds."|t,
+		id   : handle~'socialOGVideoEpisodeDuration',
+		name : handle~'[socialOGVideoEpisodeDuration]',
+		value: socialOGVideoEpisodeDuration,
+		size: "5",
+	}) }}
+	{#
+	{{ forms.dateField({
+		label: ""|t,
+		instructions: ""|t,
+		id   : handle~'socialOGVideoEpisodeReleaseDate',
+		name : handle~'[socialOGVideoEpisodeReleaseDate]',
+		value: socialOGVideoEpisodeReleaseDate,
+	}) }}
+	#}
+	{{ forms.textField({
+		label: "Tag"|t,
+		instructions: "Tag words associated with this episode."|t,
+		id   : handle~'socialOGVideoEpisodeTag',
+		name : handle~'[socialOGVideoEpisodeTag]',
+		value: socialOGVideoEpisodeTag,
+	}) }}
+</div>

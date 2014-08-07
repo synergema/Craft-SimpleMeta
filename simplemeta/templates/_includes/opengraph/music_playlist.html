@@ -1,0 +1,30 @@
+<div id="{{ handle~'socialOGType' }}_music_playlist" class="block is-hidden">
+	{{ forms.textField({
+		label: "Song"|t,
+		instructions: "The song on this playlist."|t,
+		id   : handle~'socialOGMusicPlaylistSong',
+		name : handle~'[socialOGMusicPlaylistSong]',
+		value: socialOGMusicPlaylistSong,
+	}) }}
+	{{ forms.textField({
+		label: "Disc"|t,
+		id   : handle~'socialOGMusicPlaylistSongDisc',
+		name : handle~'[socialOGMusicPlaylistSongDisc]',
+		value: socialOGMusicPlaylistSongDisc,
+		size: "5",
+	}) }}
+	{{ forms.textField({
+		label: "Track"|t,
+		id   : handle~'socialOGMusicPlaylistSongTrack',
+		name : handle~'[socialOGMusicPlaylistSongTrack]',
+		value: socialOGMusicPlaylistSongTrack,
+		size: "5",
+	}) }}
+	{{ forms.textField({
+		label: "Creator"|t,
+		instructions: "The creator of this playlist."|t,
+		id   : handle~'socialOGMusicPlaylistCreator',
+		name : handle~'[socialOGMusicPlaylistCreator]',
+		value: socialOGMusicPlaylistCreator,
+	}) }}
+</div>
