@@ -35,15 +35,13 @@
 		value: socialOGVideoEpisodeDuration,
 		size: "5",
 	}) }}
-	{#
 	{{ forms.dateField({
-		label: ""|t,
+		label: "Release Date"|t,
 		instructions: ""|t,
 		id   : handle~'socialOGVideoEpisodeReleaseDate',
 		name : handle~'[socialOGVideoEpisodeReleaseDate]',
-		value: socialOGVideoEpisodeReleaseDate,
+		value: (socialOGVideoEpisodeReleaseDate ? socialOGVideoEpisodeReleaseDate : null),
 	}) }}
-	#}
 	{{ forms.textField({
 		label: "Tag"|t,
 		instructions: "Tag words associated with this episode."|t,

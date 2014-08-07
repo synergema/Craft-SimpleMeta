@@ -35,15 +35,13 @@
 		value: socialOGVideoMovieDuration,
 		size: "5",
 	}) }}
-	{#
 	{{ forms.dateField({
-		label: ""|t,
-		instructions: ""|t,
+		label: "Release Date"|t,
+		instructions: "The date the album was released."|t,
 		id   : handle~'socialOGVideoMovieReleaseDate',
 		name : handle~'[socialOGVideoMovieReleaseDate]',
-		value: socialOGVideoEpisodeReleaseDate,
+		value: (socialOGVideoMovieReleaseDate ? socialOGVideoMovieReleaseDate : null),
 	}) }}
-	#}
 	{{ forms.textField({
 		label: "Tag"|t,
 		instructions: "Tag words associated with this movie."|t,

@@ -35,15 +35,13 @@
 		value: socialOGVideoTVShowDuration,
 		size: "5",
 	}) }}
-	{#
 	{{ forms.dateField({
-		label: ""|t,
-		instructions: ""|t,
+		label: "Release Date"|t,
+		instructions: "The date the album was released."|t,
 		id   : handle~'socialOGVideoTVShowReleaseDate',
 		name : handle~'[socialOGVideoTVShowReleaseDate]',
-		value: socialOGVideoTVShowReleaseDate,
+		value: (socialOGVideoTVShowReleaseDate ? socialOGVideoTVShowReleaseDate : null),
 	}) }}
-	#}
 	{{ forms.textField({
 		label: "Tag"|t,
 		instructions: "Tag words associated with this tv show."|t,

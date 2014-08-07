@@ -25,7 +25,7 @@ class SimpleMetaService extends BaseApplicationComponent
 		$simpleMetaRecord = SimpleMeta_SimpleMetaRecord::model()->findByAttributes(array(
 			'elementId' => $elementId,
 			'handle'    => $handle,
-			));
+		));
 
 		if (!$simpleMetaRecord)
 		{
@@ -34,15 +34,36 @@ class SimpleMetaService extends BaseApplicationComponent
 			$attr['handle']    = $handle;
 		}
 
-		$attr['socialOGImageId']                  = (!empty($attr['socialOGImageId']) ? $attr['socialOGImageId'][0] : null);
-		$attr['socialOGAudioContentId']           = (!empty($attr['socialOGAudioContentId']) ? $attr['socialOGAudioContentId'][0] : null);
-		$attr['socialOGVideoContentId']           = (!empty($attr['socialOGVideoContentId']) ? $attr['socialOGVideoContentId'][0] : null);
-		$attr['socialTwitterGalleryImagesId']     = (!empty($attr['socialTwitterGalleryImagesId']) ? $attr['socialTwitterGalleryImagesId'][0] : null);
-		$attr['socialTwitterPhotoId']             = (!empty($attr['socialTwitterPhotoId']) ? $attr['socialTwitterPhotoId'][0] : null);
-		$attr['socialTwitterProductImageId']      = (!empty($attr['socialTwitterProductImageId']) ? $attr['socialTwitterProductImageId'][0] : null);
-		$attr['socialTwitterSummaryImageId']      = (!empty($attr['socialTwitterSummaryImageId']) ? $attr['socialTwitterSummaryImageId'][0] : null);
-		$attr['socialTwitterSummaryLargeImageId'] = (!empty($attr['socialTwitterSummaryLargeImageId']) ? $attr['socialTwitterSummaryLargeImageId'][0] : null);
+		/* Assets */
+		$assetFields = array(
+			'socialOGImageId',
+			'socialOGAudioContentId',
+			'socialOGVideoContentId',
+			'socialTwitterGalleryImagesId',
+			'socialTwitterPhotoId',
+			'socialTwitterProductImageId',
+			'socialTwitterSummaryImageId',
+			'socialTwitterSummaryLargeImageId',
+		);
 
+		foreach ($assetFields as $field) {
+			$attr[$field] = (!empty($attr[$field]) ? $attr[$field][0] : null);
+		}
+
+		/* DateTime */
+		$dateFields = array(
+			'socialOGMusicAlbumReleaseDate',
+			'socialOGVideoMovieReleaseDate',
+			'socialOGVideoEpisodeReleaseDate',
+			'socialOGVideoTVShowReleaseDate',
+			'socialOGVideoOtherReleaseDate',
+		);
+
+		foreach ($dateFields as $field) {
+			$attr[$field] = (($date = $attr[$field]) ? DateTime::createFromString($date, craft()->timezone) : null);
+		}
+
+		/* Set Attributes */
 		$simpleMetaRecord->setAttributes($attr, false);
 
 		return $simpleMetaRecord->save();

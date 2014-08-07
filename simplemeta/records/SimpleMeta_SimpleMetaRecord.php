@@ -57,14 +57,16 @@ class SimpleMeta_SimpleMetaRecord extends BaseRecord
 					'socialOGDescription'              => AttributeType::String,
 					'socialOGType'                     => array(AttributeType::Enum, 'values' => $openGraphTypes, 'default' => $openGraphTypes[0]),
 					// OG Video
-					'socialOGVideoContentSecure'       => AttributeType::String,
+					'socialOGVideoInclude'             => AttributeType::Number,
+					'socialOGVideoContentSecure'       => AttributeType::Number,
 					'socialOGVideoEmbeddedUrl'         => AttributeType::String,
 					'socialOGVideoUrl'                 => AttributeType::String,
 					'socialOGVideoType'                => AttributeType::String,
 					'socialOGVideoWidth'               => AttributeType::String,
 					'socialOGVideoHeight'              => AttributeType::String,
 					// OG Audio
-					'socialOGAudioContentSecure'       => AttributeType::String,
+					'socialOGAudioInclude'             => AttributeType::Number,
+					'socialOGAudioContentSecure'       => AttributeType::Number,
 					'socialOGAudioEmbeddedUrl'         => AttributeType::String,
 					'socialOGAudioType'                => AttributeType::String,
 					// Article
@@ -94,54 +96,54 @@ class SimpleMeta_SimpleMetaRecord extends BaseRecord
 					'socialOGProfileUsername'          => AttributeType::String,
 					'socialOGProfileGender'            => AttributeType::String,
 					// Video - Movie
-					'socialOGVideoMovieActor'          => AttributeType::String,       
-					'socialOGVideoMovieActorRole'      => AttributeType::String,    
-					'socialOGVideoMovieDirector'       => AttributeType::String,     
-					'socialOGVideoMovieWriter'         => AttributeType::String,       
-					'socialOGVideoMovieDuration'       => AttributeType::String,     
-					'socialOGVideoMovieRelaseDate'     => AttributeType::String, // DateTime
-					'socialOGVideoMovieTag'            => AttributeType::String,          
+					'socialOGVideoMovieActor'          => AttributeType::String,
+					'socialOGVideoMovieActorRole'      => AttributeType::String,
+					'socialOGVideoMovieDirector'       => AttributeType::String,
+					'socialOGVideoMovieWriter'         => AttributeType::String,
+					'socialOGVideoMovieDuration'       => AttributeType::String,
+					'socialOGVideoMovieReleaseDate'    => AttributeType::DateTime, // DateTime
+					'socialOGVideoMovieTag'            => AttributeType::String,
 					// Video - Episode
-					'socialOGVideoEpisodeActor'        => AttributeType::String,      
-					'socialOGVideoEpisodeActorRole'    => AttributeType::String,  
-					'socialOGVideoEpisodeDirector'     => AttributeType::String,  
-					'socialOGVideoEpisodeWriter'       => AttributeType::String,    
-					'socialOGVideoEpisodeDuration'     => AttributeType::String,  
-					'socialOGVideoEpisodeReleaseDate'  => AttributeType::String, // DateTime
-					'socialOGVideoEpisodeTag'          => AttributeType::String,      
-					'socialOGVideoEpisodeSeries'       => AttributeType::String,     
+					'socialOGVideoEpisodeActor'        => AttributeType::String,
+					'socialOGVideoEpisodeActorRole'    => AttributeType::String,
+					'socialOGVideoEpisodeDirector'     => AttributeType::String,
+					'socialOGVideoEpisodeWriter'       => AttributeType::String,
+					'socialOGVideoEpisodeDuration'     => AttributeType::String,
+					'socialOGVideoEpisodeReleaseDate'  => AttributeType::DateTime, // DateTime
+					'socialOGVideoEpisodeTag'          => AttributeType::String,
+					'socialOGVideoEpisodeSeries'       => AttributeType::String,
 					// Video - TV Show
-					'socialOGVideoTVShowActor'         => AttributeType::String,        
-					'socialOGVideoTVShowActorRole'     => AttributeType::String,    
-					'socialOGVideoTVShowDirector'      => AttributeType::String,     
-					'socialOGVideoTVShowWriter'        => AttributeType::String,       
-					'socialOGVideoTVShowDuration'      => AttributeType::String,      
-					'socialOGVideoTVShowRelaseDate'    => AttributeType::String, // DateTime
-					'socialOGVideoTVShowTag'           => AttributeType::String,          
+					'socialOGVideoTVShowActor'         => AttributeType::String,
+					'socialOGVideoTVShowActorRole'     => AttributeType::String,
+					'socialOGVideoTVShowDirector'      => AttributeType::String,
+					'socialOGVideoTVShowWriter'        => AttributeType::String,
+					'socialOGVideoTVShowDuration'      => AttributeType::String,
+					'socialOGVideoTVShowReleaseDate'    => AttributeType::DateTime, // DateTime
+					'socialOGVideoTVShowTag'           => AttributeType::String,
 					// Video - Other
-					'socialOGVideoOtherActor'          => AttributeType::String,      
-					'socialOGVideoOtherActorRole'      => AttributeType::String,    
-					'socialOGVideoOtherDirector'       => AttributeType::String,     
-					'socialOGVideoOtherWriter'         => AttributeType::String,       
-					'socialOGVideoOtherDuration'       => AttributeType::String,    
+					'socialOGVideoOtherActor'          => AttributeType::String,
+					'socialOGVideoOtherActorRole'      => AttributeType::String,
+					'socialOGVideoOtherDirector'       => AttributeType::String,
+					'socialOGVideoOtherWriter'         => AttributeType::String,
+					'socialOGVideoOtherDuration'       => AttributeType::String,
 					'socialOGVideoOtherRelaseDate'     => AttributeType::String,
 					'socialOGVideoOtherTag'            => AttributeType::String,
 					// Website
 					'socialOGWebsite'                  => AttributeType::String,
-				
-				// Twitter	
+
+				// Twitter
 				'socialTwitterTitle'       => AttributeType::String,
 				'socialTwitterType'        => array(AttributeType::Enum, 'values' => $twitterCardTypes, 'default' => $twitterCardTypes[0]),
 				'socialTwitterDescription' => AttributeType::String,
 					// Twiter App
 					'socialTwitterAppCountry'     => AttributeType::String,
-					'socialTwitterAppIphoneName'  => array(AttributeType::String, 'default' => null),
+					'socialTwitterAppIphoneName'  => AttributeType::String,
 					'socialTwitterAppIphoneId'    => AttributeType::String,
 					'socialTwitterAppIphoneUrl'   => AttributeType::String,
-					'socialTwitterAppIpadName'    => array(AttributeType::String, 'default' => null),
+					'socialTwitterAppIpadName'    => AttributeType::String,
 					'socialTwitterAppIpadId'      => AttributeType::String,
 					'socialTwitterAppIpadUrl'     => AttributeType::String,
-					'socialTwitterAppAndroidName' => array(AttributeType::String, 'default' => null),
+					'socialTwitterAppAndroidName' => AttributeType::String,
 					'socialTwitterAppAndroidId'   => AttributeType::String,
 					'socialTwitterAppAndroidUrl'  => AttributeType::String,
 					// Twitter Product
@@ -149,7 +151,7 @@ class SimpleMeta_SimpleMetaRecord extends BaseRecord
 					'socialTwitterProductLabel1'  => AttributeType::String,
 					'socialTwitterProductData2'   => AttributeType::String,
 					'socialTwitterProductLabel2'  => AttributeType::String,
-				
+
 				// SEO
 				'seoTitle'           => AttributeType::String,
 				'seoDescription'     => AttributeType::String,
