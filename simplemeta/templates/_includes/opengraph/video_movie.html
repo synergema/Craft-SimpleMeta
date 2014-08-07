@@ -1,0 +1,54 @@
+<div id="{{ handle~'socialOGType' }}_video_movie" class="block is-hidden">
+	{{ forms.textField({
+		label: "Actor"|t,
+		instructions: "Actor in the movie."|t,
+		id   : handle~'socialOGVideoMovieActor',
+		name : handle~'[socialOGVideoMovieActor]',
+		value: socialOGVideoMovieActor,
+	}) }}
+	{{ forms.textField({
+		label: "Role"|t,
+		instructions: "The role they played."|t,
+		id   : handle~'socialOGVideoMovieActorRole',
+		name : handle~'[socialOGVideoMovieActorRole]',
+		value: socialOGVideoMovieActorRole,
+	}) }}
+	{{ forms.textField({
+		label: "Director"|t,
+		instructions: "Director of the movie."|t,
+		id   : handle~'socialOGVideoMovieDirector',
+		name : handle~'[socialOGVideoMovieDirector]',
+		value: socialOGVideoMovieDirector,
+	}) }}
+	{{ forms.textField({
+		label: "Writer"|t,
+		instructions: "Writers of the movie."|t,
+		id   : handle~'socialOGVideoMovieWriter',
+		name : handle~'[socialOGVideoMovieWriter]',
+		value: socialOGVideoMovieWriter,
+	}) }}
+	{{ forms.textField({
+		label: "Duration"|t,
+		instructions: "The movie&rsquo;s length in seconds."|t,
+		id   : handle~'socialOGVideoMovieDuration',
+		name : handle~'[socialOGVideoMovieDuration]',
+		value: socialOGVideoMovieDuration,
+		size: "5",
+	}) }}
+	{#
+	{{ forms.dateField({
+		label: ""|t,
+		instructions: ""|t,
+		id   : handle~'socialOGVideoMovieReleaseDate',
+		name : handle~'[socialOGVideoMovieReleaseDate]',
+		value: socialOGVideoEpisodeReleaseDate,
+	}) }}
+	#}
+	{{ forms.textField({
+		label: "Tag"|t,
+		instructions: "Tag words associated with this movie."|t,
+		id   : handle~'socialOGVideoMovieTag',
+		name : handle~'[socialOGVideoMovieTag]',
+		value: socialOGVideoMovieTag,
+	}) }}
+</div>

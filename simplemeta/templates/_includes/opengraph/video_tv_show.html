@@ -1,0 +1,54 @@
+<div id="{{ handle~'socialOGType' }}_video_tv_show" class="block is-hidden">
+	{{ forms.textField({
+		label: "Actor"|t,
+		instructions: "Actor in the tv show."|t,
+		id   : handle~'socialOGVideoTVShowActor',
+		name : handle~'[socialOGVideoTVShowActor]',
+		value: socialOGVideoTVShowActor,
+	}) }}
+	{{ forms.textField({
+		label: "Role"|t,
+		instructions: "The role they played."|t,
+		id   : handle~'socialOGVideoTVShowActorRole',
+		name : handle~'[socialOGVideoTVShowActorRole]',
+		value: socialOGVideoTVShowActorRole,
+	}) }}
+	{{ forms.textField({
+		label: "Director"|t,
+		instructions: "Director of the tv show."|t,
+		id   : handle~'socialOGVideoTVShowDirector',
+		name : handle~'[socialOGVideoTVShowDirector]',
+		value: socialOGVideoTVShowDirector,
+	}) }}
+	{{ forms.textField({
+		label: "Writer"|t,
+		instructions: "Writers of the tv show."|t,
+		id   : handle~'socialOGVideoTVShowWriter',
+		name : handle~'[socialOGVideoTVShowWriter]',
+		value: socialOGVideoTVShowWriter,
+	}) }}
+	{{ forms.textField({
+		label: "Duration"|t,
+		instructions: "The tv show&rsquo;s length in seconds."|t,
+		id   : handle~'socialOGVideoTVShowDuration',
+		name : handle~'[socialOGVideoTVShowDuration]',
+		value: socialOGVideoTVShowDuration,
+		size: "5",
+	}) }}
+	{#
+	{{ forms.dateField({
+		label: ""|t,
+		instructions: ""|t,
+		id   : handle~'socialOGVideoTVShowReleaseDate',
+		name : handle~'[socialOGVideoTVShowReleaseDate]',
+		value: socialOGVideoTVShowReleaseDate,
+	}) }}
+	#}
+	{{ forms.textField({
+		label: "Tag"|t,
+		instructions: "Tag words associated with this tv show."|t,
+		id   : handle~'socialOGVideoTVShowTag',
+		name : handle~'[socialOGVideoTVShowTag]',
+		value: socialOGVideoTVShowTag,
+	}) }}
+</div>
