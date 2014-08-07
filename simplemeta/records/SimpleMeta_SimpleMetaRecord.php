@@ -126,7 +126,7 @@ class SimpleMeta_SimpleMetaRecord extends BaseRecord
 					'socialOGVideoOtherDirector'       => AttributeType::String,
 					'socialOGVideoOtherWriter'         => AttributeType::String,
 					'socialOGVideoOtherDuration'       => AttributeType::String,
-					'socialOGVideoOtherRelaseDate'     => AttributeType::String,
+					'socialOGVideoOtherReleaseDate'     => AttributeType::DateTime, // DateTime
 					'socialOGVideoOtherTag'            => AttributeType::String,
 					// Website
 					'socialOGWebsite'                  => AttributeType::String,
