@@ -120,7 +120,7 @@ $(document).ready(function() {
 
 	showHide.init();
 
-	//  $$$$$$$$\                                               $$\ 
+	//  $$$$$$$$\                                               $$\
 	//  $$  _____|                                              $$ |
 	//  $$ |      $$\   $$\  $$$$$$\   $$$$$$\  $$$$$$$\   $$$$$$$ |
 	//  $$$$$\    \$$\ $$  |$$  __$$\  \____$$\ $$  __$$\ $$  __$$ |
@@ -128,22 +128,38 @@ $(document).ready(function() {
 	//  $$ |       $$  $$<  $$ |  $$ |$$  __$$ |$$ |  $$ |$$ |  $$ |
 	//  $$$$$$$$\ $$  /\$$\ $$$$$$$  |\$$$$$$$ |$$ |  $$ |\$$$$$$$ |
 	//  \________|\__/  \__|$$  ____/  \_______|\__|  \__| \_______|
-	//                      $$ |                                    
-	//                      $$ |                                    
-	//                      \__|                                    
+	//                      $$ |
+	//                      $$ |
+	//                      \__|
 
 	var expandFields = {
 
 		init: function() {
 			this.bindUIActions();
+			this.onLoadExpand();
 		},
 
 		bindUIActions: function() {
 			$('body').on('click', '.lightswitch', this.expandHidden );
 		},
 
-		expandHidden: function() {
-			var $this = $(this),
+		onLoadExpand: function() {
+			var extenze = $('.expand'),
+				lightswitch
+			;
+
+			extenze.each(function( index ) {
+				lightswitch = $(this).find('.lightswitch.on');
+
+				if (lightswitch) {
+					expandFields.expandHidden(event, lightswitch);
+				};
+
+			});
+		},
+
+		expandHidden: function(event, el) {
+			var $this = (el === undefined ? $(this) : el),
 				lightswitch = $this.closest('.lightswitch'),
 				parent      = $this.closest('.field'),
 				content     = parent.next('.content')
