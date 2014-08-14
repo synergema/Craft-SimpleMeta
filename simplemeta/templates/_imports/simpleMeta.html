@@ -1,8 +1,8 @@
 {# -- Standard meta tag -- #}
 {%- macro meta(property, content) -%}
 {% spaceless %}
-	{% if content | length %}
-		<meta property="{{ property }}" content="{{ content }}" />
+	{% if content | length -%}
+	<meta property="{{ property }}" content="{{ content }}" />
 	{% endif %}
 {% endspaceless %}
 {%- endmacro -%}
@@ -11,7 +11,7 @@
 {%- macro metaLink(property, content) -%}
 {% spaceless %}
 	{% if content | length %}
-		<link rel="{{ property }}" content="{{ content }}" />
+	<link rel="{{ property }}" content="{{ content }}" />
 	{% endif %}
 {% endspaceless %}
 {%- endmacro -%}
@@ -20,35 +20,33 @@
 {%- macro metaAsset(property, content) -%}
 {% spaceless %}
 	{% if content | length %}
-		<meta property="{{ property }}" content="{{ craft.simpleMeta.asset( content ).url }}" />
+	<meta property="{{ property }}" content="{{ craft.simpleMeta.asset( content ).url }}" />
 	{% endif %}
 {% endspaceless %}
 {%- endmacro -%}
 
 {# -- Open Graph Video -- #}
 {%- macro metaObjectOpenGraphMedia(data) -%}
-{% spaceless %}
 	{# Video #}
-	{% if data.socialOGVideoInclude == true %}
-		{% if data.socialOGVideoEmbeddedUrl | length %}
-		<meta property="og:video" content="{{ data.socialOGVideoEmbeddedUrl }}">
-		<meta property="og:video:secure_url" content="{{ data.socialOGVideoEmbeddedUrl }}">
+	{%- if data.socialOGVideoInclude == true -%}
+		{% if data.socialOGVideoEmbeddedUrl | length -%}
+			{% spaceless %}<meta property="og:video" content="{{ data.socialOGVideoEmbeddedUrl }}" />{% endspaceless %}
 		{% endif %}
-		{% if data.socialOGVideoContentId | length -%}
-		<meta property="og:video" content="{{ craft.simpleMeta.asset( data.socialOGVideoContentId ).url }}">
+		{% if data.socialOGVideoContentId | length %}
+			{% spaceless %}<meta property="og:video" content="{{ craft.simpleMeta.asset( data.socialOGVideoContentId ).url }}" />{% endspaceless %}
 		{% endif %}
 		{% if data.socialOGVideoType %}
-		<meta property="og:video:type" content="{{ data.socialOGVideoType }}">
+			{% spaceless %}<meta property="og:video:type" content="{{ data.socialOGVideoType }}" />{% endspaceless %}
 		{% endif %}
 		{% if data.socialOGVideoWidth %}
-		<meta property="og:video:width" content="{{ data.socialOGVideoWidth }}">
+			{% spaceless %}<meta property="og:video:width" content="{{ data.socialOGVideoWidth }}" />{% endspaceless %}
 		{% endif %}
 		{% if data.socialOGVideoHeight %}
-		<meta property="og:video:height" content="{{ data.socialOGVideoHeight }}">
+			{% spaceless %}<meta property="og:video:height" content="{{ data.socialOGVideoHeight }}" />{% endspaceless %}
 		{% endif %}
-	{% endif %}
+	{%- endif -%}
 	{# Audio #}
-	{% if data.socialOGAudioInclude == true %}
+	{% if data.socialOGAudioInclude == true -%}
 		{% if data.socialOGAudioEmbeddedUrl | length %}
 		<meta property="og:audio" content="{{ data.socialOGAudioEmbeddedUrl }}">
 		{% endif %}
@@ -58,34 +56,32 @@
 		{% if data.socialOGAudioType %}
 		<meta property="og:audio:type" content="{{ data.socialOGAudioType }}">
 		{% endif %}
-	{% endif %}
-
-{% endspaceless %}
+	{%- endif -%}
 {%- endmacro -%}
 
 {# -- Twitter Card -- #}
 {%- macro metaObjectTwitterCard(data) -%}
 {% spaceless %}
-	{% switch data.socialTwitterType %}
-		{% case "summary" %}
+	{%- switch data.socialTwitterType -%}
+		{% case "summary" -%}
 			{% if data.socialTwitterSummaryImageId | length -%}
 			<meta property="twitter:image" content="{{ craft.simpleMeta.asset(data.socialTwitterSummaryImageId).url }}">
-			{% endif %}
+			{%- endif %}
 		{% case "summary_large_image" %}
 			{% if data.socialTwitterSummaryLargeImageId | length -%}
 			<meta property="twitter:image" content="{{ craft.simpleMeta.asset(data.socialTwitterSummaryLargeImageId).url }}">
-			{% endif %}
+			{%- endif %}
 		{% case "photo" %}	
 			{% if data.socialTwitterPhotoId | length -%}
 			<meta property="twitter:image" content="{{ craft.simpleMeta.asset(data.socialTwitterPhotoId).url }}">
-			{% endif %}
+			{%- endif %}
 		{% case "app" %}
-			{% if data.socialTwitterAppCountry | length %}
+			{% if data.socialTwitterAppCountry | length -%}
 				<meta property="twitter:app:country" content="{{ data.socialTwitterAppCountry }}">
-			{% endif %}
-			{% if data.socialTwitterAppIphoneName %}
+			{%- endif %}
+			{% if data.socialTwitterAppIphoneName -%}
 				<meta property="twitter:app:name:iphone" content="{{ data.socialTwitterAppIphoneName }}">
-			{% endif %}
+			{%- endif %}
 			{% if data.socialTwitterAppIphoneId %}
 				<meta property="twitter:app:id:iphone" content="{{ data.socialTwitterAppIphoneId }}">
 			{% endif %}
@@ -125,101 +121,6 @@
 			{% endif %}
 			{% if data.socialTwitterProductLabel2 %}
 				<meta property="twitter:label2" content="{{ data.socialTwitterProductLabel2 }}">
-			{% endif %}
-	{% endswitch %}
-{% endspaceless %}
-{%- endmacro -%}
-
-{%- macro metaObjectOpenGraph(data) -%}
-{% spaceless %}
-	{% switch data.socialOGType %}
-		{% case "video.movie" %}
-			{% if data.socialOGVideoMovieActor %}
-				<meta property="video:actor" content="{{ data.socialOGVideoMovieActor }}">
-			{% endif %}
-			{% if data.socialOGVideoMovieActorRole %}
-				<meta property="video:actor:role" content="{{ data.socialOGVideoMovieActorRole }}">
-			{% endif %}
-			{% if data.socialOGVideoMovieDirector %}
-				<meta property="video:director" content="{{ data.socialOGVideoMovieDirector }}">
-			{% endif %}
-			{% if data.socialOGVideoMovieWriter %}
-				<meta property="video:writer" content="{{ data.socialOGVideoMovieWriter }}">
-			{% endif %}
-			{% if data.socialOGVideoMovieDuration %}
-				<meta property="video:duration" content="{{ data.socialOGVideoMovieDuration }}">
-			{% endif %}
-			{% if data.socialOGVideoMovieReleaseDate %}
-				<meta property="video:release_date" content="{{ data.socialOGVideoMovieReleaseDate }}">
-			{% endif %}
-			{% if data.socialOGVideoMovieTag %}
-				<meta property="video:tag" content="{{ data.socialOGVideoMovieTag }}">
-			{% endif %}
-		{% case "video.episode" %}
-			{% if data.socialOGVideoEpisodeActor %}
-				<meta property="video:actor" content="{{ data.socialOGVideoEpisodeActor }}">
-			{% endif %}
-			{% if data.socialOGVideoEpisodeActorRole %}
-				<meta property="video:actor:role" content="{{ data.socialOGVideoEpisodeActorRole }}">
-			{% endif %}
-			{% if data.socialOGVideoEpisodeDirector %}
-				<meta property="video:director" content="{{ data.socialOGVideoEpisodeDirector }}">
-			{% endif %}
-			{% if data.socialOGVideoEpisodeWriter %}
-				<meta property="video:writer" content="{{ data.socialOGVideoEpisodeWriter }}">
-			{% endif %}
-			{% if data.socialOGVideoEpisodeDuration %}
-				<meta property="video:duration" content="{{ data.socialOGVideoEpisodeDuration }}">
-			{% endif %}
-			{% if data.socialOGVideoEpisodeReleaseDate %}
-				<meta property="video:release_date" content="{{ data.socialOGVideoEpisodeReleaseDate }}">
-			{% endif %}
-			{% if data.socialOGVideoEpisodeTag %}
-				<meta property="video:tag" content="{{ data.socialOGVideoEpisodeTag }}">
-			{% endif %}
-		{% case "video.tv_show" %}
-			{% if data.socialOGVideoTVShowActor %}
-				<meta property="video:actor" content="{{ data.socialOGVideoTVShowActor }}">
-			{% endif %}
-			{% if data.socialOGVideoTVShowActorRole %}
-				<meta property="video:actor:role" content="{{ data.socialOGVideoTVShowActorRole }}">
-			{% endif %}
-			{% if data.socialOGVideoTVShowDirector %}
-				<meta property="video:director" content="{{ data.socialOGVideoTVShowDirector }}">
-			{% endif %}
-			{% if data.socialOGVideoTVShowWriter %}
-				<meta property="video:writer" content="{{ data.socialOGVideoTVShowWriter }}">
-			{% endif %}
-			{% if data.socialOGVideoTVShowDuration %}
-				<meta property="video:duration" content="{{ data.socialOGVideoTVShowDuration }}">
-			{% endif %}
-			{% if data.socialOGVideoTVShowReleaseDate %}
-				<meta property="video:release_date" content="{{ data.socialOGVideoTVShowReleaseDate }}">
-			{% endif %}
-			{% if data.socialOGVideoTVShowTag %}
-				<meta property="video:tag" content="{{ data.socialOGVideoTVShowTag }}">
-			{% endif %}
-		{% case "video.other" %}
-			{% if data.socialOGVideoOtherActor %}
-				<meta property="video:actor" content="{{ data.socialOGVideoOtherActor }}">
-			{% endif %}
-			{% if data.socialOGVideoOtherActorRole %}
-				<meta property="video:actor:role" content="{{ data.socialOGVideoOtherActorRole }}">
-			{% endif %}
-			{% if data.socialOGVideoOtherDirector %}
-				<meta property="video:director" content="{{ data.socialOGVideoOtherDirector }}">
-			{% endif %}
-			{% if data.socialOGVideoOtherWriter %}
-				<meta property="video:writer" content="{{ data.socialOGVideoOtherWriter }}">
-			{% endif %}
-			{% if data.socialOGVideoOtherDuration %}
-				<meta property="video:duration" content="{{ data.socialOGVideoOtherDuration }}">
-			{% endif %}
-			{% if data.socialOGVideoOtherReleaseDate %}
-				<meta property="video:release_date" content="{{ data.socialOGVideoOtherReleaseDate }}">
-			{% endif %}
-			{% if data.socialOGVideoOtherTag %}
-				<meta property="video:tag" content="{{ data.socialOGVideoOtherTag }}">
 			{% endif %}
 	{% endswitch %}
 {% endspaceless %}

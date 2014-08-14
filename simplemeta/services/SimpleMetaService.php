@@ -52,11 +52,11 @@ class SimpleMetaService extends BaseApplicationComponent
 
 		/* DateTime */
 		$dateFields = array(
-			'socialOGMusicAlbumReleaseDate',
-			'socialOGVideoMovieReleaseDate',
-			'socialOGVideoEpisodeReleaseDate',
-			'socialOGVideoTVShowReleaseDate',
-			'socialOGVideoOtherReleaseDate',
+//			'socialOGMusicAlbumReleaseDate',
+//			'socialOGVideoMovieReleaseDate',
+//			'socialOGVideoEpisodeReleaseDate',
+//			'socialOGVideoTVShowReleaseDate',
+//			'socialOGVideoOtherReleaseDate',
 		);
 
 		foreach ($dateFields as $field) {

@@ -8,6 +8,7 @@ class SimpleMeta_SimpleMetaModel extends BaseModel
 		// Open Graph Types
 		$openGraphTypes = array(
 			'article',
+			'book',
 			'music.song',
 			'music.album',
 			'music.playlist',
@@ -66,66 +67,68 @@ class SimpleMeta_SimpleMetaModel extends BaseModel
 					'socialOGAudioEmbeddedUrl'         => AttributeType::String,
 					'socialOGAudioType'                => AttributeType::String,
 					// Article
-					'socialOGArticle'                  => AttributeType::String,
-					// OG Music - Song
-					'socialOGMusicSongDuration'        => AttributeType::String,
-					'socialOGMusicSongAlbum'           => AttributeType::String,
-					'socialOGMusicSongDisc'            => AttributeType::String,
-					'socialOGMusicSongTrack'           => AttributeType::String,
-					'socialOGMusicSongMusician'        => AttributeType::String,
-					// OG Music - Album
-					'socialOGMusicAlbumSong'           => AttributeType::String,
-					'socialOGMusicAlbumDisc'           => AttributeType::String,
-					'socialOGMusicAlbumTrack'          => AttributeType::String,
-					'socialOGMusicAlbumMusician'       => AttributeType::String,
-					'socialOGMusicAlbumReleaseDate'    => AttributeType::DateTime, // DateTime
-					// OG Music - Playlist
-					'socialOGMusicPlaylistSong'        => AttributeType::String,
-					'socialOGMusicPlaylistSongDisc'    => AttributeType::String,
-					'socialOGMusicPlaylistSongTrack'   => AttributeType::String,
-					'socialOGMusicPlaylistCreator'     => AttributeType::String,
-					// OG Music - Radio Station
-					'socialOGMusicRadioStationCreator' => AttributeType::String,
-					// OG Profile
-					'socialOGProfileFirstName'         => AttributeType::String,
-					'socialOGProfileLastName'          => AttributeType::String,
-					'socialOGProfileUsername'          => AttributeType::String,
-					'socialOGProfileGender'            => AttributeType::String,
-					// Video - Movie
-					'socialOGVideoMovieActor'          => AttributeType::String,
-					'socialOGVideoMovieActorRole'      => AttributeType::String,
-					'socialOGVideoMovieDirector'       => AttributeType::String,
-					'socialOGVideoMovieWriter'         => AttributeType::String,
-					'socialOGVideoMovieDuration'       => AttributeType::String,
-					'socialOGVideoMovieReleaseDate'    => AttributeType::DateTime, // DateTime
-					'socialOGVideoMovieTag'            => AttributeType::String,
-					// Video - Episode
-					'socialOGVideoEpisodeActor'        => AttributeType::String,
-					'socialOGVideoEpisodeActorRole'    => AttributeType::String,
-					'socialOGVideoEpisodeDirector'     => AttributeType::String,
-					'socialOGVideoEpisodeWriter'       => AttributeType::String,
-					'socialOGVideoEpisodeDuration'     => AttributeType::String,
-					'socialOGVideoEpisodeReleaseDate'  => AttributeType::DateTime, // DateTime
-					'socialOGVideoEpisodeTag'          => AttributeType::String,
-					'socialOGVideoEpisodeSeries'       => AttributeType::String,
-					// Video - TV Show
-					'socialOGVideoTVShowActor'         => AttributeType::String,
-					'socialOGVideoTVShowActorRole'     => AttributeType::String,
-					'socialOGVideoTVShowDirector'      => AttributeType::String,
-					'socialOGVideoTVShowWriter'        => AttributeType::String,
-					'socialOGVideoTVShowDuration'      => AttributeType::String,
-					'socialOGVideoTVShowReleaseDate'    => AttributeType::DateTime, // DateTime
-					'socialOGVideoTVShowTag'           => AttributeType::String,
-					// Video - Other
-					'socialOGVideoOtherActor'          => AttributeType::String,
-					'socialOGVideoOtherActorRole'      => AttributeType::String,
-					'socialOGVideoOtherDirector'       => AttributeType::String,
-					'socialOGVideoOtherWriter'         => AttributeType::String,
-					'socialOGVideoOtherDuration'       => AttributeType::String,
-					'socialOGVideoOtherReleaseDate'     => AttributeType::DateTime, // DateTime
-					'socialOGVideoOtherTag'            => AttributeType::String,
-					// Website
-					'socialOGWebsite'                  => AttributeType::String,
+					//'socialOGArticle'                  => AttributeType::String,
+					//// Book
+					//'socialOGBook'                     => AttributeType::String,
+					//// OG Music - Song
+					//'socialOGMusicSongDuration'        => AttributeType::String,
+					//'socialOGMusicSongAlbum'           => AttributeType::String,
+					//'socialOGMusicSongDisc'            => AttributeType::String,
+					//'socialOGMusicSongTrack'           => AttributeType::String,
+					//'socialOGMusicSongMusician'        => AttributeType::String,
+					//// OG Music - Album
+					//'socialOGMusicAlbumSong'           => AttributeType::String,
+					//'socialOGMusicAlbumDisc'           => AttributeType::String,
+					//'socialOGMusicAlbumTrack'          => AttributeType::String,
+					//'socialOGMusicAlbumMusician'       => AttributeType::String,
+					//'socialOGMusicAlbumReleaseDate'    => AttributeType::DateTime, // DateTime
+					//// OG Music - Playlist
+					//'socialOGMusicPlaylistSong'        => AttributeType::String,
+					//'socialOGMusicPlaylistSongDisc'    => AttributeType::String,
+					//'socialOGMusicPlaylistSongTrack'   => AttributeType::String,
+					//'socialOGMusicPlaylistCreator'     => AttributeType::String,
+					//// OG Music - Radio Station
+					//'socialOGMusicRadioStationCreator' => AttributeType::String,
+					//// OG Profile
+					//'socialOGProfileFirstName'         => AttributeType::String,
+					//'socialOGProfileLastName'          => AttributeType::String,
+					//'socialOGProfileUsername'          => AttributeType::String,
+					//'socialOGProfileGender'            => AttributeType::String,
+					//// Video - Movie
+					//'socialOGVideoMovieActor'          => AttributeType::String,
+					//'socialOGVideoMovieActorRole'      => AttributeType::String,
+					//'socialOGVideoMovieDirector'       => AttributeType::String,
+					//'socialOGVideoMovieWriter'         => AttributeType::String,
+					//'socialOGVideoMovieDuration'       => AttributeType::String,
+					//'socialOGVideoMovieReleaseDate'    => AttributeType::DateTime, // DateTime
+					//'socialOGVideoMovieTag'            => AttributeType::String,
+					//// Video - Episode
+					//'socialOGVideoEpisodeActor'        => AttributeType::String,
+					//'socialOGVideoEpisodeActorRole'    => AttributeType::String,
+					//'socialOGVideoEpisodeDirector'     => AttributeType::String,
+					//'socialOGVideoEpisodeWriter'       => AttributeType::String,
+					//'socialOGVideoEpisodeDuration'     => AttributeType::String,
+					//'socialOGVideoEpisodeReleaseDate'  => AttributeType::DateTime, // DateTime
+					//'socialOGVideoEpisodeTag'          => AttributeType::String,
+					//'socialOGVideoEpisodeSeries'       => AttributeType::String,
+					//// Video - TV Show
+					//'socialOGVideoTVShowActor'         => AttributeType::String,
+					//'socialOGVideoTVShowActorRole'     => AttributeType::String,
+					//'socialOGVideoTVShowDirector'      => AttributeType::String,
+					//'socialOGVideoTVShowWriter'        => AttributeType::String,
+					//'socialOGVideoTVShowDuration'      => AttributeType::String,
+					//'socialOGVideoTVShowReleaseDate'    => AttributeType::DateTime, // DateTime
+					//'socialOGVideoTVShowTag'           => AttributeType::String,
+					//// Video - Other
+					//'socialOGVideoOtherActor'          => AttributeType::String,
+					//'socialOGVideoOtherActorRole'      => AttributeType::String,
+					//'socialOGVideoOtherDirector'       => AttributeType::String,
+					//'socialOGVideoOtherWriter'         => AttributeType::String,
+					//'socialOGVideoOtherDuration'       => AttributeType::String,
+					//'socialOGVideoOtherReleaseDate'     => AttributeType::DateTime, // DateTime
+					//'socialOGVideoOtherTag'            => AttributeType::String,
+					//// Website
+					//'socialOGWebsite'                  => AttributeType::String,
 
 				// Twitter
 				'socialTwitterTitle'       => AttributeType::String,
