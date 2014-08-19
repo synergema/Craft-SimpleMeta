@@ -57,11 +57,13 @@
 				</div>
 			</div>
 			<div class="block">
-				{% include 'simplemeta/_includes/opengraph/video' %} {# Video File/Embed OG #}
+				{# Video File/Embed OG #}
+				{% include 'simplemeta/_includes/opengraph/video' %}
 			</div>
-			<div class="block">
-				{% include 'simplemeta/_includes/opengraph/audio' %} {# Video File/Embed OG #}
-			</div>
+			<!-- <div class="block">
+				{# Video File/Embed OG #}
+				{# {% include 'simplemeta/_includes/opengraph/audio' %} #}
+			</div> -->
 			<div class="block">
 				{{ forms.selectField({
 					label       : "Content Type"|t,

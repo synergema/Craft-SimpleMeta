@@ -16,4 +16,8 @@ class SimpleMetaVariable
 		return craft()->simpleMeta->getAssetById($id);
 	}
 
+	public function getVideoUrl($string)
+	{
+		return craft()->simpleMeta->parseVideos($string);
+	}
 }

@@ -31,14 +31,11 @@
 	{# Video #}
 	{%- if data.socialOGVideoInclude == true -%}
 		{% if data.socialOGVideoEmbeddedUrl | length -%}
-			{% if isVimeo %}
-			<meta property="og:video" content="http://vimeo.com/moogaloop.swf?clip_id={{ videoId }}">
-			<meta property="og:video:secure_url" content="http://vimeo.com/moogaloop.swf?clip_id={{ videoId }}">
-			{% elseif isYouTube %}
-			<meta property="og:video" content="https://www.youtube.com/v/{{ videoId }}?version=3">
-			<meta property="og:video:secure_url" content="https://www.youtube.com/v/{{ videoId }}?version=3">
+			{% set videoUrl = craft.simpleMeta.getVideoUrl(data.socialOGVideoEmbeddedUrl) %}
+			{% if videoUrl[0]['url'] is defined %}
+			<meta property="og:video" content="{{ videoUrl[0]['url'] }}">
+			<meta propery="og:video:secure_url" content="{{ videoUrl[0]['url'] | replace({'http': 'https'}) }}">
 			{% endif %}
-			{% spaceless %}<meta property="og:video" content="{{ data.socialOGVideoEmbeddedUrl }}" />{% endspaceless %}
 		{% endif %}
 		{# {% if data.socialOGVideoContentId | length %}
 			{% spaceless %}<meta property="og:video" content="{{ craft.simpleMeta.asset( data.socialOGVideoContentId ).url }}" />{% endspaceless %}
@@ -63,8 +60,8 @@
 		{% endif %}
 		{% if data.socialOGAudioType %}
 		<meta property="og:audio:type" content="{{ data.socialOGAudioType }}">
-		{% endif %}
-	{%- endif -%} #}
+		{% endif %} #}
+	{%- endif -%}
 {% endspaceless %}
 {%- endmacro -%}
 
