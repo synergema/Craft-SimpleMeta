@@ -27,12 +27,20 @@
 
 {# -- Open Graph Video -- #}
 {%- macro metaObjectOpenGraphMedia(data) -%}
+{% spaceless %}
 	{# Video #}
 	{%- if data.socialOGVideoInclude == true -%}
 		{% if data.socialOGVideoEmbeddedUrl | length -%}
+			{% if isVimeo %}
+			<meta property="og:video" content="http://vimeo.com/moogaloop.swf?clip_id={{ videoId }}">
+			<meta property="og:video:secure_url" content="http://vimeo.com/moogaloop.swf?clip_id={{ videoId }}">
+			{% elseif isYouTube %}
+			<meta property="og:video" content="https://www.youtube.com/v/{{ videoId }}?version=3">
+			<meta property="og:video:secure_url" content="https://www.youtube.com/v/{{ videoId }}?version=3">
+			{% endif %}
 			{% spaceless %}<meta property="og:video" content="{{ data.socialOGVideoEmbeddedUrl }}" />{% endspaceless %}
 		{% endif %}
-		{% if data.socialOGVideoContentId | length %}
+		{# {% if data.socialOGVideoContentId | length %}
 			{% spaceless %}<meta property="og:video" content="{{ craft.simpleMeta.asset( data.socialOGVideoContentId ).url }}" />{% endspaceless %}
 		{% endif %}
 		{% if data.socialOGVideoType %}
@@ -44,9 +52,9 @@
 		{% if data.socialOGVideoHeight %}
 			{% spaceless %}<meta property="og:video:height" content="{{ data.socialOGVideoHeight }}" />{% endspaceless %}
 		{% endif %}
-	{%- endif -%}
+	{%- endif -%} #}
 	{# Audio #}
-	{% if data.socialOGAudioInclude == true -%}
+	{# {% if data.socialOGAudioInclude == true -%}
 		{% if data.socialOGAudioEmbeddedUrl | length %}
 		<meta property="og:audio" content="{{ data.socialOGAudioEmbeddedUrl }}">
 		{% endif %}
@@ -56,7 +64,8 @@
 		{% if data.socialOGAudioType %}
 		<meta property="og:audio:type" content="{{ data.socialOGAudioType }}">
 		{% endif %}
-	{%- endif -%}
+	{%- endif -%} #}
+{% endspaceless %}
 {%- endmacro -%}
 
 {# -- Twitter Card -- #}
