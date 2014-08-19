@@ -25,6 +25,13 @@
 {% endspaceless %}
 {%- endmacro -%}
 
+{# -- Robots Meta -- #}
+{%- macro metaRobots(data) -%}
+{% spaceless %}
+	<meta name="robots" content="{{ data.seoRobotsIndex }}, {{ data.seoRobotsFollow }}" />
+{% endspaceless %}
+{%- endmacro -%}
+
 {# -- Open Graph Video -- #}
 {%- macro metaObjectOpenGraphMedia(data) -%}
 {% spaceless %}
