@@ -53,19 +53,19 @@ class SimpleMeta_SimpleMetaModel extends BaseModel
 					'socialOGType'                     => array(AttributeType::Enum, 'values' => $openGraphTypes, 'default' => $openGraphTypes[0]),
 					// OG Video
 					'socialOGVideoInclude'             => AttributeType::Number,
-					'socialOGVideoContentId'           => AttributeType::Number, /* Asset */
-					'socialOGVideoContentSecure'       => AttributeType::Number,
+					//'socialOGVideoContentId'           => AttributeType::Number, /* Asset */
+					//'socialOGVideoContentSecure'       => AttributeType::Number,
 					'socialOGVideoEmbeddedUrl'         => AttributeType::String,
-					'socialOGVideoUrl'                 => AttributeType::String,
-					'socialOGVideoType'                => AttributeType::String,
-					'socialOGVideoWidth'               => AttributeType::String,
-					'socialOGVideoHeight'              => AttributeType::String,
+					//'socialOGVideoUrl'                 => AttributeType::String,
+					//'socialOGVideoType'                => AttributeType::String,
+					//'socialOGVideoWidth'               => AttributeType::String,
+					//'socialOGVideoHeight'              => AttributeType::String,
 					// OG Audio
-					'socialOGAudioInclude'             => AttributeType::Number,
-					'socialOGAudioContentId'           => AttributeType::Number, /* Asset */
-					'socialOGAudioContentSecure'       => AttributeType::Number,
-					'socialOGAudioEmbeddedUrl'         => AttributeType::String,
-					'socialOGAudioType'                => AttributeType::String,
+					//'socialOGAudioInclude'             => AttributeType::Number,
+					//'socialOGAudioContentId'           => AttributeType::Number, /* Asset */
+					//'socialOGAudioContentSecure'       => AttributeType::Number,
+					//'socialOGAudioEmbeddedUrl'         => AttributeType::String,
+					//'socialOGAudioType'                => AttributeType::String,
 					// Article
 					//'socialOGArticle'                  => AttributeType::String,
 					//// Book

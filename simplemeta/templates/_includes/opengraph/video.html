@@ -9,14 +9,14 @@
 		<div class="child">
 
 			{{ forms.textField({
-				label: "Embedded Video"|t,
-				instructions: "Include full URL if video is embedded."|t,
+				label: "YouTube or Vimeo Video"|t,
+				instructions: "Include full YouTube or Vimeo URL."|t,
 				id   : handle~'socialOGVideoEmbeddedUrl',
 				name : handle~'[socialOGVideoEmbeddedUrl]',
 				placeholder: 'https://www.youtube.com/watch?v=J---aiyznGQ',
 				value: socialOGVideoEmbeddedUrl,
 			}) }}
-			<div class="field">
+{# 			<div class="field">
 				<div class="heading">
 					<label for="">Local Video</label>
 					<div class="instructions">
@@ -88,7 +88,7 @@
 				value: socialOGVideoHeight,
 				size : "5",
 			}) }}
-
+ #}
 		</div>
 	</div>
 </div>

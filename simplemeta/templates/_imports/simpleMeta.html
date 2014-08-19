@@ -25,14 +25,26 @@
 {% endspaceless %}
 {%- endmacro -%}
 
+{# -- Robots Meta -- #}
+{%- macro metaRobots(data) -%}
+{% spaceless %}
+	<meta name="robots" content="{{ data.seoRobotsIndex }}, {{ data.seoRobotsFollow }}" />
+{% endspaceless %}
+{%- endmacro -%}
+
 {# -- Open Graph Video -- #}
 {%- macro metaObjectOpenGraphMedia(data) -%}
+{% spaceless %}
 	{# Video #}
 	{%- if data.socialOGVideoInclude == true -%}
 		{% if data.socialOGVideoEmbeddedUrl | length -%}
-			{% spaceless %}<meta property="og:video" content="{{ data.socialOGVideoEmbeddedUrl }}" />{% endspaceless %}
+			{% set videoUrl = craft.simpleMeta.getVideoUrl(data.socialOGVideoEmbeddedUrl) %}
+			{% if videoUrl[0]['url'] is defined %}
+			<meta property="og:video" content="{{ videoUrl[0]['url'] }}">
+			<meta propery="og:video:secure_url" content="{{ videoUrl[0]['url'] | replace({'http': 'https'}) }}">
+			{% endif %}
 		{% endif %}
-		{% if data.socialOGVideoContentId | length %}
+		{# {% if data.socialOGVideoContentId | length %}
 			{% spaceless %}<meta property="og:video" content="{{ craft.simpleMeta.asset( data.socialOGVideoContentId ).url }}" />{% endspaceless %}
 		{% endif %}
 		{% if data.socialOGVideoType %}
@@ -44,9 +56,9 @@
 		{% if data.socialOGVideoHeight %}
 			{% spaceless %}<meta property="og:video:height" content="{{ data.socialOGVideoHeight }}" />{% endspaceless %}
 		{% endif %}
-	{%- endif -%}
+	{%- endif -%} #}
 	{# Audio #}
-	{% if data.socialOGAudioInclude == true -%}
+	{# {% if data.socialOGAudioInclude == true -%}
 		{% if data.socialOGAudioEmbeddedUrl | length %}
 		<meta property="og:audio" content="{{ data.socialOGAudioEmbeddedUrl }}">
 		{% endif %}
@@ -55,8 +67,9 @@
 		{% endif %}
 		{% if data.socialOGAudioType %}
 		<meta property="og:audio:type" content="{{ data.socialOGAudioType }}">
-		{% endif %}
+		{% endif %} #}
 	{%- endif -%}
+{% endspaceless %}
 {%- endmacro -%}
 
 {# -- Twitter Card -- #}

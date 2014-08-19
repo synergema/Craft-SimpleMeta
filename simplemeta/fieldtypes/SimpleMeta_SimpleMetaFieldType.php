@@ -57,8 +57,8 @@ class SimpleMeta_SimpleMetaFieldType extends BaseFieldType
 		// Set assets
 		$simplemetaAssets = array(
 			'socialOGImage'                  => $simpleMetaModel->socialOGImageId,
-			'socialOGAudioContent'           => $simpleMetaModel->socialOGAudioContentId,
-			'socialOGVideoContent'           => $simpleMetaModel->socialOGVideoContentId,
+			// 'socialOGAudioContent'           => $simpleMetaModel->socialOGAudioContentId,
+			// 'socialOGVideoContent'           => $simpleMetaModel->socialOGVideoContentId,
 			'socialTwitterGalleryImages'     => $simpleMetaModel->socialTwitterGalleryImagesId,
 			'socialTwitterPhoto'             => $simpleMetaModel->socialTwitterPhotoId,
 			'socialTwitterProductImage'      => $simpleMetaModel->socialTwitterProductImageId,
