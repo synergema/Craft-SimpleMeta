@@ -118,10 +118,21 @@ class SimpleMetaService extends BaseApplicationComponent
 				$attr = SimpleMeta_SimpleMetaRecord::model()->getAttributes();
 			}
 
-			$templatesPath = craft()->path->getPluginsPath().'simplemeta/templates/';
-			craft()->path->setTemplatesPath($templatesPath);
+			// Capture the original templates path
+			$oldPath = craft()->path->getTemplatesPath();
+			// Set the new path for rendering the plugin template
+			$newPath = craft()->path->getPluginsPath() . 'simpleMeta/templates/';
 
-			return craft()->templates->render('output', $attr);
+			// Set system to new templates path
+			craft()->path->setTemplatesPath($newPath);
+
+			// Render the HTMl from the plugin's template
+			$html    = craft()->templates->render('output', $attr);
+
+			// Set the system templates back or else front-end will bomb out
+			craft()->path->setTemplatesPath($oldPath);
+
+			return $html;
 
 		} else {
 			return false;
