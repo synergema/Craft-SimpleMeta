@@ -121,7 +121,7 @@ class SimpleMetaService extends BaseApplicationComponent
 			// Capture the original templates path
 			$oldPath = craft()->path->getTemplatesPath();
 			// Set the new path for rendering the plugin template
-			$newPath = craft()->path->getPluginsPath() . 'simpleMeta/templates/';
+			$newPath = craft()->path->getPluginsPath() . 'simplemeta/templates/';
 
 			// Set system to new templates path
 			craft()->path->setTemplatesPath($newPath);

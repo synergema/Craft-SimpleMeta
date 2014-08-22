@@ -22,7 +22,7 @@ class SimpleMetaPlugin extends BasePlugin
 
 	public function getVersion()
 	{
-		return '1.0b1';
+		return '1.0b1.1';
 	}
 
 	public function getDeveloper()
