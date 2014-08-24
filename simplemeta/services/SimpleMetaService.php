@@ -102,22 +102,73 @@ class SimpleMetaService extends BaseApplicationComponent
 	 */
 	public function outputSimpleMeta($entry, $fallback)
 	{
-
-		$id = ($entry) ? $entry->id : (($fallback) ? $fallback->id : false);
-
-		if ($id)
+		// Check for valid entry
+		if (isset($entry->id))
 		{
-			$simpleMetaRecord = SimpleMeta_SimpleMetaRecord::model()->findByAttributes(array(
-				'elementId' => $id,
+			$simpleMetaEntry = SimpleMeta_SimpleMetaRecord::model()->findByAttributes(array(
+				'elementId' => $entry->id,
 			));
+		}
+		else
+		{
+			$simpleMetaEntry = false;
+		}
 
-			if ($simpleMetaRecord)
+		// Check for valid fallback
+		if (isset($fallback->id))
+		{
+			$simpleMetaFallback = SimpleMeta_SimpleMetaRecord::model()->findByAttributes(array(
+				'elementId' => $fallback->id,
+			));
+		}
+		else
+		{
+			$simpleMetaFallback = false;
+		}
+
+		// Return false if we don't have an entry or fallback record
+		if (!$simpleMetaEntry && !$simpleMetaFallback)
+		{
+			return false;
+		}
+
+		// Holder for attributes to be rendered on output
+		$attributes = false;
+
+		// If we have entry and fallback, merge
+		if ($simpleMetaEntry)
+		{
+			// Entry attributes
+			$entryAttributes    = $simpleMetaEntry->getAttributes();
+			// Fallback attributes
+			$fallbackAttributes = $simpleMetaFallback ? $simpleMetaFallback->getAttributes() : false;
+
+			$attributes = $entryAttributes;
+
+			// If we have fallback attributes, merge with the entry attributes
+			if ($fallbackAttributes)
 			{
-				$attr = $simpleMetaRecord->getAttributes();
-			} else {
-				$attr = SimpleMeta_SimpleMetaRecord::model()->getAttributes();
+				foreach ($entryAttributes as $key => $value)
+				{
+					if (empty($value) && isset($fallbackAttributes[$key]))
+					{
+						$attributes[$key] = $fallbackAttributes[$key];
+					}
+					else
+					{
+						continue;
+					}
+				}
 			}
+		}
+		elseif ($simpleMetaFallback)
+		{
+			$attributes = $simpleMetaFallback->getAttributes();
+		}
 
+		// Make sure we have entry attributes
+		if ($attributes)
+		{
 			// Capture the original templates path
 			$oldPath = craft()->path->getTemplatesPath();
 			// Set the new path for rendering the plugin template
@@ -127,16 +178,18 @@ class SimpleMetaService extends BaseApplicationComponent
 			craft()->path->setTemplatesPath($newPath);
 
 			// Render the HTMl from the plugin's template
-			$html    = craft()->templates->render('output', $attr);
+			$html    = craft()->templates->render('output', $attributes);
 
 			// Set the system templates back or else front-end will bomb out
 			craft()->path->setTemplatesPath($oldPath);
 
 			return $html;
-
-		} else {
+		}
+		else
+		{
 			return false;
 		}
+
 	}
 
 
