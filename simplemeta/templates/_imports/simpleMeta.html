@@ -1,5 +1,14 @@
-{# -- Standard meta tag -- #}
-{%- macro meta(property, content) -%}
+{# -- Standard meta tag <meta name=""> -- #}
+{%- macro metaName(property, content) -%}
+{% spaceless %}
+	{% if content | length -%}
+	<meta name="{{ property }}" content="{{ content }}" />
+	{% endif %}
+{% endspaceless %}
+{%- endmacro -%}
+
+{# -- property meta tag <meta property=""> -- #}
+{%- macro metaProperty(property, content) -%}
 {% spaceless %}
 	{% if content | length -%}
 	<meta property="{{ property }}" content="{{ content }}" />

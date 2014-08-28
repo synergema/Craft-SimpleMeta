@@ -1,14 +1,14 @@
 {%- import "_imports/simpleMeta" as meta %}
 
-{{ meta.meta('description', seoDescription) }}
+{{ meta.metaName('description', seoDescription) }}
 {{ meta.metaLink('canonical', seoCanonicalUrl) }}
 {{ meta.metaRobots(_context) }}
-{{ meta.meta('og:type', socialOGType) }}
-{{ meta.meta('og:title', socialOGTitle) }}
-{{ meta.meta('og:description', socialOGDescription) }}
+{{ meta.metaProperty('og:type', socialOGType) }}
+{{ meta.metaProperty('og:title', socialOGTitle) }}
+{{ meta.metaProperty('og:description', socialOGDescription) }}
 {{ meta.metaAsset('og:image', socialOGImageId) }}
 {{ meta.metaObjectOpenGraphMedia(_context) }}
-{{ meta.meta('twitter:card', socialTwitterType) }}
-{{ meta.meta('twitter:title', socialTwitterTitle) }}
-{{ meta.meta('twitter:description', socialTwitterDescription) }}
+{{ meta.metaProperty('twitter:card', socialTwitterType) }}
+{{ meta.metaProperty('twitter:title', socialTwitterTitle) }}
+{{ meta.metaProperty('twitter:description', socialTwitterDescription) }}
 {{ meta.metaObjectTwitterCard(_context) }}
