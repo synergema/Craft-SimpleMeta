@@ -43,6 +43,91 @@ This example assumes that you have a global entry with a handle of `metaFallback
 
 ### 2. Custom Template
 
-You can access any of the `SimpleMeta` fields directy via the entry if you prefer to setup your own custom output. 
+You can access any of the `SimpleMeta` fields directy via the entry if you prefer to setup your own custom output.
 
-**A list of available field names coming soon.**
+#### Open Graph Tags
+
+[http://ogp.me/](http://ogp.me/)
+
+##### General
+
+Property      | Tag           | Returns
+------------- | ------------- | ------------
+Title         | `{{ entry.fieldHandle.socialOGTitle }}`            | String
+Description   | `{{ entry.fieldHandle.socialOGDescription }}`      | String
+Image         | `{{ entry.fieldHandle.socialOGImageId }}`          | Asset ID
+Type          | `{{ entry.fieldHandle.socialOGType }}`             | String
+
+##### Video
+
+Property      | Tag           | Returns
+------------- | ------------- | ------------
+Include Video | `{{ entry.fieldHandle.socialOGVideoInclude }}`     | String
+Video         | `{{ entry.fieldHandle.socialOGVideoEmbeddedUrl }}` | String
+
+
+#### Twitter Tags
+
+[https://dev.twitter.com/docs/cards](https://dev.twitter.com/docs/cards)
+
+##### General
+
+Property      | Tag           | Returns
+------------- | ------------- | ------------
+Title         | `{{ entry.fieldHandle.socialTwitterTitle }}`       | String 
+Description   | `{{ entry.fieldHandle.socialTwitterDescription }}` | String
+Type          | `{{ entry.fieldHandle.socialTwitterType }}`        | String
+
+##### Summary Card
+
+Property      | Tag           | Returns
+------------- | ------------- | ------------
+Image         | `{{ entry.fieldHandle.socialTwitterSummaryImageId }}` | Asset ID
+
+##### Summary Card w/ Large Image
+
+Property      | Tag           | Returns
+------------- | ------------- | ------------
+Image         | `{{ entry.fieldHandle.socialTwitterSummaryLargeImageId }}` | Asset ID
+
+##### Photo Card
+
+Property      | Tag           | Returns
+------------- | ------------- | ------------
+Image         | `{{ entry.fieldHandle.socialTwitterPhotoId }}` | Asset ID
+
+##### App Card
+
+Property             | Tag           | Returns
+-------------------- | ------------- | ------------
+App Name iPhone      | `{{ entry.fieldHandle.socialTwitterAppIphoneName }}`  | String
+App ID iPhone        | `{{ entry.fieldHandle.socialTwitterAppIphoneId }}`    | String
+App URL iPhone       | `{{ entry.fieldHandle.socialTwitterAppIphoneUrl }}`   | String
+App Name iPad        | `{{ entry.fieldHandle.socialTwitterAppIpadName }}`    | String
+App ID iPad          | `{{ entry.fieldHandle.socialTwitterAppIpadId }}`      | String
+App URL iPad         | `{{ entry.fieldHandle.socialTwitterAppIpadUrl }}`     | String
+App ID Google Play   | `{{ entry.fieldHandle.socialTwitterAppAndroidName }}` | String
+App Name Google Play | `{{ entry.fieldHandle.socialTwitterAppAndroidId }}`   | String
+App URL Google Play  | `{{ entry.fieldHandle.socialTwitterAppAndroidUrl }}`  | String
+App Country          | `{{ entry.fieldHandle.socialTwitterAppCountry }}`     | String
+
+##### Product Card
+
+Property      | Tag           | Returns
+------------- | ------------- | ------------
+Image         | `{{ entry.fieldHandle.socialTwitterProductImageId }}` | Asset ID
+Label 1       | `{{ entry.fieldHandle.socialTwitterProductLabel1 }}`  | String
+Data 1        | `{{ entry.fieldHandle.socialTwitterProductData1 }}`   | String
+Label 2       | `{{ entry.fieldHandle.socialTwitterProductLabel2 }}`  | String
+Data 2        | `{{ entry.fieldHandle.socialTwitterProductData2 }}}`  | String
+
+#### SEO
+
+Property         | Tag           | Returns
+---------------- | ------------- | ------------
+Title            | `{{ entry.fieldHandle.seoTitle }}`           | String
+Description      | `{{ entry.fieldHandle.seoDescription }}`     | String
+Canonical URL    | `{{ entry.fieldHandle.seoCanonicalUrl }}`    | String
+Robots Index     | `{{ entry.fieldHandle.seoRobotsIndex }}`     | String
+Robots Follow    | `{{ entry.fieldHandle.seoRobotsFollow }}`    | String
+Sitemap Priority | `{{ entry.fieldHandle.seoSitemapPriority }}` | String
