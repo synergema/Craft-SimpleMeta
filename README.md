@@ -40,6 +40,13 @@ This example assumes that you have a global entry with a handle of `metaFallback
 {{ craft.simpleMeta.output(entry, fallback)|raw }}
 ```
 
+##### How Fallback Works
+
+The fallback will work as both a fallback if the entry doesn't exist, but will also act as a default to fill in values not present in the entry. So, for example, if you have a `description` in your fallback, but not in the entry, the `description` from the fallback will be output.
+
+##### Title Tag
+
+The `output` tag will no longer include the `<title>` tag. This will need to be implemented by you. Example forthcoming on how you can handle this.
 
 ### 2. Custom Template
 
