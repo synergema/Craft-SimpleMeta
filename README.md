@@ -52,6 +52,13 @@ The `output` tag will no longer include the `<title>` tag. This will need to be 
 
 You can access any of the `SimpleMeta` fields directy via the entry if you prefer to setup your own custom output.
 
+**Note:** For fields that return an Asset ID you can use Craft's [`craft.assets`](http://buildwithcraft.com/docs/templating/craft.assets). Check out the example below:
+
+```
+{% set socialOGImageId = craft.assets.id(entry.fieldHandle.socialOGImageId).first() %}
+{{ socialOGImageId.url() }}
+```
+
 #### Open Graph Tags
 
 [http://ogp.me/](http://ogp.me/)
@@ -81,7 +88,7 @@ Video         | `{{ entry.fieldHandle.socialOGVideoEmbeddedUrl }}` | String
 
 Property      | Tag           | Returns
 ------------- | ------------- | ------------
-Title         | `{{ entry.fieldHandle.socialTwitterTitle }}`       | String 
+Title         | `{{ entry.fieldHandle.socialTwitterTitle }}`       | String
 Description   | `{{ entry.fieldHandle.socialTwitterDescription }}` | String
 Type          | `{{ entry.fieldHandle.socialTwitterType }}`        | String
 
