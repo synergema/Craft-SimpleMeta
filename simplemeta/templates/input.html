@@ -191,8 +191,7 @@
 			<div class="block">
 				{{ forms.textField({
 					label       :  "Meta Canonical URL"|t,
-					instructions: "The canonical URL that this page should point to. Cross domain canonical supported too.",
-					id          : handle~'seoCanonicalUrl',
+					instructions: "The canonical URL that this page should point to. Cross domain canonical supported too. Should be a full-qualified URL in the format <strong><em>http://domain.com/path</em></strong>",					id          : handle~'seoCanonicalUrl',
 					name        : handle~'[seoCanonicalUrl]',
 					value       : seoCanonicalUrl,
 				}) }}
