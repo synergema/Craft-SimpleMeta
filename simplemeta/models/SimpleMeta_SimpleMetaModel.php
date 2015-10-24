@@ -167,6 +167,8 @@ class SimpleMeta_SimpleMetaModel extends BaseModel
 				'seoRobotsIndex'     => array(AttributeType::Enum, 'values' => $robotsIndex, 'default' => $robotsIndex[0]),
 				'seoRobotsFollow'    => array(AttributeType::Enum, 'values' => $robotsFollow, 'default' => $robotsFollow[0]),
 				'seoSitemapPriority' => array(AttributeType::String, 'default' => '0.5'),
+				'seoSitemapChangeFrequency' => array(AttributeType::String, 'default' => 'monthly'),
+
 		);
 	}
 }
