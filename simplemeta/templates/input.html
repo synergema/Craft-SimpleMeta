@@ -246,6 +246,25 @@
 				}) }}
 			</div>
 
+			<div class="block">
+				{{ forms.selectField({
+					label       : "Update Frequency"|t,
+					instructions: "How frequently the page is likely to change.",
+					id          : handle~'seoSitemapChangeFrequency',
+					name        : handle~'[seoSitemapChangeFrequency]',
+					value       : seoSitemapChangeFrequency,
+					options: {
+						"always" 	: "Always",
+						"hourly" 	: "Hourly",
+						"daily" 	: "Daily",
+						"weekly" 	: "Weekly",
+						"monthly" 	: "Monthly",
+						"yearly" 	: "Yearly",
+						"never" 	: "Never",
+					}
+				}) }}
+			</div>
+
 		</div>
 	</section>
 </div>

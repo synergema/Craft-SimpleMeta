@@ -59,6 +59,23 @@ You can access any of the `SimpleMeta` fields directy via the entry if you prefe
 {{ socialOGImageId.url() }}
 ```
 
+### Example `sitemap.xml` Template
+
+```
+?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+{% set entries = craft.entries.section(['blog', 'pages', 'team',]) %}
+{% for entry in entries %}
+   <url>
+      <loc>{% if entry.fieldHandle.seoCanonicalUrl is not empty %}{{ entry.fieldHandle.seoCanonicalUrl }}{% else %}{{ entry.url }}{% endif %}</loc>
+      <lastmod>{{ entry.dateUpdated }}</lastmod>
+      <changefreq>{{ entry.fieldHandle.seoSitemapChangeFrequency }}</changefreq>
+      <priority>{{entry.fieldHandle.seoSitemapPriority}}</priority>
+   </url>
+{% endfor %}
+</urlset> 
+```
+
 #### Open Graph Tags
 
 [http://ogp.me/](http://ogp.me/)
@@ -139,9 +156,10 @@ Data 2        | `{{ entry.fieldHandle.socialTwitterProductData2 }}}`  | String
 
 Property         | Tag           | Returns
 ---------------- | ------------- | ------------
-Title            | `{{ entry.fieldHandle.seoTitle }}`           | String
-Description      | `{{ entry.fieldHandle.seoDescription }}`     | String
-Canonical URL    | `{{ entry.fieldHandle.seoCanonicalUrl }}`    | String
-Robots Index     | `{{ entry.fieldHandle.seoRobotsIndex }}`     | String
-Robots Follow    | `{{ entry.fieldHandle.seoRobotsFollow }}`    | String
-Sitemap Priority | `{{ entry.fieldHandle.seoSitemapPriority }}` | String
+Title            | `{{ entry.fieldHandle.seoTitle }}`           		| String
+Description      | `{{ entry.fieldHandle.seoDescription }}`     		| String
+Canonical URL    | `{{ entry.fieldHandle.seoCanonicalUrl }}`    		| String
+Robots Index     | `{{ entry.fieldHandle.seoRobotsIndex }}`     		| String
+Robots Follow    | `{{ entry.fieldHandle.seoRobotsFollow }}`    		| String
+Sitemap Priority | `{{ entry.fieldHandle.seoSitemapPriority }}` 		| String
+Change Frequency | `{{ entry.fieldHandle.seoSitemapChangeFrequency }}` 	| String
